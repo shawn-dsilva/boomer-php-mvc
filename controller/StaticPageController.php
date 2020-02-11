@@ -11,4 +11,7 @@ class StaticPageController {
     return getView('Dashboard');
   }
 
+  public function login () {
+    return getView('Login');
+  }
 }
