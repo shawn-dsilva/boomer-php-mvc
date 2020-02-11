@@ -1,6 +1,7 @@
 <?php
 
 require '../controller/StaticPageController.php';
+require '../controller/AuthController.php';
 
 
 class Router
