@@ -5,7 +5,7 @@ $router->registerRoute('GET', 'home', 'StaticPageController::home');
 
 $router->registerRoute('GET', 'dashboard', 'StaticPageController::dashboard');
 $router->registerRoute('GET', 'login', 'StaticPageController::login');
-$router->registerRoute('GET', 'login', 'StaticPageController::register');
+$router->registerRoute('GET', 'register', 'StaticPageController::register');
 
 $router->registerRoute('POST', 'login', 'AuthController::login');
 

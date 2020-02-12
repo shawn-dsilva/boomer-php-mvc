@@ -14,4 +14,8 @@ class StaticPageController {
   public function login () {
     return getView('Login');
   }
+
+  public function register () {
+    return getView('Register');
+  }
 }
