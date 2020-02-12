@@ -1,9 +1,13 @@
 <?php
 
+require '../utils/Database.php';
 
 class StaticPageController {
 
   public function home () {
+
+    $db = new Database();
+
     return getView('Home');
   }
 

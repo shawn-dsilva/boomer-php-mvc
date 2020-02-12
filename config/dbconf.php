@@ -1,7 +1,7 @@
 <?php
 
-try {
-    new PDO('mysql:host=127.0.0.1;dbname=boomermvc', 'phpmyadmin', '123456');
-} catch (PDOException $error) {
-    die("Could Not Connect. ");
-}
+define('DB_HOST', '127.0.0.1');
+define('DB_USER', 'phpmyadmin');
+define('DB_PASS', '123456');
+define('DB_NAME', 'boomermvc');
+define('DSN', 'mysql:host='.DB_HOST.';dbname='.DB_NAME);
