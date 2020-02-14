@@ -1,6 +1,5 @@
 <?php
 
-require '../utils/Database.php';
 
 class StaticPageController {
 
