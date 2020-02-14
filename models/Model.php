@@ -1,5 +1,8 @@
 <?php
-class Model {
+
+require_once __DIR__.'/../utils/Database.php';
+
+class Model extends Database {
 
     public $query;
 
