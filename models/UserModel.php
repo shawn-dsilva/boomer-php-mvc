@@ -11,4 +11,9 @@ class UserModel extends Model {
     $query = $this->insertInto('users', $data);
     $this->execstmt($query, $data);
     }
+
+    public function userExists($email) {
+    $query = $this->selectAll('users')->where('email',$email);
+    $this->execstmt($query, []);
+    }
 }

@@ -4,13 +4,24 @@ include_once '../models/UserModel.php';
 
 class AuthController {
 
+  public $user_model;
+
+  public function __construct()
+  {
+    $this->user_model = new UserModel();
+  }
+
   public function login () {
     $data=array(
       'email' => $_POST['email'],
       'password' => $_POST['password']
     );
 
-    return getView('Dashboard', compact('data'));
+    if ($this->user_model->userExists($data['email'])) {
+      return getView('Dashboard', compact('data'));
+    } else {
+      return getView('Error404');
+    }
 
   }
 
@@ -22,8 +33,7 @@ class AuthController {
     );
 
     try {
-        $user_model = new UserModel();
-        $user_model->addUser($data);
+        $this->user_model->addUser($data);
 
         return getView('Dashboard', compact('data'));
     } catch(ErrorException $error) {
