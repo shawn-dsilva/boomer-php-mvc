@@ -10,7 +10,7 @@ class Model extends Database {
 
       $columns = join(', ', array_keys($data));
       $values = ':'.join(', :', array_keys($data));
-      $this->query = "INSET INTO $table ($columns) VALUES ($values)";
+      $this->query = "INSERT INTO $table ($columns) VALUES ($values)";
       return $this->query;
     }
 }

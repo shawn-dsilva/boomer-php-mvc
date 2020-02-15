@@ -9,7 +9,7 @@ class Database {
   public function __construct()
   {
     try {
-        $this->pdo = new PDO(DSN,DB_USER,DB_PASS);
+        $this->pdo = new PDO(DSN,DB_USER,DB_PASS, OPTS);
        return $this->pdo;
     } catch (PDOException $error) {
         die("Could Not Connect. to Database <br> Error: ".$error."<br> DSN String is : ".DSN);

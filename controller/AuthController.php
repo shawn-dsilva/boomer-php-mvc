@@ -16,7 +16,7 @@ class AuthController {
 
   public function register () {
     $data=array(
-      'name' => $_POST['name'],
+      'username' => $_POST['name'],
       'email' => $_POST['email'],
       'password' => $_POST['password']
     );

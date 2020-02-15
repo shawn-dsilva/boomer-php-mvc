@@ -8,7 +8,7 @@ class UserModel extends Model {
 
     public function addUser($data) {
 
-    $query = $this->insertInto('user', $data);
+    $query = $this->insertInto('users', $data);
     $this->execstmt($query, $data);
     }
 }
