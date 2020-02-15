@@ -1,5 +1,6 @@
 <?php
 
+include_once '../models/UserModel.php';
 
 class AuthController {
 
@@ -15,12 +16,18 @@ class AuthController {
 
   public function register () {
     $data=array(
-      'name' => $_POST['email'],
+      'name' => $_POST['name'],
       'email' => $_POST['email'],
       'password' => $_POST['password']
     );
 
-    return getView('Dashboard', compact('data'));
+    try {
+        $user_model = new UserModel();
+        $user_model->addUser($data);
 
+        return getView('Dashboard', compact('data'));
+    } catch(ErrorException $error) {
+      echo $error;
+    }
   }
 }
