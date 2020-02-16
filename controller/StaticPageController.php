@@ -3,6 +3,9 @@
 
 class StaticPageController {
 
+  public function init()
+  {  }
+
   public function home () {
 
     $db = new Database();

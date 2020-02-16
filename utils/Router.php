@@ -11,13 +11,17 @@ class Router
 
   public static function initRouter($routes,$methods) {
 
-    $router = new static; // keyword static instantiates a new object
+    // keyword static instantiates a new object
+    $router = new static;
 
-    require $methods; //this parameter should contain an array of allowed Methods, methods.php file
+    //this parameter should contain an array of allowed Methods, methods.php file
+    require $methods;
 
-    $router->allowedMethods = $allowedMethods; // allowedMethods from the $methods file added to allowMethods array in class
+    // allowedMethods from the $methods file added to allowMethods array in class
+    $router->allowedMethods = $allowedMethods;
 
-    require $routes; //includes the routes.php file and runs the registerRoute() functions contained within
+    //includes the routes.php file and runs the registerRoute() functions contained within
+    require $routes;
 
     return $router;
   }
@@ -25,17 +29,28 @@ class Router
 
   public function registerRoute($method, $uri, callable $controller) {
 
+    //If method is allowed, store controller in a sub-array $method of $routes
+    // with the key as $uri and value as $controller
     if (array_key_exists($method, $this->allowedMethods)) {
         $this->routes[$method][$uri] = $controller;
     } else {
-      throw new Exception('Ivalid Method');
+      throw new Exception('Invalid Method');
     }
   }
 
   public function handleRoute($uri, $methodType) {
 
     if (array_key_exists($uri, $this->routes[$methodType])) {
+
+      //extracts only the controller name from the controller+function string
+      $controller = current(explode('::', $this->routes[$methodType][$uri]));
+
+      // initizalizes the controller
+      call_user_func($controller::init());
+
+      //calls the given function from the controller
       return call_user_func( $this->routes[$methodType][$uri]);
+
     } else {
     throw new Exception('No route defined for this URI');
     }

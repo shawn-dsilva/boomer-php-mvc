@@ -2,13 +2,13 @@
 
 include_once '../models/UserModel.php';
 
-class AuthController {
+class AuthController extends UserModel {
 
-  public $user_model;
+  public  static $user_model;
 
-  public function __construct()
+  public function init()
   {
-    $this->user_model = new UserModel();
+    self::$user_model = new UserModel();
   }
 
   public function login () {
@@ -17,7 +17,7 @@ class AuthController {
       'password' => $_POST['password']
     );
 
-    if ($this->user_model->userExists($data['email'])) {
+    if (self::$user_model->userExists($data['email'])) {
       return getView('Dashboard', compact('data'));
     } else {
       return getView('Error404');
@@ -33,7 +33,7 @@ class AuthController {
     );
 
     try {
-        $this->user_model->addUser($data);
+        self::$user_model->addUser($data);
 
         return getView('Dashboard', compact('data'));
     } catch(ErrorException $error) {
