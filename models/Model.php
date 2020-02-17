@@ -9,7 +9,7 @@ class Model extends Database {
     public function selectAll($table) {
 
       $this->query = "SELECT * FROM $table";
-      return $this->query;
+      return $this;
     }
 
     public function insertInto($table, $data) {
@@ -22,7 +22,7 @@ class Model extends Database {
 
     public function where($column, $value) {
 
-      $this->query .= " WHERE $column='$value'";
+      $this->query = $this->query." WHERE $column='$value'";
       return $this->query;
     }
 }
