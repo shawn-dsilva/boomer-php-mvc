@@ -13,8 +13,8 @@ class UserModel extends Model {
     }
 
     public function userExists($email) {
-    $this->query = $this->selectAll('users')->where('email',$email);
+    $this->selectAll('users')->where('email',$email);
     // die(var_dump($this->query));
-    $this->execstmt($this->query, []);
+    return !empty($this->execstmt($this->query, []));
     }
 }

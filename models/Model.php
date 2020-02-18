@@ -6,6 +6,11 @@ class Model extends Database {
 
     public $query;
 
+    public function __toString()
+    {
+      return $this->query;
+    }
+
     public function selectAll($table) {
 
       $this->query = "SELECT * FROM $table";
