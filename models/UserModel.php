@@ -16,15 +16,15 @@ class UserModel extends Model {
 
         $this->selectAll('users')->where('email',$email);
 
-        return !empty($this->execstmt($this->query, []));
+        return $this->execstmt($this->query, []);
     }
 
-    public function passwordCheck($email, $password) {
+    // public function passwordCheck($email, $password) {
 
-        $this->selectAll('users')->where('email',$email);
+    //     $this->selectAll('users')->where('email',$email);
 
-        $user = $this->execstmt($this->query, []);
+    //     $user = $this->execstmt($this->query, []);
 
-        return $user['password'] == $password ? true : false ;
-    }
+    //     return $user['password'] == $password ? true : false ;
+    // }
 }
