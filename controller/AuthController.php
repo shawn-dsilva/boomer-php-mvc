@@ -46,9 +46,17 @@ class AuthController extends UserModel {
     );
 
     try {
-        self::$user_model->addUser($data);
 
-        return getView('Dashboard', compact('data'));
+      $user = self::$user_model->userExists($data['email']);
+
+      if (empty($user)) {
+         $result = self::$user_model->addUser($data);
+        return getView('Dashboard', compact('result'));
+
+      } else {
+        return getView('Error404', 'User With That E-mail Already Exists');
+      }
+
     } catch(ErrorException $error) {
       echo $error;
     }
