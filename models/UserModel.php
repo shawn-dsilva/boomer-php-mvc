@@ -13,8 +13,18 @@ class UserModel extends Model {
     }
 
     public function userExists($email) {
-    $this->selectAll('users')->where('email',$email);
-    // die(var_dump($this->query));
-    return !empty($this->execstmt($this->query, []));
+
+        $this->selectAll('users')->where('email',$email);
+
+        return !empty($this->execstmt($this->query, []));
+    }
+
+    public function passwordCheck($email, $password) {
+
+        $this->selectAll('users')->where('email',$email);
+
+        $user = $this->execstmt($this->query, []);
+
+        return $user['password'] == $password ? true : false ;
     }
 }

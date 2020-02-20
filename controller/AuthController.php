@@ -18,7 +18,14 @@ class AuthController extends UserModel {
     );
 
     if (self::$user_model->userExists($data['email'])) {
-      return getView('Dashboard', compact('data'));
+      if(self::$user_model->passwordCheck($data['email'],$data['password']) )
+      {
+          return getView('Dashboard', compact('data'));
+      }
+      else {
+          return getView('Error404', 'Incorrect Password') ;
+      }
+      ;
     } else {
       return getView('Error404', 'User Not Found');
     }

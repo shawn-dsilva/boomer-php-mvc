@@ -20,7 +20,7 @@ class Database {
     try {
         $stmt = $this->pdo->prepare($query);
         $stmt->execute($data);
-        return $stmt->fetchAll(PDO::FETCH_CLASS);
+        return $stmt->fetch();
     } catch (ErrorException $error) {
       die(var_dump("An Error has occured. Error : $error <br> SQL Query : $stmt"));
     }
