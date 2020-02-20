@@ -17,20 +17,23 @@ class AuthController extends UserModel {
       'password' => $_POST['password']
     );
 
-    //Checks if user exists, if it does, then an array will be returned, else it will be empty
-    $user = self::$user_model->userExists($data['email']);
+    try {
+        //Checks if user exists, if it does, then an array will be returned, else it will be empty
+        $user = self::$user_model->userExists($data['email']);
 
-    if (!empty($user)) { //If not empty, check given password with the stored password in db
-      if($data['password'] == $user['password'] )
-      {
-          return getView('Dashboard', compact('data'));
-      }
-      else {
-          return getView('Error404', 'Incorrect Password') ;
-      }
+        if (!empty($user)) {
+        //If not empty, check given password with the stored password in db
+            if ($data['password'] == $user['password']) {
+                return getView('Dashboard', compact('data'));
+            } else {
+                return getView('Error404', 'Incorrect Password') ;
+            }
       ;
-    } else {
-      return getView('Error404', 'User Not Found');
+        } else {
+            return getView('Error404', 'User Not Found');
+        }
+    } catch (ErrorException $error) {
+      echo $error;
     }
 
   }
