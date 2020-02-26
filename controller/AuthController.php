@@ -2,6 +2,7 @@
 
 include_once '../models/UserModel.php';
 
+
 class AuthController extends UserModel {
 
   public  static $user_model;
@@ -9,6 +10,12 @@ class AuthController extends UserModel {
   public function init()
   {
     self::$user_model = new UserModel();
+  }
+
+  public function createSession() {
+    $sessionId = bin2hex(random_bytes(20));
+    self::$user_model->saveSession($sessionId);
+    return setcookie("sessionId", $sessionId, time()+3600);
   }
 
   public function login () {
@@ -24,7 +31,8 @@ class AuthController extends UserModel {
         if (!empty($user)) {
         //If not empty, check given password with the stored password in db
             if ($data['password'] == $user['password']) {
-                return getView('Dashboard', compact('data'));
+              self::createSession();
+              return getView('Dashboard', compact('data'));
             } else {
                 return getView('Error404', 'Incorrect Password') ;
             }

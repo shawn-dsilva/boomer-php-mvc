@@ -16,15 +16,14 @@ class UserModel extends Model {
 
         $this->selectAll('users')->where('email',$email);
 
-        return $this->execstmt($this->query, []);
+        return $this->execstmt($this->query, [])->fetch();
     }
 
-    // public function passwordCheck($email, $password) {
+    public function saveSession($sessionId) {
+        $sessionId = array("sessionId" => $sessionId);
+        $this->query = $this->insertInto('sessions', $sessionId);
+        $this->execstmt($this->query, $sessionId);
+    }
 
-    //     $this->selectAll('users')->where('email',$email);
 
-    //     $user = $this->execstmt($this->query, []);
-
-    //     return $user['password'] == $password ? true : false ;
-    // }
 }
