@@ -1,6 +1,6 @@
 <?php
 
-$router->registerRoute('GET', "", 'StaticPageController::home');
+$router->registerRoute('GET', "", 'StaticPageController::home')->middleware('auth');
 $router->registerRoute('GET', 'home', 'StaticPageController::home');
 
 $router->registerRoute('GET', 'dashboard', 'StaticPageController::dashboard');

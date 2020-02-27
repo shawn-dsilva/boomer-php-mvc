@@ -2,6 +2,7 @@
 
 require '../controller/StaticPageController.php';
 require '../controller/AuthController.php';
+require '../controller/BaseController.php';
 
 
 class Router
@@ -32,24 +33,27 @@ class Router
     //If method is allowed, store controller in a sub-array $method of $routes
     // with the key as $uri and value as $controller
     if (array_key_exists($method, $this->allowedMethods)) {
-        $this->routes[$method][$uri] = $controller;
+        return $this->routes[$method][$uri] = new BaseController($controller);
     } else {
       throw new Exception('Invalid Method');
     }
   }
 
+
   public function handleRoute($uri, $methodType) {
 
     if (array_key_exists($uri, $this->routes[$methodType])) {
 
-      //extracts only the controller name from the controller+function string
-      $controller = current(explode('::', $this->routes[$methodType][$uri]));
+      // //extracts only the controller name from the controller+function string
+      // $controller = current(explode('::', $this->routes[$methodType][$uri]));
 
-      // initizalizes the controller
-      call_user_func($controller::init());
+      // // initizalizes the controller
+      // call_user_func($controller::init());
 
-      //calls the given function from the controller
-      return call_user_func( $this->routes[$methodType][$uri]);
+      // //calls the given function from the controller
+      // return call_user_func( $this->routes[$methodType][$uri]);
+
+      return $this->routes[$methodType][$uri]->runController();
 
     } else {
     throw new Exception('No route defined for this URI');

@@ -13,3 +13,10 @@ function getView($name, $data = []) {
 
   return require "../views/{$name}View.php";
 }
+
+function isAuth() {
+ if(!isset($_COOKIE['sessionId'])) {
+  // TODO : Add verification of sessionId with DB step
+  return TRUE;
+  }
+}
