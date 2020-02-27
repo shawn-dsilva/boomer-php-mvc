@@ -17,4 +17,5 @@ This is a CRUD app that i made to learn MVC Architecture and AJAX from scratch u
 - [x] Basic router setup with controllers and views
 - [x] Creating core Model methods
 - [x] Login/Registration functionality
-- [ ] Sessions setup
+- [x] Sessions setup
+- [ ] Redirects based on Auth status stored in Session cookie
