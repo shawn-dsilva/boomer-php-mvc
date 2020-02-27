@@ -8,8 +8,6 @@ class StaticPageController {
 
   public function home () {
 
-    $db = new Database();
-
     return getView('Home');
   }
 

@@ -1,6 +1,6 @@
 <?php
 
-include_once('../models/Model.php');
+include_once('../app/models/Model.php');
 
 class UserModel extends Model {
 

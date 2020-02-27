@@ -11,5 +11,5 @@ function findMethod(){
 function getView($name, $data = []) {
   extract($data);
 
-  return require "../views/{$name}View.php";
+  return require "../app/views/{$name}View.php";
 }

@@ -1,9 +1,9 @@
 <?php
 
-include_once '../models/UserModel.php';
+include_once('../app/models/UserModel.php');
 
 
-class AuthController extends UserModel {
+class AuthController  {
 
   public  static $user_model;
 

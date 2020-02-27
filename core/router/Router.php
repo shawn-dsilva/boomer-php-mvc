@@ -1,8 +1,8 @@
 <?php
 
-require '../controller/StaticPageController.php';
-require '../controller/AuthController.php';
-require '../controller/BaseController.php';
+require '../app/controller/StaticPageController.php';
+require '../app/controller/AuthController.php';
+require '../app/controller/BaseController.php';
 // require './middleware/Middlewares.php';
 include(dirname(__FILE__)."/../middleware/Middlewares.php");
 

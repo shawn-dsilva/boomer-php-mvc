@@ -5,4 +5,4 @@ require '../core/utils/helpers.php';
 
 
 
-Router::initRouter("../controller/RoutesController.php","../core/router/methods.php")->handleRoute(findURI(),findMethod());
+Router::initRouter("../app/controller/RoutesController.php","../core/router/methods.php")->handleRoute(findURI(),findMethod());

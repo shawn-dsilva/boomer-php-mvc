@@ -1,6 +1,6 @@
 <?php
 
-require '../config/dbconf.php';
+require '../app/config/dbconf.php';
 
 class Database {
 
