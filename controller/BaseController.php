@@ -3,11 +3,16 @@
 class BaseController {
 
   public $controller;
+  public $uri;
+  public $method;
   public $middleware = [];
 
-  public function __construct($controller)
+  public function __construct($controller, $method, $uri)
   {
     $this->controller = $controller;
+    $this->uri = $uri;
+    $this->method = $method;
+
     return $this->controller;
   }
 
@@ -28,4 +33,11 @@ class BaseController {
 
     call_user_func($this->controller);
   }
+
+  public function runMiddlewares() {
+    foreach( $this->middleware as $middleware) {
+      call_user_func($middleware, $this);
+    }
+  }
+
 }

@@ -1,11 +1,11 @@
 <?php
 
-$router->registerRoute('GET', "", 'StaticPageController::home')->middleware('auth');
-$router->registerRoute('GET', 'home', 'StaticPageController::home');
+$router->registerRoute('GET', "", 'StaticPageController::home')->middleware('isAuth');
+$router->registerRoute('GET', 'home', 'StaticPageController::home')->middleware('isAuth');
 
-$router->registerRoute('GET', 'dashboard', 'StaticPageController::dashboard');
-$router->registerRoute('GET', 'login', 'StaticPageController::login');
-$router->registerRoute('GET', 'register', 'StaticPageController::register');
+$router->registerRoute('GET', 'dashboard', 'StaticPageController::dashboard')->middleware('isAuth');
+$router->registerRoute('GET', 'login', 'StaticPageController::login')->middleware('isAuth');
+$router->registerRoute('GET', 'register', 'StaticPageController::register')->middleware('isAuth');
 
 $router->registerRoute('POST', 'login', 'AuthController::login');
 
