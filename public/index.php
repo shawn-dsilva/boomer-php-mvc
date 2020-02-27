@@ -1,8 +1,8 @@
 <?php
 
-require '../utils/Router.php';
-require '../utils/helpers.php';
+require '../core/router/Router.php';
+require '../core/utils/helpers.php';
 
 
 
-Router::initRouter("../controller/RoutesController.php","../utils/methods.php")->handleRoute(findURI(),findMethod());
+Router::initRouter("../controller/RoutesController.php","../core/router/methods.php")->handleRoute(findURI(),findMethod());

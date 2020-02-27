@@ -1,6 +1,6 @@
 <?php
 
-include('../utils/Database.php');
+include('../core/database/Database.php');
 
 class Model extends Database {
 

@@ -3,7 +3,8 @@
 require '../controller/StaticPageController.php';
 require '../controller/AuthController.php';
 require '../controller/BaseController.php';
-require '../utils/Middlewares.php';
+// require './middleware/Middlewares.php';
+include(dirname(__FILE__)."/../middleware/Middlewares.php");
 
 
 class Router
