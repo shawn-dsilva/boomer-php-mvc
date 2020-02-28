@@ -18,11 +18,12 @@ This is a CRUD app that i made to learn MVC Architecture and AJAX from scratch u
 - [x] Creating core Model methods
 - [x] Login/Registration functionality
 - [x] Sessions setup
-- [ ] Redirects based on Auth status stored in Session cookie
+- [x] Redirects based on Auth status stored in Session cookie
+- [ ] Get relevant user data from session using sessionId from DB and display in web page
 
 ## Author
 
 **Shawn D'silva**
 
-- github.com/shawn-dsilva
-- shawndsilva.com
+- Github profile : github.com/shawn-dsilva
+- Website : shawndsilva.com
