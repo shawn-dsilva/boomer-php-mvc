@@ -1,5 +1,6 @@
 <?php
 
+include_once '../core/utils/Sessions.php';
 
 class StaticPageController {
 
@@ -12,7 +13,8 @@ class StaticPageController {
   }
 
   public function dashboard () {
-    return getView('Dashboard');
+    $data = sessionUserData($_COOKIE['sessionId']);
+    return getView('Dashboard',$data);
   }
 
   public function login () {

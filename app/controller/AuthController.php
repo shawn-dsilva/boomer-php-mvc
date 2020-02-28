@@ -1,7 +1,7 @@
 <?php
 
 include_once('../app/models/UserModel.php');
-
+include_once('../core/utils/Sessions.php');
 
 class AuthController  {
 
@@ -12,11 +12,11 @@ class AuthController  {
     self::$user_model = new UserModel();
   }
 
-  public function createSession() {
-    $sessionId = bin2hex(random_bytes(20));
-    self::$user_model->saveSession($sessionId);
-    return setcookie("sessionId", $sessionId, time()+3600);
-  }
+  // public function createSession() {
+  //   $sessionId = bin2hex(random_bytes(20));
+  //   self::$user_model->saveSession($sessionId);
+  //   return setcookie("sessionId", $sessionId, time()+3600);
+  // }
 
   public function login () {
     $data=array(
@@ -31,7 +31,7 @@ class AuthController  {
         if (!empty($user)) {
         //If not empty, check given password with the stored password in db
             if ($data['password'] == $user['password']) {
-              self::createSession();
+              createSession(self::$user_model, $user);
               Header("Location: dashboard");
             //  return getView('Dashboard', compact('data'));
             } else {

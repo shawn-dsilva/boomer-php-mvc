@@ -19,11 +19,18 @@ class UserModel extends Model {
         return $this->execstmt($this->query, [])->fetch();
     }
 
-    public function saveSession($sessionId) {
-        $sessionId = array("sessionId" => $sessionId);
-        $this->query = $this->insertInto('sessions', $sessionId);
-        $this->execstmt($this->query, $sessionId);
+    public function saveSession($sessionId, $data) {
+
+        unset($data['password']);
+        $data["sessionId"] = $sessionId;
+        // die(var_dump($data));
+        $this->query = $this->insertInto('sessions', $data);
+        $this->execstmt($this->query, $data);
     }
 
+    public function getSession($sessionId) {
+        $this->query = $this->selectAll('sessions')->where('sessionId', $sessionId);
+        return $this->execstmt($this->query, [])->fetch();
+    }
 
 }

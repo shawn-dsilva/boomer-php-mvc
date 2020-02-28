@@ -9,7 +9,5 @@ function findMethod(){
 }
 
 function getView($name, $data = []) {
-  extract($data);
-
   return require "../app/views/{$name}View.php";
 }
