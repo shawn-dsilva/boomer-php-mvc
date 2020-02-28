@@ -22,6 +22,8 @@ This is a CRUD app that i made to learn MVC Architecture and AJAX from scratch u
 - [x] Store user data upon login into sessions database and return sessionId
 - [x] Store sessionId cookie.
 - [x] Get and display user data from sessions table by verifying sessionId with database.
+- [ ] Session deletion upon Logout.
+- [ ] Input sanitization.
 
 ## Author
 
