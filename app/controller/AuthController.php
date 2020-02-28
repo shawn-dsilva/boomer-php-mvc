@@ -12,11 +12,7 @@ class AuthController  {
     self::$user_model = new UserModel();
   }
 
-  // public function createSession() {
-  //   $sessionId = bin2hex(random_bytes(20));
-  //   self::$user_model->saveSession($sessionId);
-  //   return setcookie("sessionId", $sessionId, time()+3600);
-  // }
+
 
   public function login () {
     $data=array(

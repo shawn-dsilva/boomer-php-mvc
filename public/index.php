@@ -1,7 +1,7 @@
 <?php
 
 require '../core/router/Router.php';
-require '../core/utils/helpers.php';
+require '../core/utils/utilities.php';
 
 
 
