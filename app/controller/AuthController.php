@@ -1,7 +1,7 @@
 <?php
 
 include_once('../app/models/UserModel.php');
-include_once('../core/utils/Sessions.php');
+include_once('../app/controller/SessionsController.php');
 
 class AuthController  {
 

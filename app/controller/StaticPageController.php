@@ -1,6 +1,7 @@
 <?php
 
-include_once '../core/utils/Sessions.php';
+include_once '../app/controller/SessionsController.php';
+include_once '../app/models/UserModel.php';
 
 class StaticPageController {
 
@@ -13,7 +14,8 @@ class StaticPageController {
   }
 
   public function dashboard () {
-    $data = sessionUserData($_COOKIE['sessionId']);
+    $user_model = new UserModel;
+    $data = sessionUserData($user_model, $_COOKIE['sessionId']);
     return getView('Dashboard',$data);
   }
 
