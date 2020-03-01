@@ -14,33 +14,35 @@ class AuthController  {
     self::$user_model = new UserModel();
   }
 
-
-
   public function login () {
     $data=array(
       'email' => $_POST['email'],
       'password' => $_POST['password']
     );
 
-    try {
-        //Checks if user exists, if it does, then an array will be returned, else it will be empty
-        $user = self::$user_model->userExists($data['email']);
+    $validator = new Validator();
 
-        if (!empty($user)) {
-        //If not empty, check given password with the stored password in db
-            if ($data['password'] == $user['password']) {
-              createSession(self::$user_model, $user);
-              Header("Location: dashboard");
-            //  return getView('Dashboard', compact('data'));
-            } else {
-                return getView('Error404', 'Incorrect Password') ;
-            }
-      ;
-        } else {
-            return getView('Error404', 'User Not Found');
-        }
-    } catch (ErrorException $error) {
-      echo $error;
+    if ($validator->validateAll($data)) {
+
+       //Checks if user exists, if it does, then an array will be returned,
+       // else it will be empty
+       $user = self::$user_model->userExists($data['email']);
+
+       if (!empty($user)) {
+       //If not empty, check given password with the stored password in db
+           if ($data['password'] == $user['password']) {
+             createSession(self::$user_model, $user);
+             Header("Location: dashboard"); // Redirect to dashboard page
+           } else {
+               return getView('Error404', 'Incorrect Password') ;
+           }
+
+       } else {
+           return getView('Error404', 'User Not Found');
+       }
+
+   } else {
+      return getView('Error404', $validator->getErrMsg());
     }
 
   }
@@ -59,8 +61,8 @@ class AuthController  {
           $user = self::$user_model->userExists($data['email']);
 
           if (empty($user)) {
-              $result = self::$user_model->addUser($data);
-              return getView('Dashboard', compact('result'));
+              self::$user_model->addUser($data);
+              return getView('Login');
           } else {
               return getView('Error404', 'User With That E-mail Already Exists');
           }
