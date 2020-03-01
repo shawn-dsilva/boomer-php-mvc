@@ -2,6 +2,8 @@
 
 include_once('../app/models/UserModel.php');
 include_once('../app/controller/SessionsController.php');
+include_once('../core/utils/Validator.php');
+
 
 class AuthController  {
 
@@ -50,24 +52,21 @@ class AuthController  {
       'password' => $_POST['password']
     );
 
-    // die(var_dump(validateAll($data)));
+    $validator = new Validator();
 
-    try {
+      if ($validator->validateAll($data)) {
 
-      validateAll($data);
+          $user = self::$user_model->userExists($data['email']);
 
-      $user = self::$user_model->userExists($data['email']);
-
-      if (empty($user)) {
-         $result = self::$user_model->addUser($data);
-        return getView('Dashboard', compact('result'));
+          if (empty($user)) {
+              $result = self::$user_model->addUser($data);
+              return getView('Dashboard', compact('result'));
+          } else {
+              return getView('Error404', 'User With That E-mail Already Exists');
+          }
 
       } else {
-        return getView('Error404', 'User With That E-mail Already Exists');
+        return getView('Error404', $validator->getErrMsg());
       }
-
-    } catch(Error $error) {
-      echo $error;
-    }
   }
 }
