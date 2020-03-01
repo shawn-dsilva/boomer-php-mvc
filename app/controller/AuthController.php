@@ -50,7 +50,11 @@ class AuthController  {
       'password' => $_POST['password']
     );
 
+    // die(var_dump(validateAll($data)));
+
     try {
+
+      validateAll($data);
 
       $user = self::$user_model->userExists($data['email']);
 
@@ -62,7 +66,7 @@ class AuthController  {
         return getView('Error404', 'User With That E-mail Already Exists');
       }
 
-    } catch(ErrorException $error) {
+    } catch(Error $error) {
       echo $error;
     }
   }
