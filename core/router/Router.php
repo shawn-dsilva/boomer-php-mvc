@@ -44,6 +44,10 @@ class Router
 
   public function handleRoute($uri, $methodType) {
 
+    if(file_exists($uri)) {
+      readfile($uri);
+      exit;
+    }
     if (array_key_exists($uri, $this->routes[$methodType])) {
 
       $this->routes[$methodType][$uri]->runMiddlewares();
