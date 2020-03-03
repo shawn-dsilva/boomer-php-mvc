@@ -10,5 +10,8 @@ $router->registerRoute('GET', 'register', 'StaticPageController::register')->mid
 $router->registerRoute('POST', 'login', 'AuthController::login');
 
 $router->registerRoute('POST', 'register', 'AuthController::register');
+
+$router->registerRoute('GET', 'logout', 'AuthController::logout');
+
 // $router->registerRoute('GET', 'users-list', 'UserController@index');
 // $router->registerRoute('POST', 'users', 'UserController@store');

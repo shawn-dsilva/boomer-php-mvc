@@ -17,6 +17,12 @@ class Model extends Database {
       return $this;
     }
 
+    public function deleteFrom($table) {
+
+      $this->query = "DELETE FROM $table";
+      return $this;
+    }
+
     public function insertInto($table, $data) {
 
       $columns = join(', ', array_keys($data));

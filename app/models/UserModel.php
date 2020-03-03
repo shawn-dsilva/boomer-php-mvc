@@ -33,4 +33,8 @@ class UserModel extends Model {
         return $this->execstmt($this->query, [])->fetch();
     }
 
+    public function deleteSession($sessionId) {
+        $this->query = $this->deleteFrom('sessions')->where('sessionId', $sessionId);
+        return $this->execstmt($this->query, []);
+    }
 }

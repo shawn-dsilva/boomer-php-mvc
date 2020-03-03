@@ -7,6 +7,11 @@
 <a href="javascript:logout()">Logout</a>
 <script>
 function logout() {
+
+    xhttp = new XMLHttpRequest();
+    xhttp.open("GET","/logout", false);
+    xhttp.send();
+
     document.cookie = "sessionId= ; expires = Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     window.location.href = "/login";
 }

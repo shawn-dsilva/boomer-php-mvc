@@ -71,4 +71,9 @@ class AuthController  {
         return getView('Error404', $validator->getErrMsg());
       }
   }
+
+  public function logout() {
+    $sessionId = $_COOKIE['sessionId'];
+    destroySession(self::$user_model, $sessionId);
+  }
 }

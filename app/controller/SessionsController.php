@@ -10,3 +10,8 @@
     $userdata = $user_model->getSession($sessionId);
     return $userdata;
   }
+
+  function destroySession($user_model, $sessionId) {
+    $user_model->deleteSession($sessionId);
+    return TRUE;
+  }
