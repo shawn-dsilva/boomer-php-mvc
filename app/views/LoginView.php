@@ -8,23 +8,6 @@ Password: <input type="password" name="password" id="password"><br>
 <input type="submit">
 </form>
 <div id="errorBox"></div>
-<script  type="text/javascript">
-    // $('#login').on("submit", function(e) {
-    //   e.preventDefault();
-    //   $.ajax({
-    //     type: "POST",
-    //     url: '/login',
-    //     data: {email: $('#email').val(), password: $('#password').val()},
-    //     success: function(data) {
-    //       console.log(data);
-    //       if(data === "success") {
-    //         window.location = '/dashboard';
-    //       }
-    //       $('#errorBox').html("<br><b>Error:</b> " + data);
-    //     }
-    //   });
+<script src="/js/main.js"></script>
 
-    // });
-
-</script>
 <?php require('includes/footer.html'); ?>

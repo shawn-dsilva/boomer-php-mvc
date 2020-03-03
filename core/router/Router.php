@@ -56,7 +56,8 @@ class Router
       return $this->routes[$methodType][$uri]->runController();
 
     } else {
-    throw new Exception('No route defined for this URI');
+    // throw new Exception('No route defined for this URI');
+    return getView('Error404', 'No Route defined for this URI');
     }
   }
 

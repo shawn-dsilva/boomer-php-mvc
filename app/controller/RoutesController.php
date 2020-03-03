@@ -2,6 +2,7 @@
 
 $router->registerRoute('GET', "", 'StaticPageController::home')->middleware('isAuth');
 $router->registerRoute('GET', 'home', 'StaticPageController::home')->middleware('isAuth');
+$router->registerRoute('GET', 'index.php', 'StaticPageController::home')->middleware('isAuth');
 
 $router->registerRoute('GET', 'dashboard', 'StaticPageController::dashboard')->middleware('isAuth');
 $router->registerRoute('GET', 'login', 'StaticPageController::login')->middleware('isAuth');
