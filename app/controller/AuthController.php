@@ -32,17 +32,18 @@ class AuthController  {
        //If not empty, check given password with the stored password in db
            if ($data['password'] == $user['password']) {
              createSession(self::$user_model, $user);
-             Header("Location: dashboard"); // Redirect to dashboard page
+             //Header("Location: dashboard"); // Redirect to dashboard page
+             echo('success');
            } else {
-               return getView('Error404', 'Incorrect Password') ;
+               echo('Incorrect Password') ;
            }
 
        } else {
-           return getView('Error404', 'User Not Found');
+            echo('User Not Found');
        }
 
    } else {
-      return getView('Error404', $validator->getErrMsg());
+      echo($validator->getErrMsg());
     }
 
   }
