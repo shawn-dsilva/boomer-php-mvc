@@ -1,17 +1,24 @@
-$(document).ready(function() {
-  $("#login").on("submit", function(e) {
-    e.preventDefault();
-    $.ajax({
-      type: "POST",
-      url: "/login",
-      data: { email: $("#email").val(), password: $("#password").val() },
-      success: function(data) {
+function ajaxSubmit(form) {
+  $(document).ready(function() {
+    var formId = '#'+form;
+    $(formId).on("submit", function(e) {
+      e.preventDefault();
+      $.ajax({
+        type: "POST",
+        url: "/"+form,
+        data: $(formId).serializeArray(),
+        success: function(data) {
 
-        if (data === "success") {
-          window.location = "/dashboard";
+          if (data === "success") {
+            if(form === 'login') {
+            window.location = "/dashboard";
+            } else {
+              window.location = "/login";
+            }
+          }
+          $("#errorBox").html("<br><b>Error:</b> " + data);
         }
-        $("#errorBox").html("<br><b>Error:</b> " + data);
-      }
+      });
     });
   });
-});
+}
