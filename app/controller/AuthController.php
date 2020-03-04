@@ -63,13 +63,13 @@ class AuthController  {
 
           if (empty($user)) {
               self::$user_model->addUser($data);
-              return getView('Login');
+              echo('success');
           } else {
-              return getView('Error404', 'User With That E-mail Already Exists');
+              echo('User With That E-mail Already Exists');
           }
 
       } else {
-        return getView('Error404', $validator->getErrMsg());
+        echo($validator->getErrMsg());
       }
   }
 
