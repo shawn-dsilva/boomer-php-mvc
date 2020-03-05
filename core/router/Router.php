@@ -38,8 +38,8 @@ class Router
     if (array_key_exists($method, $this->allowedMethods)) {
 
       preg_match_all( "{:([a-z]+)}", $uri, $matches);
-
-      return $this->routes[$method][$uri] = new BaseController($controller, $method, $uri, $matches[1]);
+      $matches = $matches[1];
+      return $this->routes[$method][$uri] = new BaseController($controller, $method, $uri, $matches);
     } else {
       throw new Exception('Invalid Method');
     }
@@ -64,7 +64,17 @@ class Router
 
     // $test = preg_replace( "/{:[a-z]+}/","([a-zA-Z0-9-_]+)", $test );
 
-die(var_dump($this->routes['GET']['users/{:name}/posts/{:post}']->getParams()));
+    $proute = $this->routes['GET']['users/{:name}/posts/{:post}'];
+    $purl = 'users/{:name}/posts/{:post}';
+    // die(var_dump($proute->getParams()));
+
+    $test = preg_replace( "/{:[a-z]+}/","([a-zA-Z0-9-_]+)", $purl );
+    $test = "~^".$test."$~";
+    //die(var_dump($test));
+
+    //$test = "~^user/([a-zA-Z0-9-_]+)/post/([a-zA-Z0-9-_]+)$~";
+    preg_match($test, 'users/shawn/posts/onepost', $matches);
+    die(var_dump($matches));
 
     if (array_key_exists($uri, $this->routes[$methodType])) {
 
