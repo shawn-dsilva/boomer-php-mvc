@@ -59,41 +59,16 @@ class Router
 
   public function handleRoute($uri, $methodType) {
 
-    // if(file_exists($uri)) {
-    //   readfile($uri);
-    //   exit;
-    // }
 
-    // Regex to match {:id} etc "{:[a-z]+}"
-    // $regex = "~^/user/([a-zA-Z0-9-_]+)/post/([a-zA-Z0-9-_]+)$~";
-    // preg_match($regex, '/user/shawn/post/onepost', $matches);
-    // die(var_dump($matches));
-
-
-    //   $test = '/user/{:id}/post/{:post}';
-    // preg_match_all( "/{:[a-z]+}/", $test, $matches, PREG_SET_ORDER, 0);
-
-    // // $test = preg_replace( "/{:[a-z]+}/","([a-zA-Z0-9-_]+)", $test );
-
-    // $proute = $this->routes['GET']['~^users/([a-zA-Z0-9-_]+)/posts/([a-zA-Z0-9-_]+)$~'];
-    // $purl = 'users/{:name}/posts/{:post}';
-    //  die(var_dump($proute->getParams()));
-
-    // $test = preg_replace( "/{:[a-z]+}/","([a-zA-Z0-9-_]+)", $purl );
-    // $test = "~^".$test."$~";
-    // //die(var_dump($test));
-
-    // //$test = "~^user/([a-zA-Z0-9-_]+)/post/([a-zA-Z0-9-_]+)$~";
-    // preg_match($test, 'users/shawn/posts/onepost', $matches);
-    // die(var_dump($uri));
     foreach ($this->routes[$methodType] as $route) {
 
       if(preg_match_all($route->getUri() , $uri, $matches )) {
-        $matches = array_slice($matches, 1);
-        $matches = array_column($matches, 0);
+
+        $matches = array_column(array_slice($matches, 1), 0);
+
         $route->makeParams($route->getParamKeys(), $matches);
         $params = $route->getParams();
-         die($params["post"]);
+         die($params["name"]);
         // die(var_dump($route->getParams()));
          //die(var_dump($matches));
         // die(var_dump($route->getParamKeys()));
