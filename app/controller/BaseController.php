@@ -7,6 +7,7 @@ class BaseController {
   public $method;
   public $middleware = [];
   public $paramk = [];
+  public $params = [];
 
   public function __construct($controller, $method, $uri, $paramk = [])
   {
@@ -25,12 +26,20 @@ class BaseController {
     }
   }
 
-  public function getParams() {
+  public function getParamKeys() {
     return $this->paramk;
+  }
+
+  public function getParams() {
+    return $this->params;
   }
 
   public function getUri() {
     return $this->uri;
+  }
+
+  public function makeParams($paramKeys, $paramVals) {
+    $this->params = array_combine($paramKeys, $paramVals);
   }
 
   public function runController() {

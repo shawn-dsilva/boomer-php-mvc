@@ -88,8 +88,16 @@ class Router
     // die(var_dump($uri));
     foreach ($this->routes[$methodType] as $route) {
 
-      if(preg_match_all($route->getUri() , $uri, $matches)) {
-        die(var_dump($matches));
+      if(preg_match_all($route->getUri() , $uri, $matches )) {
+        $matches = array_slice($matches, 1);
+        $matches = array_column($matches, 0);
+        $route->makeParams($route->getParamKeys(), $matches);
+        $params = $route->getParams();
+         die($params["post"]);
+        // die(var_dump($route->getParams()));
+         //die(var_dump($matches));
+        // die(var_dump($route->getParamKeys()));
+
       }
     }
 
