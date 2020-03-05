@@ -29,6 +29,10 @@ class BaseController {
     return $this->paramk;
   }
 
+  public function getUri() {
+    return $this->uri;
+  }
+
   public function runController() {
 
     //extracts only the controller name from the controller+function string
