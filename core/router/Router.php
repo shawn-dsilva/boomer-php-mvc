@@ -38,12 +38,20 @@ class Router
     // with the key as $uri and value as $controller
     if (array_key_exists($method, $this->allowedMethods)) {
 
+      // if a the route uri contains strings like {:someparameter}
       if(preg_match_all( "{:([a-z]+)}", $uri, $matches)){
 
+      // matches[1] contains the parameter name without "{:" and "}"
+      // i.e {:name} will be name, $this->paramKeys is then used in the
+      // BaseController constructor object as an array of parameter keys
       $this->paramKeys = $matches[1];
 
-       $uri = preg_replace( "/{:[a-z]+}/","([a-zA-Z0-9-_]+)", $uri );
-       $this->url = "~^".$uri."$~";
+      // the {:parameter} substrings of the URI are replaced with these regex expressions
+      $uri = preg_replace( "/{:[a-z]+}/","([a-zA-Z0-9-_]+)", $uri );
+
+      // url is now appened with these symbols for easier regex checks when an actual dynamic
+      // route is sent
+      $this->url = "~^".$uri."$~";
 
       } else {
         $this->url = $uri;
