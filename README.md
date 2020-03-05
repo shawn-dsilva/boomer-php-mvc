@@ -11,7 +11,7 @@ This is a CRUD app that i made to learn MVC Architecture and AJAX from scratch u
 - `core` contains `database` for db init, `router` for routing, `middleware` for middlewares and `utils` for helper functions
 - `public` contains user facing CSS, JS and index.php
 
-## TO-DO
+## Features Implemented
 
 - [x] Skeleton files and directory setup
 - [x] Basic router setup with controllers and views
@@ -28,7 +28,10 @@ This is a CRUD app that i made to learn MVC Architecture and AJAX from scratch u
 - [x] Login refactor into AJAX.
 - [x] Registration refactor into AJAX.
 - [x] JavaScript refactor from script tags to `.js` files.
-- [x] Modify Router so it can work even with parameterized/ dynamic routes.
+- [x] Modify Router so it can work even with parameterized/dynamic routes.
+
+
+## TO-DO
 - [ ] Get username from route parameter, retreive user data, and display it.
 
 ## Author
