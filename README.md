@@ -26,8 +26,10 @@ This is a CRUD app that i made to learn MVC Architecture and AJAX from scratch u
 - [x] Input sanitization/validation for Login and Registration
 - [x] Error Message display using AJAX In the same page.
 - [x] Login refactor into AJAX.
-- [ ] Registration refactor into AJAX.
-- [ ] JavaScript refactor from script tags to `.js` files.
+- [x] Registration refactor into AJAX.
+- [x] JavaScript refactor from script tags to `.js` files.
+- [x] Modify Router so it can work even with parameterized/ dynamic routes.
+- [ ] Get username from route parameter, retreive user data, and display it.
 
 ## Author
 
