@@ -64,11 +64,17 @@ class Router
 
       if(preg_match_all($route->getUri() , $uri, $matches )) {
 
+        // Cleanup matches array to get only the parameters in indexed array form
+        // array_slice() removes the 0th element that is the full matched string
+        // array_column() "flattens" the arrya into a properly indexed array, rather than an array of single element arrays
         $matches = array_column(array_slice($matches, 1), 0);
 
+        // creates key-value array of the extracted parameters
+        // with names specified in routes controller
         $route->makeParams($route->getParamKeys(), $matches);
         $params = $route->getParams();
          die($params["name"]);
+
         // die(var_dump($route->getParams()));
          //die(var_dump($matches));
         // die(var_dump($route->getParamKeys()));
