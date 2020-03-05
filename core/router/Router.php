@@ -11,6 +11,7 @@ class Router
 {
   protected $routes = [];
   protected $allowedMethods;
+  public $paramKeys = [];
 
   public static function initRouter($routes,$methods) {
 
@@ -35,7 +36,10 @@ class Router
     //If method is allowed, store controller in a sub-array $method of $routes
     // with the key as $uri and value as $controller
     if (array_key_exists($method, $this->allowedMethods)) {
-        return $this->routes[$method][$uri] = new BaseController($controller, $method, $uri);
+
+      preg_match_all( "{:([a-z]+)}", $uri, $matches);
+
+      return $this->routes[$method][$uri] = new BaseController($controller, $method, $uri, $matches[1]);
     } else {
       throw new Exception('Invalid Method');
     }
@@ -48,6 +52,19 @@ class Router
     //   readfile($uri);
     //   exit;
     // }
+
+    // Regex to match {:id} etc "{:[a-z]+}"
+    // $regex = "~^/user/([a-zA-Z0-9-_]+)/post/([a-zA-Z0-9-_]+)$~";
+    // preg_match($regex, '/user/shawn/post/onepost', $matches);
+    // die(var_dump($matches));
+
+
+    //   $test = '/user/{:id}/post/{:post}';
+    // preg_match_all( "/{:[a-z]+}/", $test, $matches, PREG_SET_ORDER, 0);
+
+    // $test = preg_replace( "/{:[a-z]+}/","([a-zA-Z0-9-_]+)", $test );
+
+die(var_dump($this->routes['GET']['users/{:name}/posts/{:post}']->getParams()));
 
     if (array_key_exists($uri, $this->routes[$methodType])) {
 

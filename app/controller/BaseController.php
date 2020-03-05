@@ -6,12 +6,14 @@ class BaseController {
   public $uri;
   public $method;
   public $middleware = [];
+  public $paramk = [];
 
-  public function __construct($controller, $method, $uri)
+  public function __construct($controller, $method, $uri, $paramk = [])
   {
     $this->controller = $controller;
     $this->uri = $uri;
     $this->method = $method;
+    $this->paramk = $paramk;
 
     return $this->controller;
   }
@@ -21,6 +23,10 @@ class BaseController {
     foreach ( $middlewares as $middleware ) {
       $this->middleware[] = $middleware;
     }
+  }
+
+  public function getParams() {
+    return $this->paramk;
   }
 
   public function runController() {
