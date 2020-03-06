@@ -67,7 +67,7 @@ class Router
 
   public function handleRoute($uri, $methodType) {
 
-
+    // searches for URIs having parameters
     foreach ($this->routes[$methodType] as $route) {
 
       if(preg_match_all($route->getUri() , $uri, $matches )) {
@@ -90,6 +90,8 @@ class Router
       }
     }
 
+
+    // otherwise for static route
     if (array_key_exists($uri, $this->routes[$methodType])) {
 
       $this->routes[$methodType][$uri]->runMiddlewares();
