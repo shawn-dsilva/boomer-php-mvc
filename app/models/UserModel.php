@@ -12,7 +12,7 @@ class UserModel extends Model {
     $this->execstmt($this->query, $data);
     }
 
-    public function userExists($name, $param) {
+    public function userExists(string $name, $param) { // checks if user exists using a parameter
 
         $this->selectAll('users')->where($name,$param);
 

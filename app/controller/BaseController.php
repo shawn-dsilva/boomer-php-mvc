@@ -19,12 +19,6 @@ class BaseController {
     return $this->controller;
   }
 
-  public function middleware(...$middlewares)
-  {
-    foreach ( $middlewares as $middleware ) {
-      $this->middleware[] = $middleware;
-    }
-  }
 
   public function getParamKeys() {
     return $this->paramk;
@@ -42,6 +36,13 @@ class BaseController {
     $this->params = array_combine($paramKeys, $paramVals);
   }
 
+  public function middleware(...$middlewares) // constructs array of middlewares
+  {
+    foreach ( $middlewares as $middleware ) {
+      $this->middleware[] = $middleware;
+    }
+  }
+
   public function runController() {
 
     //extracts only the controller name from the controller+function string
@@ -50,7 +51,7 @@ class BaseController {
     // initizalizes the controller
     call_user_func($controller::init());
 
-    call_user_func($this->controller, $this->params);
+    call_user_func($this->controller, $this->params); // passes in parameters to the controller
   }
 
   public function runMiddlewares() {
