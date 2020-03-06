@@ -80,13 +80,12 @@ class Router
         // creates key-value array of the extracted parameters
         // with names specified in routes controller
         $route->makeParams($route->getParamKeys(), $matches);
-        $params = $route->getParams();
+
+        // Middleware and Controllers are run, script terminated with exit
         $route->runMiddlewares();
         $route->runController();
         exit;
-        // die(var_dump($route->getParams()));
-         //die(var_dump($matches));
-        // die(var_dump($route->getParamKeys()));
+
 
       }
     }
