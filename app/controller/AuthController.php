@@ -14,6 +14,12 @@ class AuthController  {
     self::$user_model = new UserModel();
   }
 
+  public function getUser($params) {
+    $user = self::$user_model->userExists('name', $params['name']);
+    return getView('UserProfile', $user);
+  }
+
+
   public function login () {
     $data=array(
       'email' => $_POST['email'],
@@ -26,7 +32,7 @@ class AuthController  {
 
        //Checks if user exists, if it does, then an array will be returned,
        // else it will be empty
-       $user = self::$user_model->userExists($data['email']);
+       $user = self::$user_model->userExists('email', $data['email']);
 
        if (!empty($user)) {
        //If not empty, check given password with the stored password in db
@@ -59,7 +65,7 @@ class AuthController  {
 
       if ($validator->validateAll($data)) {
 
-          $user = self::$user_model->userExists($data['email']);
+          $user = self::$user_model->userExists('email', $data['email']);
 
           if (empty($user)) {
               self::$user_model->addUser($data);

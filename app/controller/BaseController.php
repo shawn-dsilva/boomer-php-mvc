@@ -50,7 +50,7 @@ class BaseController {
     // initizalizes the controller
     call_user_func($controller::init());
 
-    call_user_func($this->controller);
+    call_user_func($this->controller, $this->params);
   }
 
   public function runMiddlewares() {

@@ -12,9 +12,9 @@ class UserModel extends Model {
     $this->execstmt($this->query, $data);
     }
 
-    public function userExists($email) {
+    public function userExists($name, $param) {
 
-        $this->selectAll('users')->where('email',$email);
+        $this->selectAll('users')->where($name,$param);
 
         return $this->execstmt($this->query, [])->fetch();
     }

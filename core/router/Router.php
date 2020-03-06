@@ -81,8 +81,9 @@ class Router
         // with names specified in routes controller
         $route->makeParams($route->getParamKeys(), $matches);
         $params = $route->getParams();
-         die($params["name"]);
-
+        $route->runMiddlewares();
+        $route->runController();
+        exit;
         // die(var_dump($route->getParams()));
          //die(var_dump($matches));
         // die(var_dump($route->getParamKeys()));
