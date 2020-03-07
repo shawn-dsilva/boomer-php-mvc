@@ -56,7 +56,7 @@ class AuthController  {
 
   public function register () {
     $data=array(
-      'name' => $_POST['name'],
+      'username' => $_POST['username'],
       'email' => $_POST['email'],
       'password' => $_POST['password']
     );
@@ -68,8 +68,13 @@ class AuthController  {
           $user = self::$user_model->userExists('email', $data['email']);
 
           if (empty($user)) {
-              self::$user_model->addUser($data);
-              echo('success');
+            $username = self::$user_model->userExists('username', $data['username']);
+            if(!empty($username)) {
+              echo('sorry, that username is already taken');
+            } else {
+                self::$user_model->addUser($data);
+                echo('success');
+            }
           } else {
               echo('User With That E-mail Already Exists');
           }
