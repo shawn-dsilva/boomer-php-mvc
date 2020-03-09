@@ -17,6 +17,8 @@ $router->registerRoute('GET', 'logout', 'AuthController::logout');
 $router->registerRoute('GET', 'users/{:username}', 'AuthController::getUser');
 $router->registerRoute('GET', 'users/{:username}/posts/{:post}', 'StaticPageController::home');
 
+$router->registerRoute('POST', 'addpost', 'PostController::addpost')->middleware('isAuth');
+
 
 // $router->registerRoute('GET', 'users-list', 'UserController@index');
 // $router->registerRoute('POST', 'users', 'UserController@store');
