@@ -2,7 +2,7 @@
 
 <h1>Welcome to Boomer MVC Dashboard</h1>
 <?php
-    echo "Welcome <b>{$data['name']}</b> ! <br>
+    echo "Welcome <b>{$data['username']}</b> ! <br>
     Your E-Mail is <b>{$data['email']}</b>   " ?>
 <a href="javascript:logout()">Logout</a>
 
