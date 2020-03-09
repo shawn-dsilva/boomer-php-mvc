@@ -5,6 +5,16 @@
     echo "Welcome <b>{$data['name']}</b> ! <br>
     Your E-Mail is <b>{$data['email']}</b>   " ?>
 <a href="javascript:logout()">Logout</a>
+
+<h2>Create a Post<h2>
+<form action="/addpost" method="post">
+Title: <br>
+<input type="text" name="title" placeholder="Title of your Post"><br>
+Content: <br>
+<textarea name="content" rows="10" cols="30" placeholder="Content of your post"></textarea>
+  <br><br>
+<input type="submit">
+
 <script>
 function logout() {
 
