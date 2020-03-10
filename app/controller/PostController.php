@@ -26,7 +26,6 @@ class PostController
 
         $data['user_id'] = $userdata['id'];
 
-        // exit(var_dump($data));
 
         self::$post_model->insertPost($data);
     }
