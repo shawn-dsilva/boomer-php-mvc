@@ -16,16 +16,12 @@ class PostController
     }
 
     public function addPost () {
+
         $data=array(
           'title' => $_POST['title'],
-          'content' => $_POST['content']
+          'content' => $_POST['content'],
+          'user_id' => sessionUserData($_COOKIE['sessionId'])["user_id"]
         );
-
-        $user_model = new UserModel;
-        $userdata = sessionUserData($user_model, $_COOKIE['sessionId']);
-
-        $data['user_id'] = $userdata['id'];
-
 
         self::$post_model->insertPost($data);
     }
