@@ -40,13 +40,16 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - [x] JavaScript refactor from script tags to `.js` files.
 - [x] Modify Router so it can work even with parameterized/dynamic routes.
 - [x] Get username from route parameter, retreive user data, and display it.
+- [x] Add functionality for users to add blog posts
+- [x] List of Posts by a user in his dashboard
+
 
 ## In Progress
 
-- [ ] Add functionality for users to add blog posts
 
 ## TO-DO
 
+- [ ] SQL Join in Query Builder
 - [ ] Frontend design for homepage, login/registration and user profiles
 - [ ] List of all users registered
 - [ ] WYSIWYG text editor
