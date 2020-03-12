@@ -1,15 +1,5 @@
 <?php require('includes/header.html'); ?>
-<script>
-function logout() {
 
-    xhttp = new XMLHttpRequest();
-    xhttp.open("GET","/logout", false);
-    xhttp.send();
-
-    document.cookie = "sessionId= ; expires = Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    window.location.href = "/login";
-}
-</script>
 <h1>Welcome to Boomer MVC Dashboard</h1>
 <?php
     echo "Welcome <b>{$data['user_data']['username']}</b> ! <br>
