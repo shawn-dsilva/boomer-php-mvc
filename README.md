@@ -43,12 +43,13 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - [x] Add functionality for users to add blog posts
 - [x] List of Posts by a user in his dashboard
 
-
 ## In Progress
 
+- [ ] Add Posts refactor into AJAX
 
 ## TO-DO
 
+- [ ] Get Posts refactor into AJAX
 - [ ] SQL Join in Query Builder
 - [ ] Frontend design for homepage, login/registration and user profiles
 - [ ] List of all users registered
