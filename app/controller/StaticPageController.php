@@ -2,6 +2,7 @@
 
 include_once '../app/controller/SessionsController.php';
 
+
 class StaticPageController {
 
   public function init()
@@ -13,7 +14,9 @@ class StaticPageController {
   }
 
   public function dashboard () {
-    $data = sessionUserData($_COOKIE['sessionId']);
+    $pc = new PostController;
+    $data['user_data'] = sessionUserData($_COOKIE['sessionId']);
+    $data['posts'] = $pc->getPosts($data['user_data']['id']);
     return getView('Dashboard',$data);
   }
 

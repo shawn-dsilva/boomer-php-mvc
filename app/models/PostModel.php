@@ -11,4 +11,10 @@ class PostModel extends Model
         $this->query = $this->insertInto('posts', $data);
         $this->execstmt($this->query, $data);
     }
+
+    public function getPost($userId) {
+
+        $this->query = $this->selectAll('posts')->where('user_id', $userId);
+        return $this->execstmt($this->query, [])->fetch();
+    }
 }

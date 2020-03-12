@@ -20,9 +20,14 @@ class PostController
         $data=array(
           'title' => $_POST['title'],
           'content' => $_POST['content'],
-          'user_id' => sessionUserData($_COOKIE['sessionId'])["user_id"]
+          'user_id' => sessionUserData($_COOKIE['sessionId'])["id"]
         );
-
         self::$post_model->insertPost($data);
+    }
+
+    public function getPosts($userId) {
+        self::$post_model = new PostModel();
+        $posts = self::$post_model->getPost($userId);
+        return $posts;
     }
 }
