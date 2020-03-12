@@ -15,6 +15,6 @@ class PostModel extends Model
     public function getPost($userId) {
 
         $this->query = $this->selectAll('posts')->where('user_id', $userId);
-        return $this->execstmt($this->query, [])->fetch();
+        return $this->execstmt($this->query, [])->fetchAll();
     }
 }

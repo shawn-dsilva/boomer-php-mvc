@@ -29,11 +29,16 @@ Content: <br>
 
 <div>
   <?php
-  die(var_dump($data['posts']));
-  foreach($data['posts'] as $post) {
-    echo "<h3>{$post['title']}</h3> <br>
+
+if(empty($data['posts'])) {
+    echo "Looks like you haven't written any posts";
+  } else {
+      foreach ($data['posts'] as $post) {
+          echo "<h3>{$post['title']}</h3>
       <p>{$post['content']}</p>";
-  } ?>
+      }
+  }?>
+
 </div>
 
 <?php require('includes/footer.html'); ?>
