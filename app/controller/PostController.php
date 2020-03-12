@@ -25,9 +25,10 @@ class PostController
         self::$post_model->insertPost($data);
     }
 
-    public function getPosts($userId) {
+    public function getPosts() {
         self::$post_model = new PostModel();
+        $userId = sessionUserData($_COOKIE['sessionId'])["id"];
         $posts = self::$post_model->getPost($userId);
-        return $posts;
+        echo(json_encode($posts));
     }
 }

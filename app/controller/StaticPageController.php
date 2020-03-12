@@ -16,7 +16,7 @@ class StaticPageController {
   public function dashboard () {
     $pc = new PostController;
     $data['user_data'] = sessionUserData($_COOKIE['sessionId']);
-    $data['posts'] = $pc->getPosts($data['user_data']['id']);
+    // $data['posts'] = $pc->getPosts($data['user_data']['id']);
     return getView('Dashboard',$data);
   }
 
