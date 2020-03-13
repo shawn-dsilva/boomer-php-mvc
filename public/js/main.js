@@ -44,9 +44,8 @@ function getPostList() {
 
            data.forEach(function (item) {
 
-            $("#postList").append("<div id='post'><h3>"+item.title+"</h3><p>"+item.content+"</p></div><br>");
-
-            console.log(item.title);
+            $("#postList").append("<div id='post'><h3>"+item.title+
+            "</h3><p>"+item.content+"</p></div><br>");
           });
 
 

@@ -42,14 +42,17 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - [x] Get username from route parameter, retreive user data, and display it.
 - [x] Add functionality for users to add blog posts
 - [x] List of Posts by a user in his dashboard
+- [x] Add Posts refactor into AJAX
+- [x] Get Posts refactor into AJAX
+
 
 ## In Progress
 
-- [ ] Add Posts refactor into AJAX
+- [ ] Add Edit functionality for Posts
+- [ ] Add Delete functionality for Posts
 
 ## TO-DO
 
-- [ ] Get Posts refactor into AJAX
 - [ ] SQL Join in Query Builder
 - [ ] Frontend design for homepage, login/registration and user profiles
 - [ ] List of all users registered
