@@ -32,7 +32,7 @@ class PostController
     }
 
     public function removePost() {
-        $id = $_POST['id'];
+        $id = $_GET['id'];
         $userId = sessionUserData($_COOKIE['sessionId'])["id"];
         $posts = self::$post_model->deletePost($userId, $id);
         echo(json_encode($posts));

@@ -36,4 +36,10 @@ class Model extends Database {
       $this->query = $this->query." WHERE $column='$value'";
       return $this->query;
     }
+
+    public function and($column, $value) {
+
+      $this->query = $this->query." AND $column='$value'";
+      return $this->query;
+    }
 }
