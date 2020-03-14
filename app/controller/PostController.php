@@ -23,6 +23,7 @@ class PostController
           'user_id' => sessionUserData($_COOKIE['sessionId'])["id"]
         );
         self::$post_model->insertPost($data);
+        echo('success');
     }
 
     public function getPosts() {

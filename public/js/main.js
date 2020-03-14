@@ -15,6 +15,10 @@ function ajaxSubmit(form) {
             } else {
               window.location = "/login";
             }
+            if(form === 'addpost') {
+              $("#postList").html('');
+              getPostList();
+            }
           }
           $("#errorBox").html("<br><b>Error:</b> " + data);
         }
