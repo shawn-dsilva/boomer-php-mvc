@@ -44,12 +44,12 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - [x] List of Posts by a user in his dashboard
 - [x] Add Posts refactor into AJAX
 - [x] Get Posts refactor into AJAX
+- [x] Add Delete functionality for Posts
 
 
 ## In Progress
 
 - [ ] Add Edit functionality for Posts
-- [ ] Add Delete functionality for Posts
 
 ## TO-DO
 
