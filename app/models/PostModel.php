@@ -17,4 +17,10 @@ class PostModel extends Model
         $this->query = $this->selectAll('posts')->where('user_id', $userId);
         return $this->execstmt($this->query, [])->fetchAll();
     }
+
+    public function deletePost($userId, $id) {
+
+        $this->query = $this->deleteFrom('posts')->where('id', $id);
+        return $this->execstmt($this->query, [])->fetchAll();
+    }
 }

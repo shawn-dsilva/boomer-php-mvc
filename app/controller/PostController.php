@@ -26,9 +26,15 @@ class PostController
     }
 
     public function getPosts() {
-        self::$post_model = new PostModel();
         $userId = sessionUserData($_COOKIE['sessionId'])["id"];
         $posts = self::$post_model->getPost($userId);
+        echo(json_encode($posts));
+    }
+
+    public function removePost() {
+        $id = $_POST['id'];
+        $userId = sessionUserData($_COOKIE['sessionId'])["id"];
+        $posts = self::$post_model->deletePost($userId, $id);
         echo(json_encode($posts));
     }
 }
