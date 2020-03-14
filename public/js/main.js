@@ -58,12 +58,14 @@ function getPostList() {
 function deletePost(itemId) {
   $(document).ready(function() {
       $.ajax({
-        type: "GET",
+        type: "POST",
         url: "/deletepost",
-        data: itemId,
+        data: {id: itemId},
         success: function(data) {
           if(data == 'success') {
+            $("#postList").html('');
             getPostList();
+            console.log('success');
           }
         }
     });

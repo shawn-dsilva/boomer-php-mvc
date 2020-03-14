@@ -4,11 +4,10 @@ include_once('../app/models/Model.php');
 
 class UserModel extends Model {
 
-    public $query;
 
     public function addUser($data) {
 
-    $this->query = $this->insertInto('users', $data);
+    $this->insertInto('users', $data);
     $this->execstmt($this->query, $data);
     }
 
@@ -24,17 +23,17 @@ class UserModel extends Model {
         unset($data['password']);
         $data["sessionId"] = $sessionId;
         // die(var_dump($data));
-        $this->query = $this->insertInto('sessions', $data);
+        $this->insertInto('sessions', $data);
         $this->execstmt($this->query, $data);
     }
 
     public function getSession($sessionId) {
-        $this->query = $this->selectAll('sessions')->where('sessionId', $sessionId);
+        $this->selectAll('sessions')->where('sessionId', $sessionId);
         return $this->execstmt($this->query, [])->fetch();
     }
 
     public function deleteSession($sessionId) {
-        $this->query = $this->deleteFrom('sessions')->where('sessionId', $sessionId);
+        $this->deleteFrom('sessions')->where('sessionId', $sessionId);
         return $this->execstmt($this->query, []);
     }
 }

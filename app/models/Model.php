@@ -34,12 +34,12 @@ class Model extends Database {
     public function where($column, $value) {
 
       $this->query = $this->query." WHERE $column='$value'";
-      return $this->query;
+      return $this;
     }
 
     public function and($column, $value) {
 
       $this->query = $this->query." AND $column='$value'";
-      return $this->query;
+      return $this;
     }
 }
