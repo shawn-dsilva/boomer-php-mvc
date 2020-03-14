@@ -69,7 +69,6 @@ function deletePost(itemId) {
           if(data == 'success') {
             $("#postList").html('');
             getPostList();
-            console.log('success');
           }
         }
     });

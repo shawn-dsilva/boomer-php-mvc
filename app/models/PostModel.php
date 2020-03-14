@@ -1,8 +1,8 @@
 <?php
 
-include_once('../app/models/Model.php');
+include_once('../app/models/BaseModel.php');
 
-class PostModel extends Model
+class PostModel extends BaseModel
 {
 
     public function insertPost($data) {

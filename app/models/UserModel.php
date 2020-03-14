@@ -1,8 +1,8 @@
 <?php
 
-include_once('../app/models/Model.php');
+include_once('../app/models/BaseModel.php');
 
-class UserModel extends Model {
+class UserModel extends BaseModel {
 
 
     public function addUser($data) {

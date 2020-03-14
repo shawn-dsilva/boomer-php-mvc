@@ -2,7 +2,7 @@
 
 include('../core/database/Database.php');
 
-class Model extends Database {
+class BaseModel extends Database {
 
     public $query;
 
