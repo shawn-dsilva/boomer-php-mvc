@@ -38,7 +38,7 @@ class PostController
         if($params['user_id'] == $userId) {
         $post = self::$post_model->getSinglePost($userId, $params['post_id']);
         echo(json_encode($post));
-        }
+        } else echo 'Error : Access Denied';
 
     }
 
