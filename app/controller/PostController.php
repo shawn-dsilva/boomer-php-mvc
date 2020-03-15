@@ -37,7 +37,8 @@ class PostController
         $userId = sessionUserData($_COOKIE['sessionId'])["id"];
         // if($params['user_id'] == $userId) {
         $post = self::$post_model->getSinglePost($userId, $params['postid']);
-        echo(json_encode($post));
+        // echo(json_encode($post));
+        return getView('SinglePost', $post);
         // } else echo 'Error : Access Denied';
 
     }
