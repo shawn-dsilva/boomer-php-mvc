@@ -35,10 +35,10 @@ class PostController
     public function getOnePost($params) {
 
         $userId = sessionUserData($_COOKIE['sessionId'])["id"];
-        if($params['user_id'] == $userId) {
-        $post = self::$post_model->getSinglePost($userId, $params['post_id']);
+        // if($params['user_id'] == $userId) {
+        $post = self::$post_model->getSinglePost($userId, $params['postid']);
         echo(json_encode($post));
-        } else echo 'Error : Access Denied';
+        // } else echo 'Error : Access Denied';
 
     }
 
