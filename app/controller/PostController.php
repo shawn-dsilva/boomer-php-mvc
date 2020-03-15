@@ -32,6 +32,16 @@ class PostController
         echo(json_encode($posts));
     }
 
+    public function getOnePost($params) {
+
+        $userId = sessionUserData($_COOKIE['sessionId'])["id"];
+        if($params['user_id'] == $userId) {
+        $post = self::$post_model->getSinglePost($userId, $params['post_id']);
+        echo(json_encode($post));
+        }
+
+    }
+
     public function removePost() {
         $id = $_POST['id'];
         $userId = sessionUserData($_COOKIE['sessionId'])["id"];

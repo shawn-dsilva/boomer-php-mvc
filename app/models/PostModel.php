@@ -17,6 +17,12 @@ class PostModel extends BaseModel
         return $this->execstmt($this->query, [])->fetchAll();
     }
 
+    public function getSinglePost($userId, $postId) {
+
+        $this->selectAll('posts')->where('user_id', $userId)->and('id', $postId);
+        return $this->execstmt($this->query, [])->fetch();
+    }
+
     public function deletePost($userId, $id) {
 
         $this->deleteFrom('posts')->where('user_id', $userId)->and('id', $id);
