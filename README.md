@@ -49,7 +49,7 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 
 ## In Progress
 
-- [ ] Get Single Post
+- [x] Get Single Post and Display it
 - [ ] Add Edit functionality for Posts
 
 ## TO-DO
