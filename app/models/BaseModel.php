@@ -27,7 +27,14 @@ class BaseModel extends Database {
       // TODO
       $this->query .= " SET ";
       foreach($data as $key => $value) {
-        $this->query .= "{$key}='{$value}', ";
+        reset($array);
+        if ($key != key($data)) {
+            $this->query .= "{$key}='{$value}', ";
+        }
+        end($array);
+        if ($key != key($data)) {
+          $this->query .= "{$key}='{$value}' ";
+      }
       }
       return $this;
     }

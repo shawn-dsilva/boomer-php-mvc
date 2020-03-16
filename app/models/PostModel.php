@@ -29,8 +29,8 @@ class PostModel extends BaseModel
         $post['content'] = $data['content'];
 
         $this->update('posts')->set($post)->where('user_id', $data['user_id'])->and('id', $data['id']);
-        trigger_error($this->query);
-        //return $this->execstmt($this->query, [])->fetch();
+        //die(trigger_error($this->query));
+        return $this->execstmt($this->query, []);
     }
 
     public function deletePost($userId, $id) {

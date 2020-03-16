@@ -19,8 +19,10 @@ function ajaxSubmit(form) {
               $("#postList").html('');
               getPostList();
             }
+            if(form === 'editpost') {
+              location.reload();
+            }
 
-            console.log(data);
           }
           $("#errorBox").html("<br><b>Error:</b> " + data);
         }
