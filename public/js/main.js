@@ -74,3 +74,18 @@ function deletePost(itemId) {
     });
   });
 }
+
+function openEditBox() {
+  $(document).ready(function() {
+      var title = $('#title').text();
+      var content = $('#content').text();
+      var form = $("<form></form>");
+      form.append(`Title: <br>
+      <input type="text" id="title" name="title" value="${title}"><br>`);
+      form.append(`Content: <br>
+      <textarea name="content" id="content" rows="10" cols="30">${content}</textarea>`);
+      form.append(` <br><br>
+      <input type="submit">`);
+      $("#onePost").html(form);
+    });
+}

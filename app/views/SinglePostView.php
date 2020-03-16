@@ -1,6 +1,7 @@
 <?php require('includes/header.html'); ?>
-
-<h2><?php echo $data['title']; ?></h2>
-<p><?php echo $data['content']; ?></p>
-
+<div id="onePost">
+  <h2 id="title"><?php echo $data['title']; ?></h2>
+  <p id="content"><?php echo $data['content']; ?></p>
+  <button onclick="javascript:openEditBox()">Edit</button>
+</div>
 <?php require('includes/footer.html'); ?>
