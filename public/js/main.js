@@ -86,6 +86,16 @@ function openEditBox() {
       <textarea name="content" id="content" rows="10" cols="30">${content}</textarea>`);
       form.append(` <br><br>
       <input type="submit">`);
-      $("#onePost").html(form);
+      $("#onePost").hide();
+      $("#editBox").html(form);
+      $("#editBox").append(`<button onclick="javascript:closeEditBox()">
+      Cancel</button>`);
+      $("#editBox").show();
+
     });
+}
+
+function closeEditBox() {
+  $("#editBox").hide();
+  $("#onePost").show();
 }
