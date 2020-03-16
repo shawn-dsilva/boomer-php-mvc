@@ -19,6 +19,8 @@ function ajaxSubmit(form) {
               $("#postList").html('');
               getPostList();
             }
+
+            console.log(data);
           }
           $("#errorBox").html("<br><b>Error:</b> " + data);
         }
@@ -81,7 +83,7 @@ function openEditBox() {
       var content = $('#content').text();
       var id = $('#id').text();
 
-      var form = $("<form></form>");
+      var form = $("<form id='editpost'></form>");
       form.append(`Title: <br>
       <input type="text" id="title" name="title" value="${title}"><br>`);
       form.append(`Content: <br>
@@ -89,16 +91,18 @@ function openEditBox() {
       form.append(`<input type="hidden" id="post_id" name="post_id" value="${id}">`);
       form.append(` <br><br>
       <input type="submit">`);
+      form.append(`<script>ajaxSubmit('editpost')</script>`);
+
       $("#onePost").hide();
-      $("#editpost").html(form);
-      $("#editpost").append(`<button onclick="javascript:closeEditBox()">
+      $("#editBox").html(form);
+      $("#editBox").append(`<button onclick="javascript:closeEditBox()">
       Cancel</button>`);
-      $("#editpost").show();
+      $("#editBox").show();
 
     });
 }
 
 function closeEditBox() {
-  $("#editpost").hide();
+  $("#editBox").hide();
   $("#onePost").show();
 }

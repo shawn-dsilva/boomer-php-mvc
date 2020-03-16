@@ -1,4 +1,5 @@
 <?php require('includes/header.html'); ?>
+
 <div id="onePost">
   <span hidden id="id"><?php echo $data['id']; ?></span>
   <h2 id="title"><?php echo $data['title']; ?></h2>
@@ -6,6 +7,5 @@
   <button onclick="javascript:openEditBox()">Edit</button>
 
 </div>
-<div id="editpost"></div>
-<script>ajaxSubmit('editpost')</script>
+<div id="editBox"></div>
 <?php require('includes/footer.html'); ?>

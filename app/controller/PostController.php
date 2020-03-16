@@ -53,7 +53,7 @@ class PostController
     public function editPost () {
 
         $data=array(
-          'id' => $_POST['id'],
+          'id' => $_POST['post_id'],
           'title' => $_POST['title'],
           'content' => $_POST['content'],
           'user_id' => sessionUserData($_COOKIE['sessionId'])["id"]

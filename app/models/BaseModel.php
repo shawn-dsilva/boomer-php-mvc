@@ -25,7 +25,11 @@ class BaseModel extends Database {
 
     public function set($data) {
       // TODO
-      return $this->query;
+      $this->query .= " SET ";
+      foreach($data as $key => $value) {
+        $this->query .= "{$key}='{$value}', ";
+      }
+      return $this;
     }
 
     public function deleteFrom($table) {
