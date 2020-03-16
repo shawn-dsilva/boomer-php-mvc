@@ -17,6 +17,17 @@ class BaseModel extends Database {
       return $this;
     }
 
+    public function update($table) {
+
+      $this->query = "UPDATE $table";
+      return $this;
+    }
+
+    public function set($data) {
+      // TODO
+      return $this->query;
+    }
+
     public function deleteFrom($table) {
 
       $this->query = "DELETE FROM $table";

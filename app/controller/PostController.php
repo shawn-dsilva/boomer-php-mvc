@@ -49,4 +49,16 @@ class PostController
         self::$post_model->deletePost($userId, $id);
         echo('success');
     }
+
+    public function editPost () {
+
+        $data=array(
+          'id' => $_POST['id'],
+          'title' => $_POST['title'],
+          'content' => $_POST['content'],
+          'user_id' => sessionUserData($_COOKIE['sessionId'])["id"]
+        );
+        self::$post_model->updatePost($data);
+        echo('success');
+    }
 }

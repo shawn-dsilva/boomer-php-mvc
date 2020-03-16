@@ -79,23 +79,26 @@ function openEditBox() {
   $(document).ready(function() {
       var title = $('#title').text();
       var content = $('#content').text();
+      var id = $('#id').text();
+
       var form = $("<form></form>");
       form.append(`Title: <br>
       <input type="text" id="title" name="title" value="${title}"><br>`);
       form.append(`Content: <br>
       <textarea name="content" id="content" rows="10" cols="30">${content}</textarea>`);
+      form.append(`<input type="hidden" id="post_id" name="post_id" value="${id}">`);
       form.append(` <br><br>
       <input type="submit">`);
       $("#onePost").hide();
-      $("#editBox").html(form);
-      $("#editBox").append(`<button onclick="javascript:closeEditBox()">
+      $("#editpost").html(form);
+      $("#editpost").append(`<button onclick="javascript:closeEditBox()">
       Cancel</button>`);
-      $("#editBox").show();
+      $("#editpost").show();
 
     });
 }
 
 function closeEditBox() {
-  $("#editBox").hide();
+  $("#editpost").hide();
   $("#onePost").show();
 }
