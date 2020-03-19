@@ -39,17 +39,21 @@ body {
 }
 
 .main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
   background-color: #F7F7F7;
 }
 
-.intro {
+.intro-container {
   text-align: center;
-  background-color: #FF9800;
+  /* background-color: #FF9800; */
+  background: linear-gradient(to bottom, #FF9800 50%, #e9e9e9 50%);
   width: 100%;
-  padding:10%;
+  padding:5rem;
+  height:100vh;
+}
+
+.intro {
+  margin: 4rem;
 }
 
 .intro h1 {
@@ -64,4 +68,24 @@ body {
   font-size: 1.5rem;
   font-weight: 400;
   color:#3b3b3b;
+}
+
+.intro-content {
+  padding:3rem;
+  color:#3b3b3b;
+  font-weight: 300;
+  font-size: 1.2rem;
+  width: 50%;
+  margin: 1rem auto;
+  background-color: white;
+  box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.intro-content-text {
+  width: 85%;
+  margin: 3rem auto;
+}
+
+.intro-content-text p {
+  margin: 1.5rem 0;
 }

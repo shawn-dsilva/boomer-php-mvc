@@ -15,9 +15,20 @@
 
 </nav>
 <div class="main">
+  <div class="intro-container">
   <div class="intro">
   <h1>BOOMER</h1>
   <h2>A PHP MVC Framework from Scratch.<br> No Libraries. No Dependencies. Just Pure PHP</h2>
+  </div>
+  <div class="intro-content">
+    <div class="intro-content-text">
+    <p>Boomer PHP MVC is a Framework made by 「 Shawn D'silva 」to learn PHP and
+      core web development and software engineering concepts like Object Oriented programming, Model-View-Controller architecture, AJAX programming etc</p>
+    <p>Without the aid of a pre-existing framework like Laravel, or any external packages</p>
+    <p>BOOMER is built with the classic Linux, Apache, MySQL, PHP  stack inside Docker containers on an Ubuntu host</p>
+    <p>On the Front-End BOOMER uses JQuery, SASS and CSS3 FlexBox with AJAX calls wherever required, The CSS is all custom with no Bootstrap etc used</p>
+</div>
+  </div>
   </div>
 
 </div>
