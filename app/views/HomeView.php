@@ -32,7 +32,7 @@
     <img src="http://konpa.github.io/devicon/devicon.git/icons/linux/linux-original.svg">
     <img src="http://konpa.github.io/devicon/devicon.git/icons/apache/apache-original-wordmark.svg">
     <img src="http://konpa.github.io/devicon/devicon.git/icons/mysql/mysql-original-wordmark.svg">
-    <img src="http://konpa.github.io/devicon/devicon.git/icons/php/php-original.svg">
+    <img src="http://konpa.github.io/devicon/devicon.git/icons/php/php-plain.svg">
     <img src="http://konpa.github.io/devicon/devicon.git/icons/docker/docker-original-wordmark.svg">
     <img src="http://konpa.github.io/devicon/devicon.git/icons/ubuntu/ubuntu-plain-wordmark.svg">
 

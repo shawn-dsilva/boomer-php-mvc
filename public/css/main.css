@@ -103,6 +103,14 @@ body {
 }
 
 img {
-  height:4rem;
-  width:4rem;
+  height:5rem;
+  width:5rem;
+  /* padding:1rem; */
+}
+
+.stack {
+  /* display: flex;
+  flex-wrap: nowrap; */
+  /* width:60%; */
+  /* margin: 0 auto!important; */
 }
