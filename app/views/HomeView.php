@@ -28,7 +28,18 @@
     <p>Without the aid of a pre-existing framework like Laravel, or any external packages</p>
     <p>BOOMER is built with the classic <b>L</b>inux, <b>A</b>pache, <b>M</b>ySQL, <b>P</b>HP  stack inside Docker containers on an Ubuntu host</p>
     <p>On the Front-End BOOMER uses JQuery, SASS and CSS3 FlexBox with AJAX calls wherever required, The CSS is all custom with no Bootstrap etc used</p>
-    <p class="stack"></p>
+    <p class="stack">
+    <img src="http://konpa.github.io/devicon/devicon.git/icons/linux/linux-original.svg">
+    <img src="http://konpa.github.io/devicon/devicon.git/icons/apache/apache-original-wordmark.svg">
+    <img src="http://konpa.github.io/devicon/devicon.git/icons/mysql/mysql-original-wordmark.svg">
+    <img src="http://konpa.github.io/devicon/devicon.git/icons/php/php-original.svg">
+    <img src="http://konpa.github.io/devicon/devicon.git/icons/docker/docker-original-wordmark.svg">
+    <img src="http://konpa.github.io/devicon/devicon.git/icons/ubuntu/ubuntu-plain-wordmark.svg">
+
+    <img src="http://konpa.github.io/devicon/devicon.git/icons/jquery/jquery-original-wordmark.svg">
+    <img src="http://konpa.github.io/devicon/devicon.git/icons/sass/sass-original.svg">
+
+</p>
 </div>
   </div>
   </div>

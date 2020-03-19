@@ -101,3 +101,8 @@ body {
 .intro-content-text p {
   margin: 1.5rem 0;
 }
+
+img {
+  height:4rem;
+  width:4rem;
+}
