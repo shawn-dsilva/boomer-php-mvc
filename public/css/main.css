@@ -40,6 +40,7 @@ body {
 
 .main {
 
+  display: flex;
   background-color: #F7F7F7;
 }
 
