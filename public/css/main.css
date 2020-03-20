@@ -23,6 +23,10 @@ a:hover {
   flex-wrap: wrap;
 }
 
+p {
+  color: #404040;
+}
+
 .logo {
   font-weight: 900;
   color:white;
@@ -192,4 +196,30 @@ img {
   width: fit-content;
   padding-bottom: 5px;
   margin: 0 auto;
+}
+.feature-card p {
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+.footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #F57C00;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-style {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: white;
+  text-align: center;
 }
