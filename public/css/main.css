@@ -49,15 +49,14 @@ a:hover {
 .main {
 
   display: flex;
-  width:100%;
   background-color: #F7F7F7;
+  flex-direction: column;
 }
 
 .intro-container {
   text-align: center;
   /* background-color: #FF9800; */
   background: linear-gradient(to bottom, #FF9800 60%, #f7f7f7 40%);
-  width: 100%;
   padding:5rem;
   height:100vh;
 }

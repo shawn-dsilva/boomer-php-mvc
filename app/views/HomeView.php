@@ -41,7 +41,39 @@
         </p>
       </div>
     </div>
-  </div>
+    </div>
+
+    <div class="intro-content">
+      <div class="intro-content-text">
+        <h2>FEATURES</h2>
+        <p>Boomer PHP MVC implements most common sense Web Framework features from scratch, like a Router, Middlewares, SQL QueryBuilder and Sessions based Authentication</p>
+        <p>To demonstrate these features, this demo website is structured as a blogging platform, supporting multiple users, who can Create, View, Edit and Delete their own Blog posts, Comment on other's blog posts, edit & delete said comments, and customize their own user profile with a bio and a display picture</p>
+        <p>These operations take place in a standard page based form, or using AJAX to update content without a page refresh</p>
+      </div>
+
+      <div>
+        <h3>MVC Architecture</h3>
+      </div>
+
+      <div>
+        <h3>Router</h3>
+      </div>
+
+      <div>
+        <h3>QueryBuilder</h3>
+      </div>
+
+      <div>
+        <h3>Authentication</h3>
+      </div>
+      <div>
+        <h3>Input Validation</h3>
+      </div>
+      <div>
+        <h3>MiddleWare</h3>
+      </div>
+    </div>
+
 
 </div>
 <?php require('includes/footer.html'); ?>
