@@ -18,7 +18,7 @@
   <div class="intro-container">
   <div class="intro">
   <h1>BOOMER</h1>
-  <h2>A PHP MVC Framework from Scratch.<br> No Libraries. No Dependencies. Just Pure PHP</h2>
+  <h2>A PHP MVC Framework from Scratch.<br> No Libraries. No Dependencies. Just Pure PHP.</h2>
   </div>
     <div class="intro-content">
       <div class="intro-content-text">
@@ -43,7 +43,8 @@
     </div>
     </div>
 
-    <div class="intro-content">
+    <div class="features-container">
+    <div class="features-content">
       <div class="intro-content-text">
         <h2>FEATURES</h2>
         <p>Boomer PHP MVC implements most common sense Web Framework features from scratch, like a Router, Middlewares, SQL QueryBuilder and Sessions based Authentication</p>
@@ -51,26 +52,40 @@
         <p>These operations take place in a standard page based form, or using AJAX to update content without a page refresh</p>
       </div>
 
-      <div>
+    </div>
+    <div class="feature-card-container">
+      <div class="feature-card">
         <h3>MVC Architecture</h3>
+        <p>Based on the Model-View-Controller web architecture</p>
       </div>
 
-      <div>
+      <div class="feature-card">
         <h3>Router</h3>
+        <p>A parameterized router that abstracts the resource from the URI that the user enters</p>
+
       </div>
 
-      <div>
+      <div class="feature-card">
         <h3>QueryBuilder</h3>
+        <p>A safe Query Builder for MySQL that uses PDO under the hood, enabling developers to write legible, modular SQL queries instead of raw SQL </p>
       </div>
 
-      <div>
+      <div class="feature-card">
         <h3>Authentication</h3>
+        <p>Uses Sessions for persistence of Logins, and stores user passwords securely hashed in the database</p>
+
       </div>
-      <div>
+      <div class="feature-card">
         <h3>Input Validation</h3>
+        <p>All User input is validated for correctness according to the developers needs and sanitized from malicious attempts at code injection</p>
+
       </div>
-      <div>
+      <div class="feature-card">
         <h3>MiddleWare</h3>
+        <p>Middleware can be applied to all routes before being passed on to their controller </p>
+
+      </div>
+
       </div>
     </div>
 
