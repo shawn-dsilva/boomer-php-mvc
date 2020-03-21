@@ -254,20 +254,51 @@ img {
   margin: 2rem auto;
 }
 
-.card form {
-
+.input-container {
+  display:flex;
+  flex-direction: row;
+  width:100%;
+  margin:1.8rem auto;
 }
 
-
-.card input {
-  margin:1rem auto;
-  width: 100%;
+.input-icon {
+  padding: 1rem;
+  background-color: #FF9800;
+  color:white;
   font-size: 1.5rem;
-  padding:1rem 0;
 }
+.card input {
+  width: 100%;
+  font-size: 1.2rem;
+  padding:1rem 0;
+  outline: none;
+
+}
+
 
 .card input::placeholder {
 font-size: 1.4rem;
 font-weight: 300;
 padding:1rem;
+}
+
+.card input:focus {
+  border: 2px solid #F57C00;
+}
+
+.submit {
+  background-color: #F57C00;
+  border: 2px solid #F57C00;
+  border-radius: 15px;
+  color:white;
+  padding:1.3rem;
+  width: 100%;
+  font-weight: 500!important;
+  font-size: 1.5rem!important;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.submit:hover {
+  opacity:1;
 }
