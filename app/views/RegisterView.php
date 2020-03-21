@@ -1,4 +1,5 @@
 <?php require('includes/header.html'); ?>
+<?php require('includes/navbar.html'); ?>
 
 <h1>REGISTER</h1>
 

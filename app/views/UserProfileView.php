@@ -1,4 +1,6 @@
 <?php require('includes/header.html'); ?>
+<?php require('includes/navbar.html'); ?>
+
 
 <h1><?php echo $data['name']; ?></h1>
 

@@ -1,18 +1,6 @@
 <?php require('includes/header.html'); ?>
+<?php require('includes/navbar.html'); ?>
 
-  <nav class="navbar">
-    <a class="logo" href="#home">BOOMER</a>
-
-    <div class="right-container">
-      <a class="right-text" href="/users">Users</a>
-      <a class="right-text" href="/posts">Posts</a>
-      <a class="right-text" href="/login">Login</a>
-      <a class="right-text" href="/register">Register</a>
-      <a class="right-text" href="https://www.github.com/shawn-dsilva/boomer-php-mvc">Source on Github <i class="fab fa-github"></i></a>
-
-    </div>
-
-  </nav>
 
 <div class="main">
   <div class="intro-container">
@@ -27,7 +15,6 @@
           core web development and software engineering concepts like Object Oriented programming, Model-View-Controller architecture, AJAX programming etc</p>
         <p>Without the aid of a pre-existing framework like Laravel, or any external packages</p>
 
-        <p><a href="/register">Create an account</a> to demo it's features, or <a href="/login">Sign In</a> if you already have one.</p>
         <p>BOOMER is built with the classic <b>L</b>inux, <b>A</b>pache, <b>M</b>ySQL, <b>P</b>HP  stack inside Docker containers on an Ubuntu host</p>
         <p>On the Front-End BOOMER uses JQuery, SASS and CSS3 FlexBox with AJAX calls wherever required, The CSS is all custom with no Bootstrap etc used</p>
         <p class="stack">
@@ -52,6 +39,8 @@
         <p>Boomer PHP MVC implements most common sense Web Framework features from scratch, like a Router, Middlewares, Input Validation, SQL Query Builder and Sessions based Authentication</p>
         <p>To demonstrate these features, this demo website is structured as a blogging platform, supporting multiple users, who can Create, View, Edit and Delete their own Blog posts, Comment on other's blog posts, edit & delete said comments, and customize their own user profile with a bio and a display picture</p>
         <p>These operations take place in a standard page based form, or using AJAX to update content without a page refresh</p>
+        <p><a href="/register">Create an account</a> to demo its features, or <a href="/login">Sign In</a> if you already have one.</p>
+
       </div>
 
     </div>

@@ -1,4 +1,6 @@
 <?php require('includes/header.html'); ?>
+<?php require('includes/navbar.html'); ?>
+
 
 <h1>Welcome to Boomer MVC Dashboard</h1>
 <?php
