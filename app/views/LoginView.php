@@ -3,7 +3,7 @@
 <div class="container">
   <div class="card">
 <h1>LOGIN</h1>
-
+<span>Don't have an account yet? <a href="/register">Register.</a></span>
     <form id="login" >
       <div class="input-container">
       <i class="fas fa-envelope input-icon"></i>

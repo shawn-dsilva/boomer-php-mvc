@@ -235,6 +235,7 @@ img {
   background-color: white;
   padding:2rem;
   margin: auto;
+  text-align: center;
   width:20%;
   height:50%;
   box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.4);
@@ -242,9 +243,11 @@ img {
   border-radius:25px;
   display: flex;
   flex-direction: column;
-
 }
 
+.card span {
+  color: #3b3b3b;
+}
 .card h1 {
   font-size: 2rem;
   font-weight: 900;
@@ -283,7 +286,7 @@ padding:1rem;
 }
 
 .card input:focus {
-  border: 2px solid #F57C00;
+  border: 2px solid #FF9800;
 }
 
 .submit {
