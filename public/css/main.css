@@ -2,6 +2,7 @@ body {
   margin: 0;
   font-family: Inter, sans-serif;
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 a {
@@ -203,7 +204,6 @@ img {
 }
 
 .footer {
-  margin-top: 3rem;
   padding-top: 2rem;
   padding-bottom: 1rem;
   bottom: 0;
@@ -222,4 +222,52 @@ img {
   font-weight: 300;
   color: white;
   text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: #FF9800;
+  height: 80vh;
+}
+
+.card {
+  background-color: white;
+  padding:2rem;
+  margin: auto;
+  width:20%;
+  height:50%;
+  box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.4);
+  border: 2px solid whitesmoke;
+  border-radius:25px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.card h1 {
+  font-size: 2rem;
+  font-weight: 900;
+  border-bottom:5px solid #3b3b3b;
+  color: #3b3b3b;
+  width: fit-content;
+  margin: 2rem auto;
+}
+
+.card form {
+
+}
+
+
+.card input {
+  margin:1rem auto;
+  width: 100%;
+  font-size: 1.5rem;
+  padding:1rem 0;
+}
+
+.card input::placeholder {
+font-size: 1.4rem;
+font-weight: 300;
+padding:1rem;
 }
