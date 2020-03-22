@@ -307,3 +307,17 @@ font-weight: 300;
 .submit:hover {
   opacity:1;
 }
+
+.submit:focus {
+  outline:none;
+}
+
+.errorBox {
+  border : 2px solid #db5353;
+  background-color: #ffcccb;
+  border-radius: 15px;
+  color:red;
+  padding:2rem 0.5rem;
+  margin: 0.5rem 0;
+  display:none;
+}

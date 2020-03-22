@@ -21,7 +21,7 @@
         <button class="submit" type="submit"> Register <i class="far fa-arrow-alt-circle-right"></i></button>
       </div>
     </form>
-    <div id="errorBox"></div>
+    <div class="errorBox" id="errorBox"></div>
   </div>
 </div>
 <script>ajaxSubmit('register')</script>

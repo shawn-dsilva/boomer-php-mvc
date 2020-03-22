@@ -24,7 +24,9 @@ function ajaxSubmit(form) {
             }
 
           }
-          $("#errorBox").html("<br><b>Error:</b> " + data);
+          $("#errorBox").html("<b>Error:</b> " + data);
+          $("#errorBox").fadeIn();
+          $("#errorBox").delay(5000).fadeOut(1000);
         }
       });
     });
