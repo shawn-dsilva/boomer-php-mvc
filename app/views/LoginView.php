@@ -4,6 +4,8 @@
   <div class="card">
 <h1>LOGIN</h1>
 <span>Don't have an account yet? <a href="/register">Register.</a></span>
+<div class="errorBox"  id="errorBox"></div>
+    <div class="successBox" id="successBox"></div>
     <form id="login" >
       <div class="input-container">
       <i class="fas fa-envelope input-icon"></i>
@@ -17,8 +19,7 @@
         <button class="submit" type="submit"> Log In <i class="far fa-arrow-alt-circle-right"></i></button>
       </div>
     </form>
-    <div class="errorBox"  id="errorBox"></div>
-    <div class="successBox" id="successBox"></div>
+
 
   </div>
 </div>
