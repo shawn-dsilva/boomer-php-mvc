@@ -11,9 +11,17 @@ function ajaxSubmit(form) {
 
           if (data === "success") {
             if(form === 'login') {
-            window.location = "/dashboard";
-            } else {
-              window.location = "/login";
+              $("#successBox").html(`<b>${data} : </b> Login successful, you will be redirected to the Dashboard`);
+              $("#successBox").fadeIn();
+              $("#successBox").delay(3000).fadeOut(500, function() {
+                window.location = "/dashboard";
+              });
+            } else if (form === 'register') {
+              $("#successBox").html(`<b>${data} : </b> Registered successfully, you will be redirected to the Login page`);
+              $("#successBox").fadeIn();
+              $("#successBox").delay(3000).fadeOut(500, function() {
+                window.location = "/login";
+              });
             }
             if(form === 'addpost') {
               $("#postList").html('');
@@ -23,10 +31,11 @@ function ajaxSubmit(form) {
               location.reload();
             }
 
-          }
+          } else {
           $("#errorBox").html("<b>Error:</b> " + data);
           $("#errorBox").fadeIn();
           $("#errorBox").delay(5000).fadeOut(1000);
+          }
         }
       });
     });

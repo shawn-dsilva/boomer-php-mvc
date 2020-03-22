@@ -321,3 +321,13 @@ font-weight: 300;
   margin: 0.5rem 0;
   display:none;
 }
+
+.successBox {
+  border : 2px solid green;
+  background-color: lightgreen;
+  border-radius: 15px;
+  color:green;
+  padding:2rem 0.5rem;
+  margin: 0.5rem 0;
+  display:none;
+}

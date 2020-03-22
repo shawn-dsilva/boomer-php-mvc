@@ -18,6 +18,8 @@
       </div>
     </form>
     <div class="errorBox"  id="errorBox"></div>
+    <div class="successBox" id="successBox"></div>
+
   </div>
 </div>
 <script>ajaxSubmit('login')</script>
