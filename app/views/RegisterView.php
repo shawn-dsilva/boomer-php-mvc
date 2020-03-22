@@ -1,14 +1,28 @@
 <?php require('includes/header.html'); ?>
 <?php require('includes/navbar.html'); ?>
-
+<div class="container">
+  <div class="card">
 <h1>REGISTER</h1>
-
-<form id="register">
-Name: <input type="text" name="name"><br>
-E-Mail: <input type="text" name="email"><br>
-Password: <input type="password" name="password"><br>
-<input type="submit">
-</form>
-<div id="errorBox"></div>
+<span>Already have an account? <a href="/register">Login.</a></span>
+    <form id="register" >
+    <div class="input-container">
+      <i class="fas fa-user input-icon"></i>
+        <input type="text" name="username" id="username" placeholder="Enter your username">
+      </div>
+      <div class="input-container">
+      <i class="fas fa-envelope input-icon"></i>
+        <input type="text" name="email" id="email" placeholder="Enter your E-Mail">
+      </div>
+      <div class="input-container">
+      <i class="fas fa-key input-icon"></i>
+        <input type="password" name="password" id="password" placeholder="Enter your Password">
+      </div>
+      <div class="input-container">
+        <button class="submit" type="submit"> Register <i class="far fa-arrow-alt-circle-right"></i></button>
+      </div>
+    </form>
+    <div id="errorBox"></div>
+  </div>
+</div>
 <script>ajaxSubmit('register')</script>
 <?php require('includes/footer.html'); ?>

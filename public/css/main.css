@@ -233,11 +233,11 @@ img {
 
 .card {
   background-color: white;
-  padding:2rem;
+  padding: 0.5rem 2rem;
   margin: auto;
   text-align: center;
   width:20%;
-  height:50%;
+  height:fit-content;
   box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.4);
   border: 2px solid whitesmoke;
   border-radius:25px;
