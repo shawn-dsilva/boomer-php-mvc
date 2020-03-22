@@ -272,9 +272,10 @@ img {
 }
 .card input {
   width: 100%;
-  font-size: 1.5rem;
-  font-weight: 100;
-  padding: 0 1.5rem ;
+  font-family: "Inter", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 200;
+  padding: 0 1.3rem ;
   outline: none;
 
 }
