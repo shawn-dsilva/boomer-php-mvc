@@ -8,7 +8,7 @@
         echo "<p>Welcome  to the Boomer PHP MVC Dashboard, <b>{$data['user_data']['username']}</b> ! From here, you can customize your public profile, view your latest blog posts, edit blog posts or delete them, and also create new blog posts.</p>
         <p>You can also comment on other registered user's blog posts, comments have full CRUD functionality, just like Blog Posts and User Profile</p> " ?>
 
-    <a href="javascript:logout()">Logout</a>
+    <!-- <a href="javascript:logout()">Logout</a> -->
   </div>
 
   <!-- <div class="card-dashboard">
