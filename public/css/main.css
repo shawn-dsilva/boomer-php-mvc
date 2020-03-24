@@ -380,17 +380,49 @@ font-weight: 300;
 .dashboard-container {
   display: flex;
   flex-direction: row;
-  width:80%;
+  width:70%;
+  height:100%;
   margin: 0 auto;
+  margin-bottom: 1rem;
 }
 
 .dashboard-linkcard {
+  text-align: center;
   padding:1rem;
   margin: 1rem 1rem;
+  margin-bottom: 2.5rem;
   width:25%;
   flex-grow:1;
-  box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.3);
   border: 1px solid #f7f7f7;
   background: white;
   border-radius: 10px;
+}
+
+.dashboard-linkcard h2 {
+  font-size: 1.5rem;
+  font-weight: 900;
+   /* border-bottom:3px solid #3b3b3b; */
+  color: #3b3b3b;
+  width: fit-content;
+  margin: 1rem auto;
+  /* margin: 2rem auto; */
+}
+
+.dashboard-linkcard a {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  border:1px solid #f57c00;
+  border-radius: 10px;
+  color: #3b3b3b;
+  /* width: fit-content; */
+  /* margin: 2rem auto; */
+  padding:1rem;
+  margin:2rem auto;
+  background-color: #F57C00;
+  color:white;
+  font-weight: 600;
+  font-size: 1.2rem;
+  width:70%;
 }
