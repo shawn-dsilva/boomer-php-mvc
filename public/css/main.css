@@ -1,8 +1,13 @@
 body {
   margin: 0;
-  font-family: Inter, sans-serif;
+  font-family: 'Inter', sans-serif;
   overflow-x: hidden;
   box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
 }
 
 a {
@@ -332,4 +337,42 @@ font-weight: 300;
   margin-top:2rem;
   margin-bottom: 0.5rem;
   display:none;
+}
+
+.container-main {
+  display: flex;
+  flex-direction: column;
+  background-color: #FF9800;
+  height: 100%;
+}
+
+.card-dashboard, .card-latest-posts {
+  background-color: white;
+  padding: 2rem;
+  margin: 3rem auto;
+  text-align: center;
+  width:60%;
+  height:fit-content;
+  box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.4);
+  border: 2px solid whitesmoke;
+  border-radius:10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-dashboard h1{
+  font-size: 2rem;
+  font-weight: 900;
+  border-bottom:5px solid #3b3b3b;
+  color: #3b3b3b;
+  width: fit-content;
+  margin: 2rem auto;
+}
+
+.card-dashboard p{
+  width: 60%;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  padding:1rem;
+  font-weight: 300;
 }

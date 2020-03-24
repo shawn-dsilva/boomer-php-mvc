@@ -1,31 +1,39 @@
 <?php require('includes/header.html'); ?>
 <?php require('includes/navbar.html'); ?>
 
+<div class="container-main">
+  <div class="card-dashboard">
+    <h1>Boomer MVC Dashboard</h1>
+    <?php
+        echo "<p>Welcome  to the Boomer PHP MVC Dashboard, <b>{$data['user_data']['username']}</b> ! From here, you can customize your public profile, view your latest blog posts, edit blog posts or delete them, and also create new blog posts.</p>
+        <p>You can also comment on other registered user's blog posts, comments have full CRUD functionality, just like Blog Posts and User Profile</p> " ?>
 
-<h1>Welcome to Boomer MVC Dashboard</h1>
-<?php
-    echo "Welcome <b>{$data['user_data']['username']}</b> ! <br>
-    Your E-Mail is <b>{$data['user_data']['email']}</b>   " ?>
-<a href="javascript:logout()">Logout</a>
+    <a href="javascript:logout()">Logout</a>
+  </div>
 
-<h2>Create a Post<h2>
+  <!-- <div class="card-dashboard">
+    <h2>Create a Post<h2>
 
-<form id="addpost">
-Title: <br>
-<input type="text" id="title" name="title" placeholder="Title of your Post"><br>
-Content: <br>
-<textarea name="content" id="content" rows="10" cols="30" placeholder="Content of your post"></textarea>
-  <br><br>
-<input type="submit">
-</form>
-<script>ajaxSubmit('addpost')</script>
+    <form id="addpost">
+    Title: <br>
+    <input type="text" id="title" name="title" placeholder="Title of your Post"><br>
+    Content: <br>
+    <textarea name="content" id="content" rows="10" cols="30" placeholder="Content of your post"></textarea>
+      <br><br>
+    <input type="submit">
+    </form>
+    <script>ajaxSubmit('addpost')</script>
 
-<div id="errorBox"></div>
+    <div id="errorBox"></div>
+  </div> -->
 
-<h2>Your Posts</h2>
-<script>getPostList();</script>
+  <div class="card-latest-posts">
+    <h2>Your Posts</h2>
+    <script>getPostList();</script>
 
-<div id="postList">
+    <div id="postList">
+    </div>
+  </div>
+
 </div>
-
 <?php require('includes/footer.html'); ?>
