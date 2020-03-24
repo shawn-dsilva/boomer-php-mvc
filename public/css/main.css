@@ -1,3 +1,8 @@
+:root {
+  --primary-dark: #f5651d;
+}
+
+/*F57C00*/
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
@@ -11,7 +16,7 @@ h1,h2,h3,h4,h5 {
 }
 
 a {
-  color:#F57C00;
+  color:var(--primary-dark);
   text-decoration: none;
 }
 
@@ -23,7 +28,7 @@ a:hover {
   width:100%;
   height:5%;
   overflow: hidden;
-  background-color: #F57C00;
+  background-color: var(--primary-dark);
   padding:1rem;
   display:flex;
   flex-wrap: wrap;
@@ -215,7 +220,7 @@ img {
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #F57C00;
+  background-color: var(--primary-dark);
   color: white;
   display: flex;
   flex-direction: row;
@@ -297,8 +302,8 @@ font-weight: 300;
 }
 
 .submit {
-  background-color: #F57C00;
-  border: 2px solid #F57C00;
+  background-color: var(--primary-dark);
+  border: 2px solid var(--primary-dark);
   border-radius: 15px;
   color:white;
   padding:1.3rem;
@@ -351,7 +356,7 @@ font-weight: 300;
   padding: 3rem;
   margin: 3rem auto;
   text-align: center;
-  width:60%;
+  width:50%;
   height:fit-content;
   box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.4);
   border: 2px solid whitesmoke;
@@ -370,7 +375,7 @@ font-weight: 300;
 }
 
 .card-dashboard p{
-  width: 60%;
+  width: 80%;
   margin: 0 auto;
   font-size: 1.2rem;
   padding:1rem;
@@ -420,9 +425,14 @@ font-weight: 300;
   /* margin: 2rem auto; */
   padding:1rem;
   margin:2rem auto;
-  background-color: #F57C00;
+  background-color: var(--primary-dark);
   color:white;
   font-weight: 600;
   font-size: 1.2rem;
   width:70%;
+  opacity: 0.9;
+}
+
+.dashboard-linkcard a:hover {
+  opacity: 1;
 }
