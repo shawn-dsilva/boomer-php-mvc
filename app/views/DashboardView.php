@@ -27,11 +27,30 @@
     <div id="errorBox"></div>
   </div> -->
 
-  <div class="card-latest-posts">
+  <!-- <div class="card-latest-posts">
     <h2>Your Posts</h2>
     <script>getPostList();</script>
 
     <div id="postList">
+    </div> -->
+
+    <div class="dashboard-container">
+      <div class="dashboard-linkcard">
+        <h2>User Profile</h2>
+        <p>View and Edit your Public Profile</p>
+        <button>View your Profile</button>
+      </div>
+      <div class="dashboard-linkcard">
+        <h2>Your Blog Posts</h2>
+        <p>View, Edit and Delete your Blog posts from a list</p>
+        <button>View Blog Posts</button>
+
+      </div>
+      <div class="dashboard-linkcard">
+        <h2>Create a Blog Post</h2>
+        <p>Write a New Blog Post</p>
+        <button>Create New Post</button>
+      </div>
     </div>
   </div>
 
