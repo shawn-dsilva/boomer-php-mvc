@@ -49,10 +49,11 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - [x] Add Edit functionality for Posts
 - [x] Frontend design for homepage, login/registration
 - [x] setup.php script to setup Database with tables
+- [x] Navbar should show Logged in status
 
 ## In Progress
 
-- [ ] Navbar should show Logged in status
+- [ ] Fix broken isAuth middleware based routing
 
 ## TO-DO
 
