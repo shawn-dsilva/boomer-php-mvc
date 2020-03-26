@@ -16,7 +16,7 @@
         <div class='user-dropdown-content'>
         <a href='/profile'><i class='far fa-address-card'></i> Profile</a>
           <a href='/dashboard'><i class='fas fa-cogs'></i> Dashboard</a>
-          <a href='/logout'><i class='fas fa-sign-out-alt'></i> Logout</a>
+          <a href='#' onclick='javascript:logout()'><i class='fas fa-sign-out-alt'></i> Logout</a>
 
         </div>
       </div>" ;
