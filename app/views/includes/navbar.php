@@ -9,12 +9,14 @@
       <a class='right-text' href='/register'>Register</a>";
 
     } else {
-      echo " <div class='user-dropdown'>
-      <a class='right-text' href='/dashboard'>Welcome <i class='fas fa-user'></i> {$data['user_data']['username']}</a>
-      <i class='fas fa-angle-down'></i>
+      echo "       <span>Welcome, </span>
+      <div class='user-dropdown'>
+      <span class='right-text' href='/dashboard'><i class='fas fa-user'></i> {$data['user_data']['username']}       <i class='fas fa-angle-down'></i>
+      </span>
         <div class='user-dropdown-content'>
-          <a href='/dashboard'>Dashboard</a>
-          <a href='/logout'>Logout</a>
+        <a href='/profile'><i class='far fa-address-card'></i> Profile</a>
+          <a href='/dashboard'><i class='fas fa-cogs'></i> Dashboard</a>
+          <a href='/logout'><i class='fas fa-sign-out-alt'></i> Logout</a>
 
         </div>
       </div>" ;
