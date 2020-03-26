@@ -102,7 +102,8 @@ class Router
 
     } else {
     // throw new Exception('No route defined for this URI');
-    return getView('Error404', 'No Route defined for this URI');
+
+    return StaticPageController::err404('No Route defined for this URI');
     }
   }
 

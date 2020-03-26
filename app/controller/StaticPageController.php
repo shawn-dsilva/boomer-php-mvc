@@ -33,4 +33,10 @@ class StaticPageController {
   public function register () {
     return getView('Register');
   }
+
+  public static function err404($msg) {
+    self::$data['user_data'] = sessionUserData($_COOKIE['sessionId']);
+    self::$data['msg'] = $msg;
+    return getView('Error404', self::$data);
+  }
 }

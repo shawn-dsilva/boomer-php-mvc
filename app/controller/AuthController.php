@@ -8,10 +8,10 @@ include_once('../core/utils/Validator.php');
 class AuthController  {
 
   public  static $user_model;
-  public $mwReturns = [];
+  public static $mwReturns = [];
   public function init($mwReturns)
   {
-    $this->mwReturns = $mwReturns;
+    self::$mwReturns = $mwReturns;
     self::$user_model = new UserModel();
   }
 
