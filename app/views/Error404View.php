@@ -1,5 +1,5 @@
 <?php require('includes/header.html'); ?>
-<?php require('includes/navbar.html'); ?>
+<?php require('includes/navbar.php'); ?>
 
 
 <h1>ERROR 404 PAGE NOT FOUND</h1>

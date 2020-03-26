@@ -6,6 +6,8 @@ class BaseController {
   public $uri;
   public $method;
   public $middleware = [];
+  public $mwReturns = [];
+
   public $paramk = [];
   public $params = [];
 
@@ -49,14 +51,15 @@ class BaseController {
     $controller = current(explode('::', $this->controller));
 
     // initizalizes the controller
-    call_user_func($controller::init());
+    call_user_func($controller::init($this->mwReturns));
 
     call_user_func($this->controller, $this->params); // passes in parameters to the controller
   }
 
   public function runMiddlewares() {
     foreach( $this->middleware as $middleware) {
-      call_user_func($middleware, $this);
+    $this->mwReturns[$middleware] = call_user_func($middleware, $this);
+
     }
   }
 
