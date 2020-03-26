@@ -50,19 +50,21 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - [x] Frontend design for homepage, login/registration
 - [x] setup.php script to setup Database with tables
 - [x] Navbar should show Logged in status
+- [x] Fix broken isAuth middleware based routing
 
 ## In Progress
 
-- [ ] Fix broken isAuth middleware based routing
+- [ ] Add more CRUD fields for User model
+- [ ] Frontend design for User profiles
 
 ## TO-DO
 
 - [ ] SQL Join in Query Builder
-- [ ] Frontend design for user profiles
 - [ ] List of all users registered
 - [ ] WYSIWYG text editor
 - [ ] List of latest posts from all users
 - [ ] Comments from registered users
+- [ ] Schema Builder
 
 ## Author
 
