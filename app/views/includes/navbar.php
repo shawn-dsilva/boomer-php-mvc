@@ -9,7 +9,15 @@
       <a class='right-text' href='/register'>Register</a>";
 
     } else {
-      echo " <a class='right-text' href='/dashboard'>Welcome {$data['user_data']['username']}</a>";
+      echo " <div class='user-dropdown'>
+      <a class='right-text' href='/dashboard'>Welcome <i class='fas fa-user'></i> {$data['user_data']['username']}</a>
+      <i class='fas fa-angle-down'></i>
+        <div class='user-dropdown-content'>
+          <a href='/dashboard'>Dashboard</a>
+          <a href='/logout'>Logout</a>
+
+        </div>
+      </div>" ;
     }?>
 
     <a class="right-text" href="https://www.github.com/shawn-dsilva/boomer-php-mvc">Source on Github <i class="fab fa-github"></i></a>
