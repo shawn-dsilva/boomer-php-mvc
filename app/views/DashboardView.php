@@ -1,5 +1,5 @@
 <?php require('includes/header.html'); ?>
-<?php require('includes/navbar.html'); ?>
+<?php require('includes/navbar.php'); ?>
 
 <div class="container-main">
   <div class="card-dashboard">

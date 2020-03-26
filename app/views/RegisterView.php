@@ -1,5 +1,5 @@
 <?php require('includes/header.html'); ?>
-<?php require('includes/navbar.html'); ?>
+<?php require('includes/navbar.php'); ?>
 <div class="container">
   <div class="card">
 <h1>REGISTER</h1>
