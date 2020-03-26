@@ -47,15 +47,17 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - [x] Add Delete functionality for Posts
 - [x] Get Single Post and Display it
 - [x] Add Edit functionality for Posts
+- [x] Frontend design for homepage, login/registration
+- [x] setup.php script to setup Database with tables
 
 ## In Progress
 
-
+- [ ] Navbar should show Logged in status
 
 ## TO-DO
 
 - [ ] SQL Join in Query Builder
-- [ ] Frontend design for homepage, login/registration and user profiles
+- [ ] Frontend design for user profiles
 - [ ] List of all users registered
 - [ ] WYSIWYG text editor
 - [ ] List of latest posts from all users
