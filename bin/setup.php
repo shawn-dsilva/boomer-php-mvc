@@ -20,5 +20,6 @@ require 'app/config/dbconf.php';
         $db->exec($sql);
         echo 'Database provisioned successfully';
     } catch (PDOException $error) {
+        die($error->getMessage());
         die("Could Not Connect. to Database <br> Error: ".$error."<br> DSN String is : ".DSN);
     }
