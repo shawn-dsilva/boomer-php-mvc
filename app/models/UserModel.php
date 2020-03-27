@@ -18,6 +18,8 @@ class UserModel extends BaseModel {
         return $this->execstmt($this->query, [])->fetch();
     }
 
+
+
     public function saveSession($sessionId, $data) {
 
         unset($data['password']);

@@ -9,7 +9,9 @@
 
   function sessionUserData($sessionId) {
     $user_model = new UserModel;
-    $userdata = $user_model->getSession($sessionId);
+    $sessiondata = $user_model->getSession($sessionId);
+    // TODO : Switch to SQL join instead of below hack
+    $userdata = $user_model->userExists('id', $sessiondata['id']);
     return $userdata;
   }
 
