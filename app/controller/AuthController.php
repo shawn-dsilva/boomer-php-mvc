@@ -20,6 +20,19 @@ class AuthController  {
     empty($user) ? getView('Error404', 'User Not Found'): getView('UserProfile', $user) ;
   }
 
+  public function getProfile() {
+    $userdata = sessionUserData($_COOKIE['sessionId']);
+
+    // TODO : FIX isAuth Middleware to reject non-logged in users from accessing profile, and remove if else block from here
+    if(empty($userdata)) {
+      Header("Location: login");
+    } else {
+      unset($userdata['password']);
+      getView('SelfProfile',$userdata);
+    }
+
+  }
+
 
   public function login () {
     $data=array(

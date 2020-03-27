@@ -23,6 +23,7 @@ $router->registerRoute('GET', 'post/{:postid}', 'PostController::getOnePost')->m
 
 $router->registerRoute('POST', 'deletepost', 'PostController::removePost')->middleware('isAuth');
 
+$router->registerRoute('GET', 'profile', 'AuthController::getProfile')->middleware('isAuth');
 
 $router->registerRoute('POST', 'editpost', 'PostController::editPost')->middleware('isAuth');
 
