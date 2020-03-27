@@ -5,27 +5,45 @@
   <div class="profile-card">
   <?php
     $icons['name'] = "<i class='far fa-id-card'></i>";
-    $icons['username'] = "<i class='far fa-id-card'></i>";
-    $icons['email'] = "<i class='far fa-id-card'></i>";
-    $icons['about'] = "<i class='far fa-id-card'></i>";
-    $icons['location'] = "<i class='far fa-id-card'></i>";
+    $icons['username'] = "<i class='fas fa-user'></i>";
+    $icons['email'] = "<i class='fas fa-envelope'></i>";
+    $icons['about'] = "<i class='fas fa-info-circle'></i>";
+    $icons['location'] = "<i class='fas fa-map-marker-alt'></i>";
   ?>
     <h1>YOUR PROFILE</h1>
 
     <div class="profile-data">
 
 
-<?php foreach($data['user_data'] as $key => $value) {
-  echo("<div class='profile-item'>
-    <div class='profile-item-title'>
-      {$icons[$key]}
-      {$key}
-    </div>
-    <div class='profile-item-content'>{$value}</div>
-  </div>
+<?php
 
-  ");
+unset($data['user_data']['id']);
+foreach($data['user_data'] as $key => $value) {
+
+    if(empty($value)) {
+      $pre = "<div class='profile-item'>
+      <div class='profile-item-title'>
+        {$icons[$key]}
+        {$key}
+      </div>";
+      $post =  "<div class='profile-item-content' style='color:grey;'>This field is empty, click Edit to add something</div>
+      </div>";
+      echo($pre.$post);
+
+    } else {
+      $pre = "<div class='profile-item'>
+      <div class='profile-item-title'>
+        {$icons[$key]}
+        {$key}
+      </div>";
+      $post =  "<div class='profile-item-content'>{$value}</div>
+      </div>";
+      echo($pre.$post);
+
+    }
+
 } ?>
+
     <!-- <div class="profile-item">
       <div class="profile-item-title"><i class="far fa-id-card"></i>
       Name </div>     <?php echo empty($data['user_data']['name']) ? "<div class='profile-item-content'>None</div>" : "<div class='profile-item-content'>{$data['user_data']['name']}</div> "  ?>

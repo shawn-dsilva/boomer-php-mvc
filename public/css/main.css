@@ -470,8 +470,8 @@ img {
 
 .profile-card {
   background-color: white;
-  padding: 0.5rem 2rem;
-  margin: auto;
+  padding: 2rem;
+  margin: 2rem auto;
   text-align: center;
   width: 60%;
   height: fit-content;
@@ -480,6 +480,7 @@ img {
   border-radius: 25px;
   display: flex;
   flex-direction: column;
+  padding-bottom: 2rem;
 }
 
 .profile-card h1 {
@@ -521,19 +522,20 @@ img {
   max-width: 20%;
   flex-grow: 1;
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: 500;
   text-transform: capitalize;
   border: 1px solid var(--primary-dark);
   border-radius: 5px;
 }
 
+
 .profile-item-content {
   color: #3b3b3b;
   padding: 1rem;
   margin: 1rem;
-  flex-grow: 2;
+  flex-grow: 1;
   font-size: 1.2rem;
-  font-weight: 300;
+  font-weight: 400;
   border: 2px solid lightgray;
 
 }
