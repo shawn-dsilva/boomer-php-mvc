@@ -21,14 +21,14 @@ class AuthController  {
   }
 
   public function getProfile() {
-    $userdata = sessionUserData($_COOKIE['sessionId']);
+    $data['user_data'] = sessionUserData($_COOKIE['sessionId']);
 
     // TODO : FIX isAuth Middleware to reject non-logged in users from accessing profile, and remove if else block from here
-    if(empty($userdata)) {
+    if(empty($data)) {
       Header("Location: login");
     } else {
-      unset($userdata['password']);
-      getView('SelfProfile',$userdata);
+      unset($data['user_data']['password']);
+      getView('SelfProfile',$data);
     }
 
   }
