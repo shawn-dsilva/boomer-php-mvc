@@ -4,7 +4,7 @@ function isAuth($obj) {
 
     if(!isset($_COOKIE['sessionId']) ) {
 
-      if ($obj->uri == 'dashboard') {
+      if ($obj->uri == 'dashboard' || $obj->uri == 'profile') {
          Header("Location: login");
         exit();
 
