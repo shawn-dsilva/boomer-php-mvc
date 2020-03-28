@@ -54,13 +54,14 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - [x] Add more CRUD fields for User model
 - [x] Frontend design for User profiles
 - [x] UI Fixes
+- [x] Add front-end edit profile features
+- [x] Fixes to protected routes
+
 
 ## In Progress
 
-- [ ] Add front-end edit profile features
 - [ ] Add backend edit profile features
 - [ ] SQL Join in Query Builder
-- [ ] Fixes to protected routes
 
 ## TO-DO
 
