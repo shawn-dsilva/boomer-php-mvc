@@ -537,18 +537,28 @@ img {
   flex-grow: 1;
   font-size: 1.2rem;
   font-weight: 400;
-  border: 2px solid lightgray;
   max-width: 60%;
+  resize: none;
 
+}
+
+.profile-item-content:focus {
+  outline: 2px solid #ff9800;
+}
+
+textarea {
+  font-size: 1.2rem!important;
+  font-weight: 400!important;
+  font-family: 'Inter'!important;
 }
 
 .profile-edit {
   padding: 1.5rem;
-  margin: 2rem auto;
+  margin:2rem auto;
   color: white;
   background-color: var(--primary-dark);
   opacity: 0.9;
-  max-width: 30%;
+  max-width: 40%;
   flex-grow: 1;
   font-size: 1.8rem;
   font-weight: 900;
@@ -557,6 +567,25 @@ img {
   border-radius: 15px;
 }
 
+.profile-edit button {
+  color: white;
+  text-decoration: none;
+
+}
+
+
 .profile-edit:hover {
   opacity: 1;
+}
+
+.hide {
+  display: none;
+}
+
+.profile-edit-container {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 3rem auto;
+  width:85%;
 }

@@ -119,3 +119,11 @@ function closeEditBox() {
   $("#editBox").hide();
   $("#onePost").show();
 }
+
+function openProfileEdit() {
+  $(".profile-content-item").toggle();
+  $(".profile-edit-item").toggle();
+
+  $(".beforeedit").toggle();
+  $(".afteredit").toggle();
+}

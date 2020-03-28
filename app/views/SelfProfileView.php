@@ -4,7 +4,7 @@
 <div class="profile-container">
   <div class="profile-card">
   <?php
-    $icons['name'] = "<i class='far fa-id-card'></i>";
+    $icons['name'] = "<i class='far fa-address-card'></i>";
     $icons['username'] = "<i class='fas fa-user'></i>";
     $icons['email'] = "<i class='fas fa-envelope'></i>";
     $icons['about'] = "<i class='fas fa-info-circle'></i>";
@@ -20,15 +20,30 @@
 unset($data['user_data']['id']);
 foreach($data['user_data'] as $key => $value) {
 
-    if(empty($value)) {
-      $pre = "<div class='profile-item'>
+    if(empty($value) && ($key != 'email' || $key != 'username')) {
+      if($key == 'about') {
+        $pre = "<div class='profile-item'>
+        <div class='profile-item-title'>
+          {$icons[$key]}
+          {$key}
+        </div>";
+        $post =  "<div class='profile-item-content profile-content-item'  style='color:grey;'>This field is empty, click Edit to add something</div>
+
+        <textarea class='profile-item-content profile-edit-item hide' name='{$key}'  rows='15' cols='30' placeholder='You can now Edit your About section!'></textarea>
+        </div>";
+
+        echo($pre.$post);
+      } else {
+          $pre = "<div class='profile-item'>
       <div class='profile-item-title'>
         {$icons[$key]}
         {$key}
       </div>";
-      $post =  "<div class='profile-item-content' style='color:grey;'>This field is empty, click Edit to add something</div>
+          $post =  "<div class='profile-item-content profile-content-item'  style='color:grey;'>This field is empty, click Edit to add something</div>
+      <input class='profile-item-content profile-edit-item hide' type='text' name='{$key}' placeholder='You can now Edit your {$key} !'>
       </div>";
-      echo($pre.$post);
+          echo($pre.$post);
+      }
 
     } else {
       $pre = "<div class='profile-item'>
@@ -76,8 +91,16 @@ foreach($data['user_data'] as $key => $value) {
 
 </div>
 
-<div class="profile-edit" > <i class="fas fa-cog"></i> Edit Your Profile </div>
 
+
+<div class="profile-edit-container">
+
+ <button class="profile-edit beforeedit"  onclick="javascript:openProfileEdit()"><i class="fas fa-cog" ></i> Edit Your Profile </button>
+
+  <button class="profile-edit afteredit hide" class="profile-edit beforeedit" onclick="javascript:openProfileEdit()"><i class="far fa-save"></i> Save Changes </button>
+
+  <button class="profile-edit afteredit hide" onclick="javascript:openProfileEdit()"><i class="fas fa-times"></i> Cancel Changes</button>
+</div>
 
     </div>
 
