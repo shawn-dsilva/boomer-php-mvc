@@ -18,6 +18,8 @@
 <?php
 
 unset($data['user_data']['id']);
+echo "<form id='editprofile'>";
+
 foreach($data['user_data'] as $key => $value) {
 
     if(empty($value) && ($key != 'email' || $key != 'username')) {
@@ -59,6 +61,9 @@ foreach($data['user_data'] as $key => $value) {
 
 } ?>
 
+
+
+<?php echo "</form>" ?>
     <!-- <div class="profile-item">
       <div class="profile-item-title"><i class="far fa-id-card"></i>
       Name </div>     <?php echo empty($data['user_data']['name']) ? "<div class='profile-item-content'>None</div>" : "<div class='profile-item-content'>{$data['user_data']['name']}</div> "  ?>
@@ -92,20 +97,21 @@ foreach($data['user_data'] as $key => $value) {
 </div>
 
 
-
 <div class="profile-edit-container">
 
  <button class="profile-edit beforeedit"  onclick="javascript:openProfileEdit()"><i class="fas fa-cog" ></i> Edit Your Profile </button>
 
-  <button class="profile-edit afteredit hide" class="profile-edit beforeedit" onclick="javascript:openProfileEdit()"><i class="far fa-save"></i> Save Changes </button>
+  <button class="profile-edit afteredit hide" class="profile-edit beforeedit" type="submit" form="editprofile" ><i class="far fa-save"></i> Save Changes </button>
 
   <button class="profile-edit afteredit hide" onclick="javascript:openProfileEdit()"><i class="fas fa-times"></i> Cancel Changes</button>
 </div>
+
 
     </div>
 
 
   </div>
 </div>
+<script>ajaxSubmit('editprofile')</script>
 
 <?php require('includes/footer.html'); ?>
