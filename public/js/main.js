@@ -8,7 +8,7 @@ function ajaxSubmit(form) {
         url: "/"+form,
         data: $(formId).serializeArray(),
         success: function(data) {
-
+          console.log(data);
           if (data === "success") {
             if(form === 'login') {
               $("#successBox").html(`<b>${data} : </b> Login successful, you will be redirected to the Dashboard`);

@@ -42,4 +42,15 @@ class UserModel extends BaseModel {
         $this->deleteFrom('sessions')->where('sessionId', $sessionId);
         return $this->execstmt($this->query, []);
     }
+
+    public function updateUserData($id, $data) {
+        //die(var_dump($data));
+
+        $this->update('users')->set($data)->where('id', $id);
+        //die(trigger_error($this->query));
+        //die(var_dump($this->query));
+
+        return $this->execstmt($this->query, []);
+    }
+
 }

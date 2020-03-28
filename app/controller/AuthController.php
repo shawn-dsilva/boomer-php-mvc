@@ -33,6 +33,20 @@ class AuthController  {
 
   }
 
+  public function editProfile() {
+    $data = $_POST;
+    $id = sessionUserData($_COOKIE['sessionId'])['id'];
+    // TODO : FIX isAuth Middleware to reject non-logged in users from accessing profile, and remove if else block from here
+
+    foreach($data as $key => $value) {
+     if(empty($value)) {
+       unset($data[$key]);
+     }
+    }
+    //die(var_dump($data,$id));
+    self::$user_model->updateUserData($id,$data);
+
+  }
 
   public function login () {
     $data=array(

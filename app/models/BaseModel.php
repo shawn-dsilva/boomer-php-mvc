@@ -26,15 +26,22 @@ class BaseModel extends Database {
     public function set($data) {
       // TODO
       $this->query .= " SET ";
-      foreach($data as $key => $value) {
-        reset($array);
-        if ($key != key($data)) {
-            $this->query .= "{$key}='{$value}', ";
-        }
-        end($array);
-        if ($key != key($data)) {
+
+      if(count($data) == 1) {
+        foreach($data as $key => $value) {
           $this->query .= "{$key}='{$value}' ";
-      }
+        }
+      } else {
+          foreach ($data as $key => $value) {
+              reset($array);
+              if ($key != key($data)) {
+                  $this->query .= "{$key}='{$value}', ";
+              }
+              end($array);
+              if ($key != key($data)) {
+                  $this->query .= "{$key}='{$value}' ";
+              }
+          }
       }
       return $this;
     }
