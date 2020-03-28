@@ -497,7 +497,7 @@ img {
   /* background-color: #FF9800; */
   background: linear-gradient(to bottom, #ff9800 50%, #f7f7f7 50%);
   padding: 5rem;
-  height: 80vh;
+  height: fit-content;
 }
 
 .profile-data {
@@ -510,7 +510,7 @@ img {
 .profile-item {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .profile-item-title {
@@ -526,6 +526,7 @@ img {
   text-transform: capitalize;
   border: 1px solid var(--primary-dark);
   border-radius: 5px;
+  max-height: 2rem;
 }
 
 
@@ -537,5 +538,21 @@ img {
   font-size: 1.2rem;
   font-weight: 400;
   border: 2px solid lightgray;
+  max-width: 60%;
 
+}
+
+.profile-edit {
+  padding: 1.5rem;
+  margin: 1rem auto;
+  color: white;
+  background-color: var(--primary-dark);
+  opacity: 0.9;
+  max-width: 30%;
+  flex-grow: 1;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  border: 1px solid var(--primary-dark);
+  border-radius: 5px;
 }

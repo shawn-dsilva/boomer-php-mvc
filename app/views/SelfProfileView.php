@@ -73,10 +73,15 @@ foreach($data['user_data'] as $key => $value) {
       Location </div>    <?php echo empty($data['user_data']['location']) ? "<div class='profile-item-content'>None</div>" : "<div class='profile-item-content'>{$data['user_data']['location']}</div> "  ?>
       </div> -->
 
+
 </div>
+
+<div class="profile-edit" > <i class="fas fa-user-cog"></i> Edit Profile </div>
 
 
     </div>
+
+
   </div>
 </div>
 
