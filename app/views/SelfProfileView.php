@@ -76,7 +76,7 @@ foreach($data['user_data'] as $key => $value) {
 
 </div>
 
-<div class="profile-edit" > <i class="fas fa-user-cog"></i> Edit Profile </div>
+<div class="profile-edit" > <i class="fas fa-cog"></i> Edit Your Profile </div>
 
 
     </div>

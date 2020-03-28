@@ -544,15 +544,19 @@ img {
 
 .profile-edit {
   padding: 1.5rem;
-  margin: 1rem auto;
+  margin: 2rem auto;
   color: white;
   background-color: var(--primary-dark);
   opacity: 0.9;
   max-width: 30%;
   flex-grow: 1;
   font-size: 1.8rem;
-  font-weight: 600;
+  font-weight: 900;
   text-transform: capitalize;
   border: 1px solid var(--primary-dark);
-  border-radius: 5px;
+  border-radius: 15px;
+}
+
+.profile-edit:hover {
+  opacity: 1;
 }
