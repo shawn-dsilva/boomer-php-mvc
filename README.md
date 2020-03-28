@@ -53,11 +53,14 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - [x] Fix broken isAuth middleware based routing
 - [x] Add more CRUD fields for User model
 - [x] Frontend design for User profiles
+- [x] UI Fixes
 
 ## In Progress
 
+- [ ] Add front-end edit profile features
+- [ ] Add backend edit profile features
 - [ ] SQL Join in Query Builder
-- [ ] Fixes to protected routes and UI
+- [ ] Fixes to protected routes
 
 ## TO-DO
 
