@@ -28,6 +28,7 @@ class BaseModel extends Database {
       $this->query .= " SET ";
 
       foreach($data as $key => $value) {
+          $value = str_replace("'","''",$value);
           $this->query .= "{$key}='{$value}', ";
       }
 

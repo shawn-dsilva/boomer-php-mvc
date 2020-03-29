@@ -30,6 +30,9 @@ function ajaxSubmit(form) {
             if(form === 'editpost') {
               location.reload();
             }
+            if(form === 'editprofile') {
+              window.location = "/profile";
+            }
 
           } else {
           $("#errorBox").html("<b>Error:</b> " + data);

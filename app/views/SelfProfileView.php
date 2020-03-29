@@ -48,15 +48,41 @@ foreach($data['user_data'] as $key => $value) {
       }
 
     } else {
-      $pre = "<div class='profile-item'>
-      <div class='profile-item-title'>
-        {$icons[$key]}
-        {$key}
-      </div>";
-      $post =  "<div class='profile-item-content'>{$value}</div>
-      </div>";
-      echo($pre.$post);
+      if($key == 'about') {
+        $pre = "<div class='profile-item'>
+        <div class='profile-item-title'>
+          {$icons[$key]}
+          {$key}
+        </div>";
+        $post =  "<div class='profile-item-content profile-content-item'  >{$value}</div>
 
+        <textarea class='profile-item-content profile-edit-item hide' name='{$key}'  rows='15' cols='30' >{$value}</textarea>
+        </div>";
+
+        echo($pre.$post);
+      } else {
+        if($key == 'username' || $key == 'email' ) {
+          $pre = "<div class='profile-item'>
+          <div class='profile-item-title'>
+            {$icons[$key]}
+            {$key}
+          </div>";
+              $post =  "<div class='profile-item-content '  >{$value}</div>
+          </div>";
+              echo($pre.$post);
+        } else {
+          $pre = "<div class='profile-item'>
+          <div class='profile-item-title'>
+            {$icons[$key]}
+            {$key}
+          </div>";
+              $post =  "<div class='profile-item-content profile-content-item'  >{$value}</div>
+          <input class='profile-item-content profile-edit-item hide' type='text' name='{$key}' value='{$value}'>
+          </div>";
+              echo($pre.$post);
+        }
+
+      }
     }
 
 } ?>

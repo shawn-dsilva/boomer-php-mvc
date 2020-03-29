@@ -45,6 +45,7 @@ class AuthController  {
     }
     //die(var_dump($data,$id));
     self::$user_model->updateUserData($id,$data);
+    echo 'success';
 
   }
 
