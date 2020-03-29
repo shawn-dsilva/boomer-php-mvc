@@ -54,9 +54,13 @@ foreach($data['user_data'] as $key => $value) {
           {$icons[$key]}
           {$key}
         </div>";
-        $post =  "<div class='profile-item-content profile-content-item'  >{$value}</div>
-
-        <textarea class='profile-item-content profile-edit-item hide' name='{$key}'  rows='15' cols='30' >{$value}</textarea>
+        $post =  "<div class='profile-item-content profile-content-item'>
+        {$value}
+        </div>
+        <div class='about-container'>
+        <span style='display:none;' class='count' id='count'></span>
+        <textarea id='about-edit' class='profile-item-content profile-edit-item hide' name='{$key}'  rows='15' cols='30' onkeyup='javascript:counter()' onkeydown='javascript:counter()' >{$value}</textarea>
+        </div>
         </div>";
 
         echo($pre.$post);
@@ -138,6 +142,8 @@ foreach($data['user_data'] as $key => $value) {
 
   </div>
 </div>
-<script>ajaxSubmit('editprofile')</script>
+<script>ajaxSubmit('editprofile');
+$('#about-edit').keyup(counter());
+$('#about-edit').keydown(counter());</script>
 
 <?php require('includes/footer.html'); ?>

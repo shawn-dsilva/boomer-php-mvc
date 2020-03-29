@@ -589,3 +589,30 @@ textarea {
   margin: 3rem auto;
   width:85%;
 }
+
+.count {
+  font-weight: 300!important;
+  font-size: 1.3rem;
+  margin: 1rem;
+}
+.about-container {
+  display:none;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.flexbox {
+  display: flex;
+}
+
+.width100 {
+  max-width: 100%;
+  color: #3b3b3b;
+  padding: 1rem;
+  margin: 1rem;
+  flex-grow: 1;
+  font-size: 1.2rem;
+  font-weight: 400;
+  resize: none;
+
+}

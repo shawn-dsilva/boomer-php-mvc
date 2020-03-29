@@ -126,7 +126,18 @@ function closeEditBox() {
 function openProfileEdit() {
   $(".profile-content-item").toggle();
   $(".profile-edit-item").toggle();
-
+   $(".about-container").toggleClass('flexbox');
+$(".count").toggle();
   $(".beforeedit").toggle();
   $(".afteredit").toggle();
+}
+
+function counter() {
+  var count = $('#about-edit').val().length;
+  max=1200;
+  $('#count').css('color','green');
+  $('#count').text(count+'/'+max);
+  if(count > max) {
+    $('#count').css('color','red');
+  }
 }
