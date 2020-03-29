@@ -594,6 +594,7 @@ textarea {
   font-weight: 300!important;
   font-size: 1.3rem;
   margin: 1rem;
+  margin-bottom:0;
 }
 .about-container {
   display:none;

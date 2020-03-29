@@ -59,7 +59,7 @@ foreach($data['user_data'] as $key => $value) {
         </div>
         <div class='about-container'>
         <span style='display:none;' class='count' id='count'></span>
-        <textarea id='about-edit' class='profile-item-content profile-edit-item hide' name='{$key}'  rows='15' cols='30' onkeyup='javascript:counter()' onkeydown='javascript:counter()' >{$value}</textarea>
+        <textarea id='about-edit' class='profile-item-content profile-edit-item hide' name='{$key}' style='max-width:100%!important'  rows='15' cols='30' onkeyup='javascript:counter()' onkeydown='javascript:counter()' >{$value}</textarea>
         </div>
         </div>";
 
