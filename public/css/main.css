@@ -495,7 +495,7 @@ img {
 .profile-container {
   text-align: center;
   /* background-color: #FF9800; */
-  background: linear-gradient(to bottom, #ff9800 50%, #f7f7f7 50%);
+  background: #ff9800 ;
   padding: 5rem;
   height: fit-content;
 }
