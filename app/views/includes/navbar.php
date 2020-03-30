@@ -11,7 +11,7 @@
     } else {
       echo "       <span>Welcome, </span>
       <div class='user-dropdown'>
-      <span class='right-text' href='/dashboard'><i class='fas fa-user'></i> {$data['user_data']['username']}       <i class='fas fa-angle-down'></i>
+      <span class='right-text' href='/dashboard'><i class='fas fa-user'></i>".(empty($data['user_data']['name']) ?  " {$data['user_data']['username']} " : "  {$data['user_data']['name']} ({$data['user_data']['username']}) "  )."<i class='fas fa-angle-down'></i>
       </span>
         <div class='user-dropdown-content'>
         <a href='/profile'><i class='far fa-address-card'></i> Profile</a>

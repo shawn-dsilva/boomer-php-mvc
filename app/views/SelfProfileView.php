@@ -29,12 +29,12 @@ foreach($data['user_data'] as $key => $value) {
           {$icons[$key]}
           {$key}
         </div>";
-        $post =  "<div class='profile-item-content profile-content-item'>
+        $post =  "<div class='profile-item-content profile-content-item' style='color:grey;'>
         This field is empty, click Edit to add something
         </div>
         <div class='about-container'>
         <span style='display:none;' class='count' id='count'></span>
-        <textarea id='about-edit' class='profile-item-content profile-edit-item hide' name='{$key}' style='max-width:100%!important'  rows='15' cols='30' onkeyup='javascript:counter()' onkeydown='javascript:counter()' >You can now Edit your About section!</textarea>
+        <textarea id='about-edit' class='profile-item-content profile-edit-item hide' name='{$key}' style='max-width:100%!important'  rows='15' cols='30' onkeyup='javascript:counter()' onkeydown='javascript:counter()' placeholder='You can now Edit your About section!' ></textarea>
         </div>
         </div>";
 
