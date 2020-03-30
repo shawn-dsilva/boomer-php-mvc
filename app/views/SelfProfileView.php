@@ -51,41 +51,36 @@
     }
 
   ?>
+
+
     <h1>YOUR PROFILE</h1>
 
     <div class="profile-data">
 
 
-<?php
+  <?php
 
-unset($data['user_data']['id']);
-echo "<form id='editprofile'>";
+  unset($data['user_data']['id']);
+  echo "<form id='editprofile'>";
 
-foreach($data['user_data'] as $key => $value) {
+    foreach($data['user_data'] as $key => $value) {
 
-  render($icons,$key,$value);
+      render($icons,$key,$value);
 
-} ?>
+    }
+  echo "</form>"
+  ?>
 
+  </div>
+    <div class="profile-edit-container">
 
-<?php echo "</form>" ?>
+    <button class="profile-edit beforeedit"  onclick="javascript:openProfileEdit()"><i class="fas fa-cog" ></i> Edit Your Profile </button>
 
-</div>
+      <button class="profile-edit afteredit hide" class="profile-edit beforeedit" type="submit" form="editprofile" ><i class="far fa-save"></i> Save Changes </button>
 
-
-<div class="profile-edit-container">
-
- <button class="profile-edit beforeedit"  onclick="javascript:openProfileEdit()"><i class="fas fa-cog" ></i> Edit Your Profile </button>
-
-  <button class="profile-edit afteredit hide" class="profile-edit beforeedit" type="submit" form="editprofile" ><i class="far fa-save"></i> Save Changes </button>
-
-  <button class="profile-edit afteredit hide" onclick="javascript:openProfileEdit()"><i class="fas fa-times"></i> Cancel Changes</button>
-</div>
-
-
+      <button class="profile-edit afteredit hide" onclick="javascript:openProfileEdit()"><i class="fas fa-times"></i> Cancel Changes</button>
     </div>
-
-
+    </div>
   </div>
 </div>
 <script>ajaxSubmit('editprofile');
