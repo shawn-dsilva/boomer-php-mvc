@@ -23,74 +23,74 @@ echo "<form id='editprofile'>";
 foreach($data['user_data'] as $key => $value) {
 
     if(empty($value) && ($key != 'email' || $key != 'username')) {
-      if($key == 'about') {
-        $pre = "<div class='profile-item'>
-        <div class='profile-item-title'>
-          {$icons[$key]}
-          {$key}
-        </div>";
-        $post =  "<div class='profile-item-content profile-content-item' style='color:grey;'>
-        This field is empty, click Edit to add something
-        </div>
-        <div class='about-container'>
-        <span style='display:none;' class='count' id='count'></span>
-        <textarea id='about-edit' class='profile-item-content profile-edit-item hide' name='{$key}' style='max-width:100%!important'  rows='15' cols='30' onkeyup='javascript:counter()' onkeydown='javascript:counter()' placeholder='You can now Edit your About section!' ></textarea>
-        </div>
-        </div>";
-
-        echo($pre.$post);
-      } else {
+        if($key == 'about') {
           $pre = "<div class='profile-item'>
-      <div class='profile-item-title'>
-        {$icons[$key]}
-        {$key}
-      </div>";
-          $post =  "<div class='profile-item-content profile-content-item'  style='color:grey;'>This field is empty, click Edit to add something</div>
-      <input class='profile-item-content profile-edit-item hide' type='text' name='{$key}' placeholder='You can now Edit your {$key} !'>
-      </div>";
+          <div class='profile-item-title'>
+            {$icons[$key]}
+            {$key}
+          </div>";
+          $post =  "<div class='profile-item-content profile-content-item' style='color:grey;'>
+          This field is empty, click Edit to add something
+          </div>
+          <div class='about-container'>
+          <span style='display:none;' class='count' id='count'></span>
+          <textarea id='about-edit' class='profile-item-content profile-edit-item hide' name='{$key}' style='max-width:100%!important'  rows='15' cols='30' onkeyup='javascript:counter()' onkeydown='javascript:counter()' placeholder='You can now Edit your About section!' ></textarea>
+          </div>
+          </div>";
+
           echo($pre.$post);
-      }
-
-    } else {
-      if($key == 'about') {
-        $pre = "<div class='profile-item'>
+        } else {
+            $pre = "<div class='profile-item'>
         <div class='profile-item-title'>
           {$icons[$key]}
           {$key}
         </div>";
-        $post =  "<div class='profile-item-content profile-content-item'>
-        {$value}
-        </div>
-        <div class='about-container'>
-        <span style='display:none;' class='count' id='count'></span>
-        <textarea id='about-edit' class='profile-item-content profile-edit-item hide' name='{$key}' style='max-width:100%!important'  rows='15' cols='30' onkeyup='javascript:counter()' onkeydown='javascript:counter()' >{$value}</textarea>
-        </div>
+            $post =  "<div class='profile-item-content profile-content-item'  style='color:grey;'>This field is empty, click Edit to add something</div>
+        <input class='profile-item-content profile-edit-item hide' type='text' name='{$key}' placeholder='You can now Edit your {$key} !'>
         </div>";
-
-        echo($pre.$post);
-      } else {
-        if($key == 'username' || $key == 'email' ) {
-          $pre = "<div class='profile-item'>
-          <div class='profile-item-title'>
-            {$icons[$key]}
-            {$key}
-          </div>";
-              $post =  "<div class='profile-item-content '  >{$value}</div>
-          </div>";
-              echo($pre.$post);
-        } else {
-          $pre = "<div class='profile-item'>
-          <div class='profile-item-title'>
-            {$icons[$key]}
-            {$key}
-          </div>";
-              $post =  "<div class='profile-item-content profile-content-item'  >{$value}</div>
-          <input class='profile-item-content profile-edit-item hide' type='text' name='{$key}' value='{$value}'>
-          </div>";
-              echo($pre.$post);
+            echo($pre.$post);
         }
 
-      }
+    } else {
+        if($key == 'about') {
+          $pre = "<div class='profile-item'>
+          <div class='profile-item-title'>
+            {$icons[$key]}
+            {$key}
+          </div>";
+          $post =  "<div class='profile-item-content profile-content-item'>
+          {$value}
+          </div>
+          <div class='about-container'>
+          <span style='display:none;' class='count' id='count'></span>
+          <textarea id='about-edit' class='profile-item-content profile-edit-item hide' name='{$key}' style='max-width:100%!important'  rows='15' cols='30' onkeyup='javascript:counter()' onkeydown='javascript:counter()' >{$value}</textarea>
+          </div>
+          </div>";
+
+          echo($pre.$post);
+        } else {
+            if($key == 'username' || $key == 'email' ) {
+              $pre = "<div class='profile-item'>
+              <div class='profile-item-title'>
+                {$icons[$key]}
+                {$key}
+              </div>";
+                  $post =  "<div class='profile-item-content '  >{$value}</div>
+              </div>";
+                  echo($pre.$post);
+            } else {
+              $pre = "<div class='profile-item'>
+              <div class='profile-item-title'>
+                {$icons[$key]}
+                {$key}
+              </div>";
+                  $post =  "<div class='profile-item-content profile-content-item'  >{$value}</div>
+              <input class='profile-item-content profile-edit-item hide' type='text' name='{$key}' value='{$value}'>
+              </div>";
+                  echo($pre.$post);
+            }
+
+        }
     }
 
 } ?>
@@ -98,35 +98,6 @@ foreach($data['user_data'] as $key => $value) {
 
 
 <?php echo "</form>" ?>
-    <!-- <div class="profile-item">
-      <div class="profile-item-title"><i class="far fa-id-card"></i>
-      Name </div>     <?php echo empty($data['user_data']['name']) ? "<div class='profile-item-content'>None</div>" : "<div class='profile-item-content'>{$data['user_data']['name']}</div> "  ?>
-      </div>
-
-      <div class="profile-item">
-
-      <div class="profile-item-title"><i class="fas fa-user"></i>
-      Username </div>    <?php echo empty($data['user_data']['username']) ? "<div class='profile-item-content'>None</div>" : "<div class='profile-item-content'>{$data['user_data']['username']}</div> "  ?>
-      </div>
-
-      <div class="profile-item">
-
-      <div class="profile-item-title"><i class="fas fa-envelope"></i>
-      E-Mail </div>    <?php echo empty($data['user_data']['email']) ? "<div class='profile-item-content'>None</div>" : "<div class='profile-item-content'>{$data['user_data']['email']}</div> "  ?>
-      </div>
-
-      <div class="profile-item">
-
-      <div class="profile-item-title"><i class="fas fa-info-circle"></i>
-      About </div>    <?php echo empty($data['user_data']['about']) ? "<div class='profile-item-content'>None</div>" : "<div class='profile-item-content'>{$data['user_data']['about']}</div> "  ?>
-      </div>
-
-      <div class="profile-item">
-
-      <div class="profile-item-title"><i class="fas fa-map-marker-alt"></i></i>
-      Location </div>    <?php echo empty($data['user_data']['location']) ? "<div class='profile-item-content'>None</div>" : "<div class='profile-item-content'>{$data['user_data']['location']}</div> "  ?>
-      </div> -->
-
 
 </div>
 
