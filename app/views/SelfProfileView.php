@@ -9,6 +9,31 @@
     $icons['email'] = "<i class='fas fa-envelope'></i>";
     $icons['about'] = "<i class='fas fa-info-circle'></i>";
     $icons['location'] = "<i class='fas fa-map-marker-alt'></i>";
+
+    function render($icons, $key, $value) {
+
+      $emptyMsg =" This field is empty, click Edit to add something";
+      $title = " <div class='profile-item-title'>
+        {$icons[$key]}
+        {$key}
+      </div>";
+
+      $content = "<div class='profile-item-content profile-content-item'  style='color:grey;'>".(empty($value) ? $emptyMsg : $value )."</div>";
+
+      $input = "<input class='profile-item-content profile-edit-item hide' type='text' name='{$key}' placeholder='You can now Edit your {$key} !'>";
+
+      $concat = $title.$content.$input;
+
+      echo(container($concat));
+
+    }
+
+    function container($content) {
+
+      $complete = "<div class='profile-item'>{$content}</div>";
+      return $complete;
+    }
+
   ?>
     <h1>YOUR PROFILE</h1>
 
@@ -22,79 +47,9 @@ echo "<form id='editprofile'>";
 
 foreach($data['user_data'] as $key => $value) {
 
-    if(empty($value) && ($key != 'email' || $key != 'username')) {
-        if($key == 'about') {
-          $pre = "<div class='profile-item'>
-          <div class='profile-item-title'>
-            {$icons[$key]}
-            {$key}
-          </div>";
-          $post =  "<div class='profile-item-content profile-content-item' style='color:grey;'>
-          This field is empty, click Edit to add something
-          </div>
-          <div class='about-container'>
-          <span style='display:none;' class='count' id='count'></span>
-          <textarea id='about-edit' class='profile-item-content profile-edit-item hide' name='{$key}' style='max-width:100%!important'  rows='15' cols='30' onkeyup='javascript:counter()' onkeydown='javascript:counter()' placeholder='You can now Edit your About section!' ></textarea>
-          </div>
-          </div>";
-
-          echo($pre.$post);
-        } else {
-            $pre = "<div class='profile-item'>
-        <div class='profile-item-title'>
-          {$icons[$key]}
-          {$key}
-        </div>";
-            $post =  "<div class='profile-item-content profile-content-item'  style='color:grey;'>This field is empty, click Edit to add something</div>
-        <input class='profile-item-content profile-edit-item hide' type='text' name='{$key}' placeholder='You can now Edit your {$key} !'>
-        </div>";
-            echo($pre.$post);
-        }
-
-    } else {
-        if($key == 'about') {
-          $pre = "<div class='profile-item'>
-          <div class='profile-item-title'>
-            {$icons[$key]}
-            {$key}
-          </div>";
-          $post =  "<div class='profile-item-content profile-content-item'>
-          {$value}
-          </div>
-          <div class='about-container'>
-          <span style='display:none;' class='count' id='count'></span>
-          <textarea id='about-edit' class='profile-item-content profile-edit-item hide' name='{$key}' style='max-width:100%!important'  rows='15' cols='30' onkeyup='javascript:counter()' onkeydown='javascript:counter()' >{$value}</textarea>
-          </div>
-          </div>";
-
-          echo($pre.$post);
-        } else {
-            if($key == 'username' || $key == 'email' ) {
-              $pre = "<div class='profile-item'>
-              <div class='profile-item-title'>
-                {$icons[$key]}
-                {$key}
-              </div>";
-                  $post =  "<div class='profile-item-content '  >{$value}</div>
-              </div>";
-                  echo($pre.$post);
-            } else {
-              $pre = "<div class='profile-item'>
-              <div class='profile-item-title'>
-                {$icons[$key]}
-                {$key}
-              </div>";
-                  $post =  "<div class='profile-item-content profile-content-item'  >{$value}</div>
-              <input class='profile-item-content profile-edit-item hide' type='text' name='{$key}' value='{$value}'>
-              </div>";
-                  echo($pre.$post);
-            }
-
-        }
-    }
+  render($icons,$key,$value);
 
 } ?>
-
 
 
 <?php echo "</form>" ?>
