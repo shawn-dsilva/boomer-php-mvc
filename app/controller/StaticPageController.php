@@ -36,11 +36,11 @@ class StaticPageController {
 
 
   public function postlist () {
-    return getView('PostList');
+    return getView('PostList', self::$data);
   }
 
   public function createpost () {
-    return getView('CreatePost');
+    return getView('CreatePost', self::$data);
   }
 
   public static function err404($msg) {
