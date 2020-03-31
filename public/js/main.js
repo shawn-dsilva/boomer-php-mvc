@@ -64,13 +64,18 @@ function getPostList() {
 
            data = JSON.parse(data);
 
+           console.log(typeof(data));
+           if(Object.entries(data).length === 0) {
+            $("#postList").append(`<div class="post" ><h3>You have no Posts
+            </h3><p>Add a New Post</p>`);
+           } else {
            data.forEach(function (item) {
 
             $("#postList").append(`<div class="post" id=${item.id}><h3>${item.title}
             </h3><p>${item.content}</p>
             <button onclick="deletePost(${item.id})">Delete</button></div><br>`);
           });
-
+        }
 
         }
     });

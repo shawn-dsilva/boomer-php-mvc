@@ -34,6 +34,11 @@ class StaticPageController {
     return getView('Register');
   }
 
+
+  public function postlist () {
+    return getView('PostList');
+  }
+
   public static function err404($msg) {
     self::$data['user_data'] = sessionUserData($_COOKIE['sessionId']);
     self::$data['msg'] = $msg;
