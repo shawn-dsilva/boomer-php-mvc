@@ -29,8 +29,6 @@ DROP TABLE IF EXISTS `sessions`;
 CREATE TABLE `sessions` (
   `id` int(11) unsigned NOT NULL,
   `sessionId` varchar(255) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `username` varchar(50) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`sessionId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -58,10 +58,11 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - [x] Fixes to protected routes
 - [x] Add backend edit profile features
 - [x] Profile page PHP/HTML refactored
+- [x] SQL Join in Query Builder
+- [x] Get user data from session changed to SQL Join
 
 ## In Progress
 
-- [ ] SQL Join in Query Builder
 - [ ] All Posts by User edit page
 
 ## TO-DO
