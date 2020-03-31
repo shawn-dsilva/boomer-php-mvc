@@ -35,9 +35,10 @@ class UserModel extends BaseModel {
 
     public function getSession($sessionId) {
         // $this->selectAll('sessions')->where('sessionId', $sessionId);
-        $userdata = ['email','username','name','about','location'];
-        $this->select($userdata)->from('users')->join('sessions')->on('id','users','sessions');
-        die(var_dump($this->query));
+        $userdata = ['users.email','users.username','name','about','location'];
+        $this->select($userdata)->from('users')->join('sessions')->on('id','users','sessions')->where('sessionId',$sessionId);
+        //die(var_dump($this->query));
+        //die(var_dump( $this->execstmt($this->query, [])->fetch()));
         return $this->execstmt($this->query, [])->fetch();
     }
 
