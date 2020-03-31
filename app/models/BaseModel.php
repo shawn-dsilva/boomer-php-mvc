@@ -11,6 +11,18 @@ class BaseModel extends Database {
       return $this->query;
     }
 
+    public function select($params) {
+      $paramString = implode(",", $params);
+      $this->query = "SELECT $paramString ";
+      return $this;
+    }
+
+
+    public function from($table) {
+      $this->query .= " FROM $table";
+      return $this;
+    }
+
     public function selectAll($table) {
 
       $this->query = "SELECT * FROM $table";
@@ -50,6 +62,11 @@ class BaseModel extends Database {
       return $this->query;
     }
 
+    public function join($table) {
+      $this->query .= " JOIN $table";
+      return $this;
+    }
+
     public function where($column, $value) {
 
       $this->query = $this->query." WHERE $column='$value'";
@@ -59,6 +76,11 @@ class BaseModel extends Database {
     public function and($column, $value) {
 
       $this->query = $this->query." AND $column='$value'";
+      return $this;
+    }
+
+    public function on($id, $table1, $table2) {
+      $this->query .= " ON $table1.$id = $table2.$id ";
       return $this;
     }
 }
