@@ -1,8 +1,8 @@
 <?php require('includes/header.html'); ?>
 <?php require('includes/navbar.php'); ?>
 
-<div class="card-latest-posts">
-  <h2>Your Posts</h2>
+<div class="posts-container">
+  <h1>Your Posts</h1>
   <script>getPostList();</script>
 
   <div id="postList">

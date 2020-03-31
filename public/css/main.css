@@ -495,7 +495,7 @@ img {
 .profile-container {
   text-align: center;
   /* background-color: #FF9800; */
-  background: #ff9800 ;
+  background: #ff9800;
   padding: 5rem;
   height: fit-content;
 }
@@ -529,7 +529,6 @@ img {
   max-height: 2rem;
 }
 
-
 .profile-item-content {
   color: #3b3b3b;
   padding: 1rem;
@@ -539,7 +538,6 @@ img {
   font-weight: 400;
   max-width: 60%;
   resize: none;
-
 }
 
 .profile-item-content:focus {
@@ -547,14 +545,14 @@ img {
 }
 
 textarea {
-  font-size: 1.2rem!important;
-  font-weight: 400!important;
-  font-family: 'Inter'!important;
+  font-size: 1.2rem !important;
+  font-weight: 400 !important;
+  font-family: "Inter" !important;
 }
 
 .profile-edit {
   padding: 1.5rem;
-  margin:2rem auto;
+  margin: 2rem auto;
   color: white;
   background-color: var(--primary-dark);
   opacity: 0.9;
@@ -570,9 +568,7 @@ textarea {
 .profile-edit button {
   color: white;
   text-decoration: none;
-
 }
-
 
 .profile-edit:hover {
   opacity: 1;
@@ -583,21 +579,21 @@ textarea {
 }
 
 .profile-edit-container {
-  display:flex;
+  display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   margin: 3rem auto;
-  width:85%;
+  width: 85%;
 }
 
 .count {
-  font-weight: 300!important;
+  font-weight: 300 !important;
   font-size: 1.3rem;
   margin: 1rem;
-  margin-bottom:0;
+  margin-bottom: 0;
 }
 .about-container {
-  display:none;
+  display: none;
   flex-direction: column;
   flex-grow: 1;
 }
@@ -615,5 +611,64 @@ textarea {
   font-size: 1.2rem;
   font-weight: 400;
   resize: none;
+}
 
+.posts-container {
+  min-height: 100vh;
+  background-color: #ff9800;
+  color: white;
+  margin: 0;
+  padding: 5rem;
+}
+
+.posts-container h1 {
+  font-weight: 900;
+  font-size: 3rem;
+  border-bottom: 5px solid white;
+  width: fit-content;
+  margin: 2rem auto;
+}
+
+.post {
+  background-color: white;
+  padding: 2rem;
+  margin: 2rem auto;
+  width: 50%;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+  border: 1px solid white;
+  border-radius: 8px;
+}
+
+.post h2 {
+  font-weight: 700;
+  font-size: 2.4rem;
+  margin: 1rem 0;
+  color: #3b3b3b;
+}
+
+.post h2:hover {
+  color: #f57c00;
+  border-bottom: 5px solid #f57c00;
+  width: fit-content;
+}
+.post p {
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: grey;
+}
+
+.post button {
+  padding:1rem 2rem;
+  margin:1rem 0.5rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color:white;
+  background-color: #f57c00;
+  border: 2px solid #f57c00;
+  border-radius:10px;
+  opacity: 0.9;
+}
+
+.post button:hover {
+  opacity: 2;
 }

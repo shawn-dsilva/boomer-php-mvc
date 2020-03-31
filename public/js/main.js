@@ -71,9 +71,11 @@ function getPostList() {
            } else {
            data.forEach(function (item) {
 
-            $("#postList").append(`<div class="post" id=${item.id}><h3>${item.title}
-            </h3><p>${item.content}</p>
-            <button onclick="editPost(${item.id})">Edit</button><button onclick="deletePost(${item.id})">Delete</button></div><br>`);
+            $("#postList").append(`<div class="post" id=${item.id}><h2>${item.title}
+            </h2><p>${item.content}</p>
+            <button onclick="viewPost(${item.id})">Read More</button>
+            <button onclick="editPost(${item.id})">Edit</button>
+            <button onclick="deletePost(${item.id})">Delete</button></div><br>`);
           });
         }
 
