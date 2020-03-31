@@ -60,10 +60,10 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - [x] Profile page PHP/HTML refactored
 - [x] SQL Join in Query Builder
 - [x] Get user data from session changed to SQL Join
+- [x] List of all posts by logged in user with links to edit, delete and view full post
 
 ## In Progress
 
-- [ ] All Posts by User edit page
 
 ## TO-DO
 

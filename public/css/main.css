@@ -650,6 +650,7 @@ textarea {
   color: #f57c00;
   border-bottom: 5px solid #f57c00;
   width: fit-content;
+  cursor: pointer;
 }
 .post p {
   font-weight: 400;
@@ -670,5 +671,6 @@ textarea {
 }
 
 .post button:hover {
-  opacity: 2;
+  opacity: 1;
+  cursor:pointer;
 }
