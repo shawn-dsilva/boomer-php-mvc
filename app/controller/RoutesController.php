@@ -27,6 +27,9 @@ $router->registerRoute('GET', 'profile', 'AuthController::getProfile')->middlewa
 
 $router->registerRoute('GET', 'postlist', 'StaticPageController::postlist')->middleware('isAuth');
 
+$router->registerRoute('GET', 'createpost', 'StaticPageController::createpost')->middleware('isAuth');
+
+
 $router->registerRoute('POST', 'editpost', 'PostController::editPost')->middleware('isAuth');
 
 $router->registerRoute('POST', 'editprofile', 'AuthController::editProfile')->middleware('isAuth');

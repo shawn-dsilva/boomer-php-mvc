@@ -39,6 +39,10 @@ class StaticPageController {
     return getView('PostList');
   }
 
+  public function createpost () {
+    return getView('CreatePost');
+  }
+
   public static function err404($msg) {
     self::$data['user_data'] = sessionUserData($_COOKIE['sessionId']);
     self::$data['msg'] = $msg;

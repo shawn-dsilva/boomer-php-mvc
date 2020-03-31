@@ -73,7 +73,7 @@ function getPostList() {
 
             $("#postList").append(`<div class="post" id=${item.id}><h3>${item.title}
             </h3><p>${item.content}</p>
-            <button onclick="deletePost(${item.id})">Delete</button></div><br>`);
+            <button onclick="editPost(${item.id})">Edit</button><button onclick="deletePost(${item.id})">Delete</button></div><br>`);
           });
         }
 
