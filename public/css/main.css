@@ -674,3 +674,69 @@ textarea {
   opacity: 1;
   cursor:pointer;
 }
+
+.createpost-container {
+  min-height: 100vh;
+  background-color: #ff9800;
+  color: #3b3b3b;
+  margin: 0;
+  padding: 5rem;
+}
+
+.createpost {
+  background-color: white;
+  padding: 2rem;
+  margin: 2rem auto;
+  width: 60%;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+  border: 1px solid white;
+  border-radius: 8px;
+}
+
+.createpost-content {
+  margin:0 auto;
+  width:80%;
+  text-align: center;
+}
+
+.createpost input, textarea {
+  width:100%;
+  padding:  0.8rem 0.5rem;
+  margin: 1.5rem auto;
+  color:#3b3b3b!important;
+  outline:#ff9800;
+}
+
+.createpost input {
+  font-size: 2.5rem;
+  font-weight: 900;
+  /* padding:0.5rem 1rem; */
+}
+.createpost h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  /* padding:0.5rem 1rem; */
+  color:#3b3b3b;
+  border-bottom: 10px solid #3b3b3b;
+  width: fit-content ;
+  margin: 3rem auto;
+}
+
+.createpost textarea {
+  font-size:1.5rem!important;
+  font-family: 'Inter'!important;
+  font-weight: 300!important;
+  resize: none;
+}
+
+.createpost button {
+  width:60%;
+  margin: 2rem auto;
+  padding:1rem;
+  color:white;
+  background-color: #f57c00;
+  border: 2px solid #f57c00;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1.5rem;
+}

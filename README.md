@@ -64,11 +64,13 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 
 ## In Progress
 
+- [ ] Style Create Post page
+- [ ] WYSIWYG text editor
+
 
 ## TO-DO
 
 - [ ] List of all users registered
-- [ ] WYSIWYG text editor
 - [ ] List of latest posts from all users
 - [ ] Comments from registered users
 - [ ] Schema Builder
