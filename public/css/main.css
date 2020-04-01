@@ -734,9 +734,15 @@ textarea {
   margin: 2rem auto;
   padding:1rem;
   color:white;
-  background-color: #f57c00;
-  border: 2px solid #f57c00;
+  background-color: var(--primary-dark);
+  border: 2px solid var(--primary-dark);
   border-radius: 5px;
   font-weight: 600;
   font-size: 1.5rem;
+  cursor:pointer;
+  opacity: 0.9;
+}
+
+.createpost button:hover {
+  opacity:1;
 }

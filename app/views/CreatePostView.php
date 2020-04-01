@@ -11,7 +11,7 @@
       <input type="text" id="title" name="title" placeholder="Title of your Post"><br>
       <textarea name="content" id="content" rows="10" cols="30" placeholder="Content of your post"></textarea>
         <br><br>
-      <button type="submit" form="addpost">SUBMIT POST</button>
+      <button type="submit" form="addpost"><i class="far fa-save"></i> SUBMIT POST</button>
       </form>
       <script>ajaxSubmit('addpost')</script>
 
