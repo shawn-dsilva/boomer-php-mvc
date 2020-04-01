@@ -700,7 +700,9 @@ textarea {
 }
 
 .createpost input, textarea {
-  width:100%;
+  min-width:100%;
+  max-width:100%;
+
   padding:  0.8rem 0.5rem;
   margin: 1.5rem auto;
   color:#3b3b3b!important;
@@ -727,6 +729,7 @@ textarea {
   font-family: 'Inter'!important;
   font-weight: 300!important;
   resize: none;
+  margin-top: 1rem!important;
 }
 
 .createpost button {
@@ -748,21 +751,30 @@ textarea {
 }
 
 .texted-container {
-  width:102%;
+  width:100%;
   min-height: 3rem;
+  padding:0.5rem;
   display: flex;
   flex-direction: row;
-  box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, 0.2);
   margin: 0 auto;
   text-align: center;
 }
 
 .texted-symbols {
-  border:1px solid lightgrey;
-  padding: 1rem ;
-  text-align: center;
+  border:1px solid lightgrey!important;
+  border-radius: unset!important;
+  background-color: white!important;
+  margin:0!important;
+  padding: 1rem!important;
+  text-align: center!important;
   /* display: flex;
   flex-grow: 1; */
   width:20%;
-  font-size: 1.5rem;
+  font-size: 1.5rem!important;
+  color:#3b3b3b!important;
+}
+
+.texted-symbols:hover {
+  background-color: #dbdbdb!important;
 }

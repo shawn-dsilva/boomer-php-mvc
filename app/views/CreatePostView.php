@@ -10,14 +10,14 @@
       <form id="addpost">
       <input type="text" id="title" name="title" placeholder="Title of your Post"><br>
       <div class="texted-container">
-        <div class="texted-symbols"><i class="fas fa-heading"></i></div>
-        <div class="texted-symbols"><i class="fas fa-bold"></i></div>
-        <div class="texted-symbols"><i class="fas fa-italic"></i></div>
-        <div class="texted-symbols"><i class="fas fa-underline"></i></div>
-        <div class="texted-symbols"><i class="fas fa-list"></i></div>
-        <div class="texted-symbols"><i class="fas fa-list-ol"></i></div>
-        <div class="texted-symbols"><i class="fas fa-quote-right"></i></div>
-        <div class="texted-symbols"><i class="fas fa-link"></i></div>
+        <button class="texted-symbols"><i class="fas fa-heading"></i></button>
+        <button class="texted-symbols"><i class="fas fa-bold"></i></button>
+        <button class="texted-symbols"><i class="fas fa-italic"></i></button>
+        <button class="texted-symbols"><i class="fas fa-underline"></i></button>
+        <button class="texted-symbols"><i class="fas fa-list"></i></button>
+        <button class="texted-symbols"><i class="fas fa-list-ol"></i></button>
+        <button class="texted-symbols"><i class="fas fa-quote-right"></i></button>
+        <button class="texted-symbols"><i class="fas fa-link"></i></button>
 
       </div>
       <textarea name="content" id="content" rows="10" cols="30" placeholder="Content of your post"></textarea>
