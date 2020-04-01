@@ -746,3 +746,23 @@ textarea {
 .createpost button:hover {
   opacity:1;
 }
+
+.texted-container {
+  width:102%;
+  min-height: 3rem;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.texted-symbols {
+  border:1px solid lightgrey;
+  padding: 1rem ;
+  text-align: center;
+  /* display: flex;
+  flex-grow: 1; */
+  width:20%;
+  font-size: 1.5rem;
+}
