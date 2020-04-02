@@ -10,14 +10,14 @@
       <form id="addpost">
       <input   type="text" id="title" name="title" placeholder="Title of your Post"><br>
 
-      <textarea  name="content" id="content" rows="10" cols="30" placeholder="Content of your post"></textarea>
+      <div contenteditable="true" name="content" id="content" >basic post content here</div>
         <br><br>
       <button type="submit" form="addpost"><i class="far fa-save"></i> SUBMIT POST</button>
       </form>
 
       <div class="texted-container">
         <button onclick="javascript:styleText('bold')" class="texted-symbols"><i class="fas fa-heading"></i></button>
-        <button onclick="javascript:styleText('bold')" class="texted-symbols"><i class="fas fa-bold"></i></button>
+        <button onclick="document.execCommand('bold', false, '');" class="texted-symbols"><i class="fas fa-bold"></i></button>
         <button onclick="javascript:selectText()" class="texted-symbols"><i class="fas fa-italic"></i></button>
         <button onclick="javascript:selectText()" class="texted-symbols"><i class="fas fa-underline"></i></button>
         <button onclick="javascript:selectText()" class="texted-symbols"><i class="fas fa-list"></i></button>

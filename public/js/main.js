@@ -160,10 +160,10 @@ function styleText(p) {
   console.log('in styleText()');
   console.log(p);
   if(p == 'bold') {
-    text = '<b>'+text+'</b>';
+    document.execCommand('bold',false,'');
   }
   console.log(text);
-  document.getElementById('content').setRangeText(text);
+  //document.getElementById('content').setRangeText(text);
 
 
 }
