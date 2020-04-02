@@ -148,3 +148,9 @@ function counter() {
     $('#count').css('color','red');
   }
 }
+
+function selectText() {
+  text = window.getSelection().toString();
+  console.log(text);
+  return text;
+}

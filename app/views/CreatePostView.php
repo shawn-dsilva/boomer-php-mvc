@@ -8,23 +8,25 @@
       <h1>Create New Post</h1>
 
       <form id="addpost">
-      <input type="text" id="title" name="title" placeholder="Title of your Post"><br>
-      <div class="texted-container">
-        <button class="texted-symbols"><i class="fas fa-heading"></i></button>
-        <button class="texted-symbols"><i class="fas fa-bold"></i></button>
-        <button class="texted-symbols"><i class="fas fa-italic"></i></button>
-        <button class="texted-symbols"><i class="fas fa-underline"></i></button>
-        <button class="texted-symbols"><i class="fas fa-list"></i></button>
-        <button class="texted-symbols"><i class="fas fa-list-ol"></i></button>
-        <button class="texted-symbols"><i class="fas fa-quote-right"></i></button>
-        <button class="texted-symbols"><i class="fas fa-link"></i></button>
+      <input   type="text" id="title" name="title" placeholder="Title of your Post"><br>
 
-      </div>
-      <textarea name="content" id="content" rows="10" cols="30" placeholder="Content of your post"></textarea>
+      <textarea  name="content" id="content" rows="10" cols="30" placeholder="Content of your post"></textarea>
         <br><br>
       <button type="submit" form="addpost"><i class="far fa-save"></i> SUBMIT POST</button>
       </form>
-      <script>ajaxSubmit('addpost')</script>
+
+      <div class="texted-container">
+        <button onclick="javascript:selectText()" class="texted-symbols"><i class="fas fa-heading"></i></button>
+        <button onclick="javascript:selectText()" class="texted-symbols"><i class="fas fa-bold"></i></button>
+        <button onclick="javascript:selectText()" class="texted-symbols"><i class="fas fa-italic"></i></button>
+        <button onclick="javascript:selectText()" class="texted-symbols"><i class="fas fa-underline"></i></button>
+        <button onclick="javascript:selectText()" class="texted-symbols"><i class="fas fa-list"></i></button>
+        <button onclick="javascript:selectText()" class="texted-symbols"><i class="fas fa-list-ol"></i></button>
+        <button onclick="javascript:selectText()" class="texted-symbols"><i class="fas fa-quote-right"></i></button>
+        <button onclick="javascript:selectText()" class="texted-symbols"><i class="fas fa-link"></i></button>
+
+      </div>
+      <script>document.onmouseup = document.onkeyup = document.onselectionchange = selectText();</script>
 
       <div id="errorBox"></div>
       </div>
