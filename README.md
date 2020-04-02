@@ -66,7 +66,10 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 
 ## In Progress
 
-- [ ] WYSIWYG text editor
+- [ ] WYSIWYG text editor, complete below subtasks
+- [ ] Get selected text from input
+- [ ] Append styles/HTML tags and replace selected text in input
+- [ ] Change "mode" of font styles when given button is pressed, and change it back to normal when button is pressed again
 
 
 ## TO-DO
