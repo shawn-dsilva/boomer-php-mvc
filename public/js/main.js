@@ -154,3 +154,16 @@ function selectText() {
   console.log(text);
   return text;
 }
+
+function styleText(p) {
+  text = selectText();
+  console.log('in styleText()');
+  console.log(p);
+  if(p == 'bold') {
+    text = '<b>'+text+'</b>';
+  }
+  console.log(text);
+  document.getElementById('content').setRangeText(text);
+
+
+}

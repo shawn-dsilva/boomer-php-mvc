@@ -16,8 +16,8 @@
       </form>
 
       <div class="texted-container">
-        <button onclick="javascript:selectText()" class="texted-symbols"><i class="fas fa-heading"></i></button>
-        <button onclick="javascript:selectText()" class="texted-symbols"><i class="fas fa-bold"></i></button>
+        <button onclick="javascript:styleText('bold')" class="texted-symbols"><i class="fas fa-heading"></i></button>
+        <button onclick="javascript:styleText('bold')" class="texted-symbols"><i class="fas fa-bold"></i></button>
         <button onclick="javascript:selectText()" class="texted-symbols"><i class="fas fa-italic"></i></button>
         <button onclick="javascript:selectText()" class="texted-symbols"><i class="fas fa-underline"></i></button>
         <button onclick="javascript:selectText()" class="texted-symbols"><i class="fas fa-list"></i></button>
