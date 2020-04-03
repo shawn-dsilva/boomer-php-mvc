@@ -148,22 +148,3 @@ function counter() {
     $('#count').css('color','red');
   }
 }
-
-function selectText() {
-  text = window.getSelection().toString();
-  console.log(text);
-  return text;
-}
-
-function styleText(p) {
-  text = selectText();
-  console.log('in styleText()');
-  console.log(p);
-  if(p == 'bold') {
-    document.execCommand('bold',false,'');
-  }
-  console.log(text);
-  //document.getElementById('content').setRangeText(text);
-
-
-}

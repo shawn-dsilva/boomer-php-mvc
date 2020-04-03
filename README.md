@@ -66,9 +66,8 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 
 ## In Progress
 
-- [ ] WYSIWYG text editor, complete below subtasks
-- [ ] Append styles/HTML tags and replace selected text in input
-- [ ] Change "mode" of font styles when given button is pressed, and change it back to normal when button is pressed again
+- [ ] Comments with CRUD functions from registered users
+- [ ] Upvotes and Downvotes from users
 
 ## TO-DO
 
@@ -76,6 +75,7 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - [ ] List of latest posts from all users
 - [ ] Comments from registered users
 - [ ] Schema Builder
+- [ ] Rate Limiting
 
 ## Author
 
