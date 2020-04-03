@@ -79,8 +79,8 @@ class BaseModel extends Database {
       return $this;
     }
 
-    public function on($id, $table1, $table2) {
-      $this->query .= " ON $table1.$id = $table2.$id ";
+    public function on($table1, $table2) {
+      $this->query .= " ON $table1 = $table2 ";
       return $this;
     }
 }
