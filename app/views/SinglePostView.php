@@ -10,8 +10,12 @@
   <p><button onclick="javascript:openEditBox()">Edit</button></p>
 
   <h1>Comments</h1>
-  <p><textarea rows="10" columns="30" placeholder="Add a Comment!"></textarea><button>Submit Comment</button></p>
+  <p><form id="addcomment">
+  <textarea rows="10" columns="30" placeholder="Add a Comment!"></textarea><button>Submit Comment</button>
+  </form>
+  </p>
   </div>
 </div>
+<script>ajaxSubmit('addcomment')</script>
 <div id="editBox"></div>
 <?php require('includes/footer.html'); ?>

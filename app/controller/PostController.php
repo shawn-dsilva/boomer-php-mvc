@@ -62,4 +62,15 @@ class PostController
         self::$post_model->updatePost($data);
         echo('success');
     }
+
+    public function addComment () {
+
+        $data=array(
+          'comment' => $_POST['comment'],
+          'user_id' => sessionUserData($_COOKIE['sessionId'])["id"],
+          'post_id' => $_POST['post_id']
+        );
+        self::$post_model->insertComment($data);
+        echo('success');
+    }
 }
