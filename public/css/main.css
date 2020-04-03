@@ -778,3 +778,36 @@ textarea {
 .texted-symbols:hover {
   background-color: #dbdbdb!important;
 }
+
+.post-container {
+  background:#ff9800;
+  min-height: 100vh;
+  padding:5rem;
+  margin:0 auto;
+}
+
+.post-content {
+  background-color: white;
+  color:#3b3b3b;
+  padding:2rem;
+  width: 60%;
+  margin:0 auto;
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.3);
+  border: solid 2px white;
+  border-radius: 5px;
+}
+
+.post-content h1 {
+  font-weight: 900;
+  font-size: 2.5rem;
+  border-bottom : 5px solid #3b3b3b;
+  width:fit-content;
+  margin:3rem auto;
+}
+
+.post-content p {
+  width:70%;
+  margin:0 auto;
+  font-size: 1.3rem;
+  padding:1rem
+}
