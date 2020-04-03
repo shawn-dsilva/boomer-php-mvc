@@ -4,9 +4,9 @@
 
 <div class="post-container" id="onePost">
   <div class="post-content">
-  <span hidden id="id"><?php echo $data['id']; ?></span>
-  <h1 id="title"><?php echo $data['title']; ?></h1>
-  <p id="content"><?php echo $data['content']; ?></p>
+  <span hidden id="id"><?php echo $data['post']['id']; ?></span>
+  <h1 id="title"><?php echo $data['post']['title']; ?></h1>
+  <p id="content"><?php echo $data['post']['content']; ?></p>
   <p><button onclick="javascript:openEditBox()">Edit</button></p>
 
   <h1>Comments</h1>

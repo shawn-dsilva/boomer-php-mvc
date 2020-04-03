@@ -34,11 +34,12 @@ class PostController
 
     public function getOnePost($params) {
 
-        $userId = sessionUserData($_COOKIE['sessionId'])["id"];
+        $data['user_data'] = sessionUserData($_COOKIE['sessionId']);
+        $userId = $data['user_data']['id'];
         // if($params['user_id'] == $userId) {
-        $post = self::$post_model->getSinglePost($userId, $params['postid']);
+        $data['post'] = self::$post_model->getSinglePost($userId, $params['postid']);
         // echo(json_encode($post));
-        return getView('SinglePost', $post);
+        return getView('SinglePost', $data);
         // } else echo 'Error : Access Denied';
 
     }
