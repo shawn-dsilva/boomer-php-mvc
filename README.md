@@ -63,11 +63,13 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - [x] List of all posts by logged in user with links to edit, delete and view full post
 - [x] Style Create Post page
 - [x] Get selected text from input
+- [ ] Get Single Post basic CSS styling
 
 ## In Progress
 
 - [ ] Comments with CRUD functions from registered users
-- [ ] Upvotes and Downvotes from users
+- [ ] Returning data of a post with author data using SQL Join
+- [ ] Get Single Post complete CSS styling
 
 ## TO-DO
 
@@ -76,6 +78,7 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - [ ] Comments from registered users
 - [ ] Schema Builder
 - [ ] Rate Limiting
+- [ ] Upvotes and Downvotes from users
 
 ## Author
 
