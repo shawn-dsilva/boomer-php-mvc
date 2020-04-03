@@ -63,7 +63,8 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - [x] List of all posts by logged in user with links to edit, delete and view full post
 - [x] Style Create Post page
 - [x] Get selected text from input
-- [ ] Get Single Post basic CSS styling
+- [x] Get Single Post basic CSS styling
+- [x] Posts in `/postlist` link to single post
 
 ## In Progress
 
