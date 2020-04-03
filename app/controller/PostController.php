@@ -66,7 +66,7 @@ class PostController
     public function addComment () {
 
         $data=array(
-          'comment' => $_POST['comment'],
+          'content' => $_POST['content'],
           'user_id' => sessionUserData($_COOKIE['sessionId'])["id"],
           'post_id' => $_POST['post_id']
         );

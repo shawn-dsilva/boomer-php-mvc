@@ -36,7 +36,7 @@ CREATE TABLE `sessions` (
 DROP TABLE IF EXISTS `comments`;
 
 CREATE TABLE `comments` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `post_id` int(11) unsigned NOT NULL,
   `user_id` int(11) unsigned NOT NULL,
   `content` varchar(500) NOT NULL,
