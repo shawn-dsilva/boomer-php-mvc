@@ -14,9 +14,13 @@
   <textarea name="content" id="content" rows="10" columns="30" placeholder="Add a Comment!"></textarea>
   <button type="submit" form="addcomment">Submit Comment</button>
   </form>
+    <div id="commentList" class="comment-list">
 
+    </div>
   </div>
 </div>
-<script>ajaxSubmit('addcomment')</script>
+<script>ajaxSubmit('addcomment')
+getCommentList('<?php echo $data['post']['id']; ?>');
+</script>
 <div id="editBox"></div>
 <?php require('includes/footer.html'); ?>

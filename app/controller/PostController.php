@@ -73,4 +73,10 @@ class PostController
         self::$post_model->insertComment($data);
         echo('success');
     }
+
+    public function getComments($params) {
+        $postId = $params['postid'];
+        $comments = self::$post_model->getComments($postId);
+        echo(json_encode($comments));
+    }
 }

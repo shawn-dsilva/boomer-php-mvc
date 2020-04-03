@@ -148,3 +148,29 @@ function counter() {
     $('#count').css('color','red');
   }
 }
+
+function getCommentList(postid) {
+  $(document).ready(function() {
+      $.ajax({
+        type: "GET",
+        url: "/getcomments/"+postid,
+        success: function(data) {
+
+           data = JSON.parse(data);
+
+           console.log(typeof(data));
+           if(Object.entries(data).length === 0) {
+            $("#postList").append(`<div class="comment" ><h3>There seem to be no comments here
+            </h3>`);
+           } else {
+           data.forEach(function (item) {
+
+            $("#commentList").append(`<div class="comment" id=${item.id}><p>${item.content}</p>
+            </div><br>`);
+          });
+        }
+
+        }
+    });
+  });
+}

@@ -44,7 +44,7 @@ class PostModel extends BaseModel
         $this->execstmt($this->query, $data);
     }
 
-    public function getComment($postId)
+    public function getComments($postId)
     {
         $this->selectAll('comments')->where('post_id', $postId);
         return $this->execstmt($this->query, [])->fetchAll();
