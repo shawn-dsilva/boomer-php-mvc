@@ -9,9 +9,9 @@
   <p><button onclick="javascript:openEditBox()">Edit</button></p>
 
   <h1>Comments</h1>
-  <form id="addcomment">
+  <form id="addcomment" class="addcomment">
   <input type="hidden" name="post_id" id="id" value="<?php echo $data['post']['id']; ?>"></input>
-  <textarea name="content" id="content" rows="10" columns="30" placeholder="Add a Comment!"></textarea>
+  <textarea name="content" id="content" rows="10" placeholder=" Add a Comment!"></textarea>
   <button type="submit" form="addcomment">Submit Comment</button>
   </form>
     <div id="commentList" class="comment-list">
