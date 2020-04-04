@@ -9,14 +9,16 @@
   <p><button onclick="javascript:openEditBox()">Edit</button></p>
 
   <h1>Comments</h1>
+  <p style="text-align:center; margin: 3rem auto;">Any thoughts on this post? <a href="#addcomment">Add a Comment.</a> </p>
+  <div id="commentList" class="comment-list">
+
+</div>
   <form id="addcomment" class="addcomment">
   <input type="hidden" name="post_id" id="id" value="<?php echo $data['post']['id']; ?>"></input>
   <textarea name="content" id="content" rows="10" placeholder=" Add a Comment!"></textarea>
-  <button type="submit" form="addcomment">Submit Comment</button>
+  <button type="submit" form="addcomment">Submit Comment <i class="fas fa-arrow-right"></i></button>
   </form>
-    <div id="commentList" class="comment-list">
 
-    </div>
   </div>
 </div>
 <script>ajaxSubmit('addcomment')

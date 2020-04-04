@@ -819,7 +819,7 @@ textarea {
   margin: 0 auto;
   padding:1.5rem;
   font-weight: 300;
-  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.2);
 }
 
 .comment span {
@@ -848,4 +848,14 @@ textarea {
   background-color: #f8f8f8;
   font-size: 16px;
   resize: none;
+}
+
+.addcomment button {
+  padding:0.8rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color:white;
+  background-color: #f57c00;
+  border: 2px solid #f57c00;
+  border-radius: 5px;
 }
