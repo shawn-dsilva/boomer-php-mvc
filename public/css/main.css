@@ -802,7 +802,7 @@ textarea {
   font-size: 2.5rem;
   border-bottom : 5px solid #3b3b3b;
   width:fit-content;
-  margin:3rem auto;
+  margin:2rem auto;
 }
 
 .post-content p {
@@ -810,6 +810,16 @@ textarea {
   margin:0 auto;
   font-size: 1.3rem;
   padding-bottom: 1rem;
+}
+
+
+.subheading {
+  width:80%;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 600;
+  font-size:1.3rem;
+  margin-bottom: 3rem;
 }
 
 .comment {

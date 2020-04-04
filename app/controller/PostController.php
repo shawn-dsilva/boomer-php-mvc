@@ -38,6 +38,7 @@ class PostController
         $userId = $data['user_data']['id'];
         // if($params['user_id'] == $userId) {
         $data['post'] = self::$post_model->getSinglePost($userId, $params['postid']);
+        $data['post']['created_at'] = date('l, F jS, Y \a\t\ g:i A', strtotime($data['post']['created_at']));
         // echo(json_encode($post));
         return getView('SinglePost', $data);
         // } else echo 'Error : Access Denied';

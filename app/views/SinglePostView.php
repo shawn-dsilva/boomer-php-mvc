@@ -5,7 +5,9 @@
 <div class="post-container" id="onePost">
   <div class="post-content">
   <h1 id="title"><?php echo $data['post']['title']; ?></h1>
-  <p style="text-align:center; font-weight:bold"><?php echo ("Author : ".$data['post']['name']." (".$data['post']['username'].")".", created on ".$data['post']['created_at']." "); ?></p>
+  <div class="subheading"><?php echo ("Written by "."<a href='users/'".$data['post']['username']."'>"
+  .$data['post']['name']." (".$data['post']['username'].")"."</a>".
+  " <br> Created on ".$data['post']['created_at']." "); ?><br></div>
   <p id="content"><?php echo $data['post']['content']; ?></p>
   <p><button onclick="javascript:openEditBox()">Edit</button></p>
 

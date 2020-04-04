@@ -172,8 +172,8 @@ function getCommentList(postid) {
            }else {
           data.forEach(function (item) {
 
-            $("#commentList").append(`<div class="comment" id=${item.id}><p>${item.content}</p>
-            <span>Posted by <a href="/users/${item.username}">${item.name} ( ${item.username } )</a>  on ${item.created_at}</span>
+            $("#commentList").append(`<div class="comment" id=${item.id}><span><a href="/users/${item.username}">${item.name} ( ${item.username } )</a> says : </span><br><p>${item.content}</p>
+            <span>Posted on ${item.created_at}</span>
             </div><br>`);
           });
         }
