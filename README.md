@@ -68,6 +68,8 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - [x] Comment Model
 - [x] Comment Controller
 - [x] Get Single Post complete CSS styling
+- [x] Get Comments List via AJAX call
+- [x] Add Comment and reload comments list on submit
 
 
 ## In Progress
