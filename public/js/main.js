@@ -149,6 +149,14 @@ function counter() {
   }
 }
 
+
+function getDate(date) {
+  d = new Date(date);
+
+  newDate = `${d.toDateString()}`;
+  return newDate;
+}
+
 function getCommentList(postid) {
   $(document).ready(function() {
       $.ajax({
@@ -169,7 +177,7 @@ function getCommentList(postid) {
           data.forEach(function (item) {
 
             $("#commentList").append(`<div class="comment" id=${item.id}><p>${item.content}</p>
-            <span>Posted by ${item.username} ( ${item.name }) on ${item.created_at}</span>
+            <span>Posted by <a href="/users/${item.username}">${item.username} ( ${item.name })</a>  on ${getDate(item.created_at)}</span>
             </div><br>`);
           });
         }
