@@ -70,11 +70,16 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - [x] Get Single Post complete CSS styling
 - [x] Get Comments List via AJAX call
 - [x] Add Comment and reload comments list on submit
+- [x] Comment `created_at` field translated to human readable field in PHP itself, instead of using JS.
 
 
 ## In Progress
 
+- [ ] Post author and submition date below title
 - [ ] Comments with CRUD functions from registered users
+- [ ] Edit comment if Author
+- [ ] Delete comment
+- [ ] Delete comment if post author or comment author
 - [ ] Add Comment without Hidden field
 - [ ] Returning data of a post with author data using SQL Join
 

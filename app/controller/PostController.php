@@ -77,6 +77,14 @@ class PostController
     public function getComments($params) {
         $postId = $params['postid'];
         $comments = self::$post_model->getComments($postId);
+
+        foreach($comments as $index => $comment) {
+            // Changes date to human readable form per comment item in array
+            $comment['created_at'] = date('l, F jS, Y \a\t\ g:i A', strtotime($comment['created_at']));
+            // adds updated comment item back to main array
+            $comments[$index] = $comment;
+        }
+
         echo(json_encode($comments));
     }
 }
