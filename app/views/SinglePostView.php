@@ -21,7 +21,7 @@
 
   </div>
 </div>
-<script>ajaxSubmit('addcomment')
+<script>ajaxSubmit('addcomment','<?php echo $data['post']['id']; ?>')
 getCommentList('<?php echo $data['post']['id']; ?>');
 </script>
 <div id="editBox"></div>

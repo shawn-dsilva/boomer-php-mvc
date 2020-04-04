@@ -1,4 +1,4 @@
-function ajaxSubmit(form) {
+function ajaxSubmit(form, id=null) {
   $(document).ready(function() {
     var formId = '#'+form;
     $(formId).on("submit", function(e) {
@@ -32,6 +32,9 @@ function ajaxSubmit(form) {
             }
             if(form === 'editprofile') {
               window.location = "/profile";
+            }
+            if(form === 'addcomment') {
+              getCommentList(id);
             }
 
           } else {
@@ -169,9 +172,9 @@ function getCommentList(postid) {
 
            console.log(Object.entries(data).length);
            console.log(data);
-
+            $("#commentList").empty();
            if(Object.entries(data).length === 0) {
-            $("#postList").append(`<div class="comment" ><h3>There seem to be no comments here
+            $("#commentList").append(`<div class="comment" ><h3>There seem to be no comments here
             </h3>`);
            }else {
           data.forEach(function (item) {

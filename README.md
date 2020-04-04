@@ -67,6 +67,7 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - [x] Posts in `/postlist` link to single post
 - [x] Comment Model
 - [x] Comment Controller
+- [x] Get Single Post complete CSS styling
 
 
 ## In Progress
@@ -74,7 +75,6 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - [ ] Comments with CRUD functions from registered users
 - [ ] Add Comment without Hidden field
 - [ ] Returning data of a post with author data using SQL Join
-- [ ] Get Single Post complete CSS styling
 
 ## TO-DO
 
