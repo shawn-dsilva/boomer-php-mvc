@@ -4,7 +4,7 @@
   <div class="right-container">
     <a class="right-text" href="/users">Users</a>
     <a class="right-text" href="/posts">Posts</a>
-    <?php if(empty($data) || !isset($data)) {
+    <?php if(empty($data['user_data']) || !isset($data)) {
       echo " <a class='right-text' href='/login'>Login</a>
       <a class='right-text' href='/register'>Register</a>";
 
