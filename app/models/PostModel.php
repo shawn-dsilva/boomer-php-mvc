@@ -16,11 +16,11 @@ class PostModel extends BaseModel
         return $this->execstmt($this->query, [])->fetchAll();
     }
 
-    public function getSinglePost($userId, $postId)
+    public function getSinglePost($postId)
     {
         // $this->selectAll('posts')->where('user_id', $userId)->and('id', $postId);
 
-        $userdata = ['users.username','name', 'posts.id','title','content','created_at'];
+        $userdata = ['users.username','name','users.id','posts.user_id','posts.id','title','content','created_at'];
         $this->select($userdata)->from('users')->join('posts')->on('users.id','posts.user_id')->where('posts.id', $postId);
         return $this->execstmt($this->query, [])->fetch();
     }

@@ -69,8 +69,8 @@ function getPostList() {
 
            console.log(typeof(data));
            if(Object.entries(data).length === 0) {
-            $("#postList").append(`<div class="post" ><h3>You have no Posts
-            </h3><p>Add a New Post</p>`);
+            $("#postList").append(`<div class="post" ><h1 style="color:#3b3b3b;">You have no Posts
+            </h1><p style="text-align:center; font-size: 1.6rem;"><a href="/createpost">Click here to Create a New Post</a></p>`);
            } else {
            data.forEach(function (item) {
 
@@ -78,7 +78,7 @@ function getPostList() {
             </h2></a>
             <p>${item.content}</p>
             <button onclick="window.location.href='/post/${item.id}'"> Read More <i class="far fa-arrow-alt-circle-right"></i></button>
-            <button onclick="editPost(${item.id})"><i class="far fa-edit"></i> Edit</button>
+            <button onclick="window.location.href='/editpostform/${item.id}'"><i class="far fa-edit"></i> Edit</button>
             <button style="border:#dc3545; background-color:#dc3545;" onclick="deletePost(${item.id})"><i class="fas fa-trash-alt"></i> Delete</button></div><br>`);
           });
         }

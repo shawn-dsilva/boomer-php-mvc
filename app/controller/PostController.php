@@ -35,9 +35,8 @@ class PostController
     public function getOnePost($params) {
 
         $data['user_data'] = sessionUserData($_COOKIE['sessionId']);
-        $userId = $data['user_data']['id'];
         // if($params['user_id'] == $userId) {
-        $data['post'] = self::$post_model->getSinglePost($userId, $params['postid']);
+        $data['post'] = self::$post_model->getSinglePost($params['postid']);
         $data['post']['created_at'] = date('l, F jS, Y \a\t\ g:i A', strtotime($data['post']['created_at']));
         // echo(json_encode($post));
         return getView('SinglePost', $data);
@@ -50,6 +49,19 @@ class PostController
         $userId = sessionUserData($_COOKIE['sessionId'])["id"];
         self::$post_model->deletePost($userId, $id);
         echo('success');
+    }
+
+    public function getEditPostForm($params) {
+        $data['user_data'] = sessionUserData($_COOKIE['sessionId']);
+        // if($params['user_id'] == $userId) {
+        $data['post'] = self::$post_model->getSinglePost($params['postid']);
+        if($data['post']['user_id'] == $data['user_data']['id']) {
+            return getView('EditPost', $data);
+        } else {
+            $data['msg'] = 'You Can only Edit your own Posts';
+            return getView('Error404',$data );
+        }
+
     }
 
     public function editPost () {
