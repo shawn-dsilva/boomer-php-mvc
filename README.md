@@ -84,6 +84,7 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - [ ] Delete comment
 - [ ] Delete comment if post author or comment author
 - [ ] Add Comment without Hidden field
+- [ ] Redo CSS in SASS
 
 ## TO-DO
 

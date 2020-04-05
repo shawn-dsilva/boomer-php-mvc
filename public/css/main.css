@@ -870,3 +870,12 @@ textarea {
   border: 2px solid #f57c00;
   border-radius: 5px;
 }
+
+.addcomment h2 {
+  font-weight: 600;
+  font-size: 1.8rem;
+  border-bottom:4px solid #3b3b3b;
+  padding-bottom: 0.5rem;
+  margin:0;
+  width: fit-content;
+}
