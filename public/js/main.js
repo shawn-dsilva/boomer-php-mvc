@@ -169,8 +169,8 @@ function getCommentList(postid) {
            console.log(data);
             $("#commentList").empty();
            if(Object.entries(data).length === 0) {
-            $("#commentList").append(`<div class="comment" ><h3>There seem to be no comments here
-            </h3>`);
+            $("#commentList").append(`<div class="comment" >  <p style="text-align:center; margin: 2rem auto; font-weight:400; font-size: 1.5rem">There are no comments on this post  </p>
+            `);
            }else {
           data.forEach(function (item) {
 
