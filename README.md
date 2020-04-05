@@ -75,11 +75,11 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - [x] Post author and submition date below title.
 - [x] Delete Posts using delete button UI
 - [x] User can edit a post only if he is the post author
+- [x] Style Error Page
 
 
 ## In Progress
 
-- [ ] Style Error Page
 - [ ] Comments with CRUD functions from registered users
 - [ ] Edit comment if Author
 - [ ] Delete comment
