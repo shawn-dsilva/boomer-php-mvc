@@ -73,11 +73,12 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - [x] Comment `created_at` field translated to human readable field in PHP itself, instead of using JS.
 - [x] Returning data of a post with author data using SQL Join.
 - [x] Post author and submition date below title.
+- [x] Delete Posts using delete button UI
+
 
 
 ## In Progress
 
-- [ ] Delete Posts using delete button UI
 - [ ] Comments with CRUD functions from registered users
 - [ ] Edit comment if Author
 - [ ] Delete comment

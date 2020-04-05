@@ -74,11 +74,12 @@ function getPostList() {
            } else {
            data.forEach(function (item) {
 
-            $("#postList").append(`<div class="post" id=${item.id}><h2>${item.title}
-            </h2><p>${item.content}</p>
-            <button onclick="window.location.href='/post/${item.id}'">Read More</button>
-            <button onclick="editPost(${item.id})">Edit</button>
-            <button onclick="deletePost(${item.id})">Delete</button></div><br>`);
+            $("#postList").append(`<div class="post" id=${item.id}><a href="/post/${item.id}"><h2>${item.title}
+            </h2></a>
+            <p>${item.content}</p>
+            <button onclick="window.location.href='/post/${item.id}'"> Read More <i class="far fa-arrow-alt-circle-right"></i></button>
+            <button onclick="editPost(${item.id})"><i class="far fa-edit"></i> Edit</button>
+            <button style="border:#dc3545; background-color:#dc3545;" onclick="deletePost(${item.id})"><i class="fas fa-trash-alt"></i> Delete</button></div><br>`);
           });
         }
 
@@ -89,6 +90,7 @@ function getPostList() {
 
 function deletePost(itemId) {
   $(document).ready(function() {
+
       $.ajax({
         type: "POST",
         url: "/deletepost",
