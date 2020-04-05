@@ -77,6 +77,7 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 
 ## In Progress
 
+- [ ] Delete Posts using delete button UI
 - [ ] Comments with CRUD functions from registered users
 - [ ] Edit comment if Author
 - [ ] Delete comment
