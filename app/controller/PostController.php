@@ -53,12 +53,18 @@ class PostController
 
     public function getEditPostForm($params) {
         $data['user_data'] = sessionUserData($_COOKIE['sessionId']);
+        if(!$data['user_data']) {
+            $data['errcode'] = 401;
+            $data['msg'] = 'You have to be Logged In to do that.<br><a href="/login"> Login Here</a>';
+            return getView('Error404',$data );
+        }
         // if($params['user_id'] == $userId) {
         $data['post'] = self::$post_model->getSinglePost($params['postid']);
         if($data['post']['user_id'] == $data['user_data']['id']) {
             return getView('EditPost', $data);
         } else {
-            $data['msg'] = 'You Can only Edit your own Posts';
+            $data['errcode'] = 403;
+            $data['msg'] = 'You Can only Edit your own Posts,<br><a href="/postlist"> View All Your Blog Posts</a>';
             return getView('Error404',$data );
         }
 

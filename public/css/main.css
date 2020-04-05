@@ -879,3 +879,40 @@ textarea {
   margin:0;
   width: fit-content;
 }
+
+
+.error-container {
+  min-height: 80vh;
+  background-color: whitesmoke;
+  padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+}
+.error {
+  padding:3rem;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom:auto;
+  margin-top:auto;
+  width:40%;
+  background-color: white;
+  border: 2px solid lightgrey;
+}
+
+.error h1 {
+  font-weight: 900;
+  font-size: 3rem;
+  display: inline;
+}
+
+.error-red {
+  display:inline;
+  color:#dc3545;
+  font-size: 3.5rem!important;
+  border:none!important;
+}
+.error p {
+  font-weight: 500;
+  font-size: 1.8rem;
+}
