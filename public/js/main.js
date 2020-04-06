@@ -176,7 +176,7 @@ function getCommentList(postid) {
 
             commentButtons = "";
 
-            if(data.this_user.id === item.id) {
+            if(data.this_user.id === item.user_id) {
               commentButtons = `<div class="comment-buttons">
               <button onclick="editComment(${item.id})"><i class="far fa-edit"></i> Edit Comment</button>
               <button style="border:#dc3545; background-color:#dc3545;" onclick="deleteComment(${item.id})"><i class="fas fa-trash-alt"></i> Delete Comment</button></div>
