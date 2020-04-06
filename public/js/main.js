@@ -176,6 +176,10 @@ function getCommentList(postid) {
 
             $("#commentList").append(`<div class="comment" id=${item.id}><span><a href="/users/${item.username}"> <i class='fas fa-user'></i>  ${item.name} ( ${item.username } )</a> says : </span><br><p>${item.content}</p>
             <span>Posted on ${item.created_at}</span>
+            <div class="comment-buttons">
+              <button onclick="window.location.href='/editpostform/${item.id}'"><i class="far fa-edit"></i> Edit Comment</button>
+              <button style="border:#dc3545; background-color:#dc3545;" onclick="deletePost(${item.id})"><i class="fas fa-trash-alt"></i> Delete Comment</button></div>
+            </div>
             </div><br>`);
           });
         }

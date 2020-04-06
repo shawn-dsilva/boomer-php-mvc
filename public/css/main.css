@@ -841,6 +841,29 @@ textarea {
   margin: 0 auto;
   display:block;
 }
+.comment-buttons {
+  width: 80%;
+  margin: 1.5rem auto;
+  margin-bottom: 0;
+}
+
+.comment button {
+  padding:0.8rem;
+  margin:0.5rem;
+  margin-left:none;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color:white;
+  background-color: #f57c00;
+  border: 2px solid #f57c00;
+  border-radius:5px;
+  opacity: 0.9;
+}
+
+.comment button:hover {
+  opacity: 1;
+  cursor:pointer;
+}
 
 .addcomment {
   width:75%;
