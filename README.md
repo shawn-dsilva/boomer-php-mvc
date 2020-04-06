@@ -77,12 +77,13 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - [x] User can edit a post only if he is the post author
 - [x] Style Error Page
 - [x] Only Authors of commments can see edit/delete buttons
+- [x] Delete comment if Author of Comment
+
 
 ## In Progress
 
 - [ ] Comments with CRUD functions from registered users
 - [ ] Edit comment if Author
-- [ ] Delete comment
 - [ ] Delete comment if post author or comment author
 - [ ] Add Comment without Hidden field
 - [ ] Redo CSS in SASS
