@@ -111,10 +111,9 @@ class PostController
     }
 
     public function removeComment($params) {
-        $commentId = $params['comment_id'];
+        $commentId = $params['commentid'];
         $userId = sessionUserData($_COOKIE['sessionId'])["id"];
         $comment =  self::$post_model->getSingleComment($commentId);
-
         if($userId != $comment['user_id']) {
             echo('ERROR : You Can only Delete Comments Written by You');
         } else {

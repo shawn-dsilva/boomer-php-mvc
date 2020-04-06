@@ -33,6 +33,9 @@ $router->registerRoute('GET', 'createpost', 'StaticPageController::createpost')-
 
 $router->registerRoute('GET', 'editpostform/{:postid}', 'PostController::getEditPostForm')->middleware('isAuth');
 
+
+$router->registerRoute('GET', 'removecomment/{:commentid}', 'PostController::removeComment')->middleware('isAuth');
+
 $router->registerRoute('POST', 'editpost', 'PostController::editPost')->middleware('isAuth');
 
 $router->registerRoute('POST', 'editprofile', 'AuthController::editProfile')->middleware('isAuth');

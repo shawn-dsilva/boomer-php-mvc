@@ -193,3 +193,16 @@ function getCommentList(postid) {
     });
   });
 }
+
+function deleteComment(commentId) {
+  $.ajax({
+    type: "GET",
+    url: "/removecomment/"+commentId,
+    success: function(data) {
+      console.log(data);
+      if(data === 'success') {
+        $("#"+commentId).remove();
+      }
+    }
+  })
+}
