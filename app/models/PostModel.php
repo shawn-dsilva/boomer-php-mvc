@@ -57,4 +57,19 @@ class PostModel extends BaseModel
         return $this->execstmt($this->query, [])->fetchAll();
 
     }
+
+
+    public function getSingleComment($commentId)
+    {
+        // $this->selectAll('posts')->where('user_id', $userId)->and('id', $postId);
+
+        $this->selectAll('comments')->where('comments.id', $commentId);
+        return $this->execstmt($this->query, [])->fetch();
+    }
+
+    public function deleteComment($commentId)
+    {
+        $this->deleteFrom('comments')->where('id', $commentId);
+        return $this->execstmt($this->query, []);
+    }
 }

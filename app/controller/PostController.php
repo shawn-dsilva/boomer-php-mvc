@@ -109,4 +109,17 @@ class PostController
 
         echo(json_encode($data));
     }
+
+    public function removeComment($params) {
+        $commentId = $params['comment_id'];
+        $userId = sessionUserData($_COOKIE['sessionId'])["id"];
+        $comment =  self::$post_model->getSingleComment($commentId);
+
+        if($userId != $comment['user_id']) {
+            echo('ERROR : You Can only Delete Comments Written by You');
+        } else {
+            self::$post_model->deleteComment($commentId);
+            echo('success');
+        }
+    }
 }
