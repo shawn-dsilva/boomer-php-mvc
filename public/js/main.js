@@ -168,18 +168,23 @@ function getCommentList(postid) {
            console.log(Object.entries(data).length);
            console.log(data);
             $("#commentList").empty();
-           if(Object.entries(data).length === 0) {
+           if(Object.entries(data.comments_list).length === 0) {
             $("#commentList").append(`<div class="comment" >  <p style="text-align:center; margin: 2rem auto; font-weight:400; font-size: 1.5rem">There are no comments on this post  </p>
             `);
            }else {
-          data.forEach(function (item) {
+          data.comments_list.forEach(function (item) {
 
+            commentButtons = "";
+
+            if(data.this_user.id === item.id) {
+              commentButtons = `<div class="comment-buttons">
+              <button onclick="editComment(${item.id})"><i class="far fa-edit"></i> Edit Comment</button>
+              <button style="border:#dc3545; background-color:#dc3545;" onclick="deleteComment(${item.id})"><i class="fas fa-trash-alt"></i> Delete Comment</button></div>
+            </div>`
+            }
             $("#commentList").append(`<div class="comment" id=${item.id}><span><a href="/users/${item.username}"> <i class='fas fa-user'></i>  ${item.name} ( ${item.username } )</a> says : </span><br><p>${item.content}</p>
             <span>Posted on ${item.created_at}</span>
-            <div class="comment-buttons">
-              <button onclick="window.location.href='/editpostform/${item.id}'"><i class="far fa-edit"></i> Edit Comment</button>
-              <button style="border:#dc3545; background-color:#dc3545;" onclick="deletePost(${item.id})"><i class="fas fa-trash-alt"></i> Delete Comment</button></div>
-            </div>
+            ${commentButtons}
             </div><br>`);
           });
         }

@@ -104,6 +104,9 @@ class PostController
             $comments[$index] = $comment;
         }
 
-        echo(json_encode($comments));
+        $data['this_user'] = sessionUserData($_COOKIE['sessionId']);
+        $data['comments_list'] = $comments;
+
+        echo(json_encode($data));
     }
 }

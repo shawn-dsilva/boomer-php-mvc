@@ -50,7 +50,7 @@ class PostModel extends BaseModel
     public function getComments($postId)
     {
         // $this->selectAll('comments')->where('post_id', $postId);
-        $userdata = ['users.username','name','content','created_at'];
+        $userdata = ['users.id','users.username','name','content','created_at'];
         $this->select($userdata)->from('users')->join('comments')->on('users.id','comments.user_id')->where('post_id', $postId);
         // die(trigger_error($this->query));
         //die(var_dump($this->execstmt($this->query, [])->fetch()));
