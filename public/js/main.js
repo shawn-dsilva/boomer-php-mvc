@@ -178,11 +178,17 @@ function getCommentList(postid) {
 
             if(data.this_user.id === item.user_id) {
               commentButtons = `<div class="comment-buttons">
-              <button onclick="editComment(${item.id})"><i class="far fa-edit"></i> Edit Comment</button>
+              <button onclick="openCommentEditBox()"><i class="far fa-edit"></i> Edit Comment</button>
               <button style="border:#dc3545; background-color:#dc3545;" onclick="deleteComment(${item.id})"><i class="fas fa-trash-alt"></i> Delete Comment</button></div>
             </div>`
             }
-            $("#commentList").append(`<div class="comment" id=${item.id}><span><a href="/users/${item.username}"> <i class='fas fa-user'></i>  ${item.name} ( ${item.username } )</a> says : </span><br><p>${item.content}</p>
+
+            $("#commentList").append(`<div class="comment" id=${item.id}><span><a href="/users/${item.username}"> <i class='fas fa-user'></i>  ${item.name} ( ${item.username } )</a> says : </span><br>
+            <p>${item.content}</p>
+            <form style="display:none">
+            <textarea rows="10" cols="20" >${item.content}</textarea>
+            <button type="submit"></button>
+            </form>
             <span>Posted on ${item.created_at}</span>
             ${commentButtons}
             </div><br>`);
@@ -205,4 +211,8 @@ function deleteComment(commentId) {
       }
     }
   })
+}
+
+function openCommentEditBox() {
+
 }
