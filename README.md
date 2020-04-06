@@ -76,7 +76,7 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - [x] Delete Posts using delete button UI
 - [x] User can edit a post only if he is the post author
 - [x] Style Error Page
-
+- [x] Only Authors of commments can see edit/delete buttons
 
 ## In Progress
 
