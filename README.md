@@ -78,7 +78,7 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - [x] Style Error Page
 - [x] Only Authors of commments can see edit/delete buttons
 - [x] Delete comment if Author of Comment
-
+- [x] Edit Comment Front-end done.
 
 ## In Progress
 
