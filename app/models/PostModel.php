@@ -72,4 +72,14 @@ class PostModel extends BaseModel
         $this->deleteFrom('comments')->where('id', $commentId);
         return $this->execstmt($this->query, []);
     }
+
+    public function updateComment($data)
+    {
+        $comment['id'] = $data['comment_id'];
+        $comment['content'] = $data['content'];
+
+        $this->update('comments')->set($comment)->where('id', $comment['id']);
+        //die(trigger_error($this->query));
+        return $this->execstmt($this->query, []);
+    }
 }

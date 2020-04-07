@@ -41,6 +41,9 @@ function ajaxSubmit(form, id=null) {
             if(form === 'addcomment') {
               getCommentList(id);
             }
+            if(form === 'editcomment') {
+              getCommentList(id);
+            }
 
           } else {
           $("#errorBox").html("<b>Error:</b> " + data);
@@ -183,7 +186,7 @@ function getCommentList(postid) {
 
             if(data.this_user.id === item.user_id) {
               commentButtons = `<div id="commentButtons${item.id}" class="comment-buttons">
-              <button onclick="javascript:openCommentEditBox(${item.id})"><i class="far fa-edit"></i> Edit Comment</button>
+              <button onclick="javascript:openCommentEditBox(${item.id}, ${postid})"><i class="far fa-edit"></i> Edit Comment</button>
               <button style="border:#dc3545; background-color:#dc3545;" onclick="deleteComment(${item.id})"><i class="fas fa-trash-alt"></i> Delete Comment</button></div>
             </div>`
             }
@@ -216,7 +219,7 @@ function deleteComment(commentId) {
   })
 }
 
-function openCommentEditBox(commentId) {
+function openCommentEditBox(commentId, postId) {
 $(`#commentContent${commentId}`).toggle();
 $(`#commentButtons${commentId}`).toggle();
 $(`#commentTimeDate${commentId}`).toggle();
@@ -231,7 +234,7 @@ if ($(`#commentEditContainer${commentId}`).is(':empty')){
   <button type="button" style="border:#dc3545; background-color:#dc3545;" onclick="openCommentEditBox(${commentId})">
   <i class="fas fa-times"></i>  Cancel Changes</button>
   </form>`)
-  ajaxSubmit('editcomment');
+  ajaxSubmit('editcomment', postId);
 } else {
   $(`#commentEditContainer${commentId}`).empty();
 }

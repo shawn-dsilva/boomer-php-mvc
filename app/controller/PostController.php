@@ -123,7 +123,21 @@ class PostController
     }
 
     public function editComment() {
-        $content = $_POST['content'];
-        echo(json_encode($content));
+        // $content = $_POST['content'];
+        // echo(json_encode($content));
+        $data=array(
+            'comment_id' => $_POST['id'],
+            'content' => $_POST['content'],
+          );
+
+          $comment =  self::$post_model->getSingleComment($data['comment_id']);
+          $userId = sessionUserData($_COOKIE['sessionId'])["id"];
+
+          if($userId != $comment['user_id']) {
+              echo('ERROR : You Can only Edit Comments Written by You');
+          } else {
+              self::$post_model->updateComment($data);
+              echo('success');
+          }
     }
 }
