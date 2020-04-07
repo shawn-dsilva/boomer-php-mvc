@@ -189,7 +189,8 @@ function getCommentList(postid) {
             <input type="hidden" name="commentId" value="${item.id}"></input>
             <textarea  rows="8" name="commentContent" >${item.content}</textarea>
             <button type="submit"><i class="fas fa-save"></i>  Submit Changes</button>
-            <button style="border:#dc3545; background-color:#dc3545;"><i class="fas fa-times"></i>  Cancel Changes</button>
+            <button type="button" style="border:#dc3545; background-color:#dc3545;" onclick="openCommentEditBox(${item.id})">
+            <i class="fas fa-times"></i>  Cancel Changes</button>
             </form>
             <span id="commentTimeDate${item.id}">Posted on ${item.created_at}</span>
             ${commentButtons}
@@ -216,9 +217,9 @@ function deleteComment(commentId) {
 }
 
 function openCommentEditBox(commentId) {
-$(`#commentEditBox${commentId}`).show();
-$(`#commentContent${commentId}`).hide();
-$(`#commentButtons${commentId}`).hide();
-$(`#commentTimeDate${commentId}`).hide();
+$(`#commentEditBox${commentId}`).toggle();
+$(`#commentContent${commentId}`).toggle();
+$(`#commentButtons${commentId}`).toggle();
+$(`#commentTimeDate${commentId}`).toggle();
 
 }
