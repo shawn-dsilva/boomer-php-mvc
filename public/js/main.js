@@ -186,8 +186,10 @@ function getCommentList(postid) {
             $("#commentList").append(`<div class="comment" id=${item.id}><span><a href="/users/${item.username}"> <i class='fas fa-user'></i>  ${item.name} ( ${item.username } )</a> says : </span><br>
             <p id="commentContent${item.id}">${item.content}</p>
             <form id="commentEditBox${item.id}" style="display:none">
-            <textarea  rows="8"  >${item.content}</textarea>
+            <input type="hidden" name="commentId" value="${item.id}"></input>
+            <textarea  rows="8" name="commentContent" >${item.content}</textarea>
             <button type="submit"><i class="fas fa-save"></i>  Submit Changes</button>
+            <button style="border:#dc3545; background-color:#dc3545;"><i class="fas fa-times"></i>  Cancel Changes</button>
             </form>
             <span id="commentTimeDate${item.id}">Posted on ${item.created_at}</span>
             ${commentButtons}
