@@ -42,5 +42,8 @@ $router->registerRoute('POST', 'editprofile', 'AuthController::editProfile')->mi
 
 $router->registerRoute('POST', 'addcomment', 'PostController::addComment')->middleware('isAuth');
 
+$router->registerRoute('POST', 'editcomment', 'PostController::editComment')->middleware('isAuth');
+
+
 // $router->registerRoute('GET', 'users-list', 'UserController@index');
 // $router->registerRoute('POST', 'users', 'UserController@store');

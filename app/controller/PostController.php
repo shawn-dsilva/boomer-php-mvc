@@ -121,4 +121,9 @@ class PostController
             echo('success');
         }
     }
+
+    public function editComment() {
+        $content = $_POST['content'];
+        echo(json_encode($content));
+    }
 }
