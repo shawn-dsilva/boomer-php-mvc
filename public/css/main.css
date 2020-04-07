@@ -860,6 +860,15 @@ textarea {
   opacity: 0.9;
 }
 
+.comment form {
+  width:80%;
+  margin: 0 auto;
+}
+
+.comment textarea {
+  resize: none;
+}
+
 .comment button:hover {
   opacity: 1;
   cursor:pointer;

@@ -177,19 +177,19 @@ function getCommentList(postid) {
             commentButtons = "";
 
             if(data.this_user.id === item.user_id) {
-              commentButtons = `<div class="comment-buttons">
-              <button onclick="openCommentEditBox()"><i class="far fa-edit"></i> Edit Comment</button>
+              commentButtons = `<div id="commentButtons${item.id}" class="comment-buttons">
+              <button onclick="javascript:openCommentEditBox(${item.id})"><i class="far fa-edit"></i> Edit Comment</button>
               <button style="border:#dc3545; background-color:#dc3545;" onclick="deleteComment(${item.id})"><i class="fas fa-trash-alt"></i> Delete Comment</button></div>
             </div>`
             }
 
             $("#commentList").append(`<div class="comment" id=${item.id}><span><a href="/users/${item.username}"> <i class='fas fa-user'></i>  ${item.name} ( ${item.username } )</a> says : </span><br>
-            <p>${item.content}</p>
-            <form style="display:none">
-            <textarea rows="10" cols="20" >${item.content}</textarea>
-            <button type="submit"></button>
+            <p id="commentContent${item.id}">${item.content}</p>
+            <form id="commentEditBox${item.id}" style="display:none">
+            <textarea  rows="8"  >${item.content}</textarea>
+            <button type="submit"><i class="fas fa-save"></i>  Submit Changes</button>
             </form>
-            <span>Posted on ${item.created_at}</span>
+            <span id="commentTimeDate${item.id}">Posted on ${item.created_at}</span>
             ${commentButtons}
             </div><br>`);
           });
@@ -213,6 +213,10 @@ function deleteComment(commentId) {
   })
 }
 
-function openCommentEditBox() {
+function openCommentEditBox(commentId) {
+$(`#commentEditBox${commentId}`).show();
+$(`#commentContent${commentId}`).hide();
+$(`#commentButtons${commentId}`).hide();
+$(`#commentTimeDate${commentId}`).hide();
 
 }
