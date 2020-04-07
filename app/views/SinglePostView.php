@@ -42,6 +42,7 @@ $isLoggedIn = FALSE;
   </div>
 </div>
 <script>//ajaxSubmit('addcomment','<?php echo $data['post']['id']; ?>')
+// ajaxSubmit('editcomment');
 getCommentList('<?php echo $data['post']['id']; ?>');
 </script>
 <div id="editBox"></div>

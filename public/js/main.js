@@ -1,6 +1,11 @@
 function ajaxSubmit(form, id=null) {
   $(document).ready(function() {
     var formId = '#'+form;
+    if($(formId).length) {
+      console.log(formId+"exists!");
+    } else {
+      console.log(formId+"MISSING");
+    }
     $(formId).on("submit", function(e) {
       e.preventDefault();
       $.ajax({
@@ -184,14 +189,9 @@ function getCommentList(postid) {
             }
 
             $("#commentList").append(`<div class="comment" id=${item.id}><span><a href="/users/${item.username}"> <i class='fas fa-user'></i>  ${item.name} ( ${item.username } )</a> says : </span><br>
+            <div id="commentEditContainer${item.id}"></div>
             <p id="commentContent${item.id}">${item.content}</p>
-            <form id="commentEditBox${item.id}" style="display:none">
-            <input type="hidden" name="commentId" value="${item.id}"></input>
-            <textarea  rows="8" name="commentContent" >${item.content}</textarea>
-            <button type="submit"><i class="fas fa-save"></i>  Submit Changes</button>
-            <button type="button" style="border:#dc3545; background-color:#dc3545;" onclick="openCommentEditBox(${item.id})">
-            <i class="fas fa-times"></i>  Cancel Changes</button>
-            </form>
+
             <span id="commentTimeDate${item.id}">Posted on ${item.created_at}</span>
             ${commentButtons}
             </div><br>`);
@@ -217,9 +217,24 @@ function deleteComment(commentId) {
 }
 
 function openCommentEditBox(commentId) {
-$(`#commentEditBox${commentId}`).toggle();
 $(`#commentContent${commentId}`).toggle();
 $(`#commentButtons${commentId}`).toggle();
 $(`#commentTimeDate${commentId}`).toggle();
+var content =  $(`#commentContent${commentId}`).text();
+
+if ($(`#commentEditContainer${commentId}`).is(':empty')){
+  $(`#commentEditContainer${commentId}`).prepend(`
+  <form id="editcomment" >
+  <input type="hidden" name="id" value="${commentId}"></input>
+  <textarea  rows="8" name="content" >${content}</textarea>
+  <button type="submit" ><i class="fas fa-save"></i>  Submit Changes</button>
+  <button type="button" style="border:#dc3545; background-color:#dc3545;" onclick="openCommentEditBox(${commentId})">
+  <i class="fas fa-times"></i>  Cancel Changes</button>
+  </form>`)
+  ajaxSubmit('editcomment');
+} else {
+  $(`#commentEditContainer${commentId}`).empty();
+}
+
 
 }
