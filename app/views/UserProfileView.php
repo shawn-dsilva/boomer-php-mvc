@@ -62,6 +62,8 @@
   <?php
 
   unset($data['user_data']['id']);
+  unset($data['user_data']['password']);
+
   echo "<form id='editprofile'>";
 
     foreach($data['user_data'] as $key => $value) {
