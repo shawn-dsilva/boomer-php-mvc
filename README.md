@@ -81,23 +81,21 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - [x] Edit Comment Front-end done.
 - [x] Edit comment if Author
 - [x] Comments with CRUD functions from registered users
+- [x] Publicly viewable user Profile styling.
+
 
 ## In Progress
 
-
-- [ ] Delete comment if post author or comment author
-- [ ] Add Comment without Hidden field
+- [ ] Input validation for all new features
+- [ ] Rate Limiting
 - [ ] Redo CSS in SASS
-- [ ] Publicly viewable user Profile styling.
 
 ## TO-DO
 
 - [ ] List of all users registered
 - [ ] List of latest posts from all users
 - [ ] Schema Builder
-- [ ] Rate Limiting
 - [ ] Upvotes and Downvotes from users
-- [ ] Input validation for all new features
 
 ## Author
 
