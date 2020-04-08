@@ -16,8 +16,9 @@ class AuthController  {
   }
 
   public function getUser($params) {
-    $user = self::$user_model->userExists('username', $params['username']);
-    empty($user) ? getView('Error404', 'User Not Found'): getView('UserProfile', $user) ;
+    $data['user_data'] = self::$user_model->userExists('username', $params['username']);
+    $error['msg'] = 'User Not Found';
+    empty($data['user_data']) ? getView('Error404', $error['msg']): getView('UserProfile', $data['user_data']) ;
   }
 
   public function getProfile() {
