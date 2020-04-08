@@ -54,7 +54,7 @@
   ?>
 
 
-    <h1>YOUR PROFILE</h1>
+    <h1><?php echo $data['user_data']['name']." ( ".$data['user_data']['username']." )"; ?></h1>
 
     <div class="profile-data">
 
