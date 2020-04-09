@@ -86,13 +86,13 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 
 ## In Progress
 
+- [ ] List of all users registered
 - [ ] Input validation for all new features
 - [ ] Rate Limiting
 - [ ] Redo CSS in SASS
 
 ## TO-DO
 
-- [ ] List of all users registered
 - [ ] List of latest posts from all users
 - [ ] Schema Builder
 - [ ] Upvotes and Downvotes from users

@@ -5,6 +5,10 @@ include_once('../app/models/BaseModel.php');
 class UserModel extends BaseModel {
 
 
+    public function getAllUsers() {
+
+    }
+
     public function addUser($data) {
 
     $this->insertInto('users', $data);
