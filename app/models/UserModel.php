@@ -6,13 +6,14 @@ class UserModel extends BaseModel {
 
 
     public function getAllUsers() {
-
+        $this->selectAll('users');
+        return $this->execstmt($this->query, [])->fetchAll();
     }
 
     public function addUser($data) {
 
-    $this->insertInto('users', $data);
-    $this->execstmt($this->query, $data);
+        $this->insertInto('users', $data);
+        $this->execstmt($this->query, $data);
     }
 
     public function userExists(string $name, $param) { // checks if user exists using a parameter

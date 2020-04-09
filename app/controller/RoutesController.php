@@ -14,6 +14,8 @@ $router->registerRoute('POST', 'register', 'AuthController::register');
 
 $router->registerRoute('GET', 'logout', 'AuthController::logout');
 
+$router->registerRoute('GET', 'users', 'AuthController::getUsersList')->middleware('isAuth');
+
 $router->registerRoute('GET', 'users/{:username}', 'AuthController::getUser');
 $router->registerRoute('GET', 'users/{:username}/posts/{:post}', 'StaticPageController::home');
 
@@ -35,6 +37,8 @@ $router->registerRoute('GET', 'editpostform/{:postid}', 'PostController::getEdit
 
 
 $router->registerRoute('GET', 'removecomment/{:commentid}', 'PostController::removeComment')->middleware('isAuth');
+
+
 
 $router->registerRoute('POST', 'editpost', 'PostController::editPost')->middleware('isAuth');
 

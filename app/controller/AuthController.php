@@ -21,6 +21,12 @@ class AuthController  {
     empty($userdata['user']) ? getView('Error404', $error): getView('UserProfile', $userdata) ;
   }
 
+  public function getUsersList() {
+    $data = self::$user_model->getAllUsers();
+    // die(var_dump($data));
+    getView('UsersList', $data);
+  }
+
   public function getProfile() {
     $data['user_data'] = sessionUserData($_COOKIE['sessionId']);
 
