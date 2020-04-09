@@ -82,11 +82,12 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - [x] Edit comment if Author
 - [x] Comments with CRUD functions from registered users
 - [x] Publicly viewable user Profile styling.
+- [x] List of all users registered
 
 
 ## In Progress
 
-- [ ] List of all users registered
+- [ ] User List Page CSS styling
 - [ ] Input validation for all new features
 - [ ] Rate Limiting
 - [ ] Redo CSS in SASS
