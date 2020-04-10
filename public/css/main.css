@@ -976,16 +976,49 @@ textarea {
   margin-bottom: 3rem;
 }
 
-.userlist-item h2 {
+.userlist-item   {
   border: 2px solid lightgrey;
+  display:flex;
+  justify-content: space-evenly;
+  color: #3b3b3b;
+
+}
+
+.userlist-item h2 {
+  display: block;
   font-weight: 600;
   padding:2rem;
   font-size: 1.5rem;
-  color:#3b3b3b;
+  color:inherit;
 }
 
-.userlist-item h2:hover {
+.registered-date {
+  margin-left: auto ;
+  font-weight: 300!important;
+}
+
+.userlist-item:hover {
   color:#f57c00!important;
   border: 2px solid #f57c00;
   border-left: 8px solid #f57c00;
+}
+
+
+.table-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  border: 3px solid lightgrey;
+  margin: 2rem 0;
+}
+
+.table-element {
+  flex-grow : 2;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 1.5rem;
+  color: #3b3b3b;
+  border-left: 2px solid lightgrey;
+  border-right: 2px solid lightgrey;
 }

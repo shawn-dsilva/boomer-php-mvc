@@ -3,12 +3,20 @@
 <div class="userlist-bg">
 <div class="userlist-container">
   <h1>Registered Users</h1>
-<?php foreach ($data as $item): ?>
-  <div class="userlist-item">
-  <a href="/users/<?= $item['username']?>">
-  <h2><?php echo $item['name']." ( ".$item['username']." ) " ?><?php echo $item['registered_on']; ?></h2>
-  </a>
+  <div class="table-container">
+    <div class="table-element">Real Name</div>
+    <div class="table-element">Username</div>
+    <div class="table-element">Registered On</div>
   </div>
+<?php foreach ($data as $item): ?>
+  <a href="/users/<?= $item['username']?>">
+
+  <div class="userlist-item">
+  <h2><?php echo $item['name']." ( ".$item['username']." ) " ?></h2>
+  <h2 class="registered-date"><?php echo $item['registered_on']; ?></h2>
+  </div>
+  </a>
+
 <?php endforeach; ?>
 </div>
 </div>
