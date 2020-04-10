@@ -4,9 +4,10 @@ include_once('../app/models/PostModel.php');
 include_once('../app/controller/SessionsController.php');
 include_once('../core/utils/Validator.php');
 include_once('../app/models/UserModel.php');
+include_once('../app/controller/BaseController.php');
 
 
-class PostController
+class PostController extends BaseController
 {
     public static $post_model;
 
@@ -39,7 +40,7 @@ class PostController
         $data['post'] = self::$post_model->getSinglePost($params['postid']);
         $data['post']['created_at'] = date('l, F jS, Y \a\t\ g:i A', strtotime($data['post']['created_at']));
         // echo(json_encode($post));
-        return getView('SinglePost', $data);
+        return self::getView('SinglePost', $data);
         // } else echo 'Error : Access Denied';
 
     }
@@ -56,16 +57,16 @@ class PostController
         if(!$data['user_data']) {
             $data['errcode'] = 401;
             $data['msg'] = 'You have to be Logged In to do that.<br><a href="/login"> Login Here</a>';
-            return getView('Error404',$data );
+            return self::getView('Error404',$data );
         }
         // if($params['user_id'] == $userId) {
         $data['post'] = self::$post_model->getSinglePost($params['postid']);
         if($data['post']['user_id'] == $data['user_data']['id']) {
-            return getView('EditPost', $data);
+            return self::getView('EditPost', $data);
         } else {
             $data['errcode'] = 403;
             $data['msg'] = 'You Can only Edit your own Posts,<br><a href="/postlist"> View All Your Blog Posts</a>';
-            return getView('Error404',$data );
+            return self::getView('Error404',$data );
         }
 
     }

@@ -1,52 +1,48 @@
 <?php
 
 include_once '../app/controller/SessionsController.php';
+include_once('../app/controller/BaseController.php');
 
 
-class StaticPageController {
-  public static $mwReturns = [];
+class StaticPageController extends BaseController {
   public static $data = [];
 
   public function init($mwReturns)
-  {     self::$mwReturns = $mwReturns;
-    if(self::$mwReturns['isAuth'][0] == TRUE) {
-      self::$data['user_data'] = sessionUserData($_COOKIE['sessionId']);
-    }
-
+  {
   }
 
   public function home () {
     // die(var_dump(self::$mwReturns));
-    return getView('Home', self::$data);
+    return self::getView('Home');
   }
 
   public function dashboard () {
     // die(var_dump(self::$data['user_data']));
     // exit();
     // $data['posts'] = $pc->getPosts($data['user_data']['id']);
-    return getView('Dashboard',self::$data);
+    return self::getView('Dashboard',self::$data);
   }
 
   public function login () {
-    return getView('Login');
+    return self::getView('Login');
   }
 
   public function register () {
-    return getView('Register');
+    return self::getView('Register');
   }
 
 
   public function postlist () {
-    return getView('PostList', self::$data);
+    return self::getView('PostList');
   }
 
   public function createpost () {
-    return getView('CreatePost', self::$data);
+    return self::getView('CreatePost');
   }
 
   public static function err404($msg) {
     self::$data['user_data'] = sessionUserData($_COOKIE['sessionId']);
     self::$data['msg'] = $msg;
-    return getView('Error404', self::$data);
+    return self::getView('Error404');
   }
 }

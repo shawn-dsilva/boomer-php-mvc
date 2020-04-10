@@ -8,6 +8,6 @@ function findMethod(){
   return $_SERVER['REQUEST_METHOD'];
 }
 
-function getView($name, $data = []) {
+function view($name, $data = []) {
   return require "../app/views/{$name}View.php";
 }

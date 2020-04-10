@@ -64,9 +64,9 @@ class BaseController {
     }
   }
 
-  public function getViewWithData($viewName, $data) {
-    die(var_dump(self::$middlewareReturns['isAuth']['user_data']));
-    getView($viewName, $data);
+  public function getView($viewName, $data = null) {
+    $data['user_data'] = self::$middlewareReturns['isAuth']['user_data'];
+    view($viewName, $data);
 
   }
 

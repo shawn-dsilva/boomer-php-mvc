@@ -19,7 +19,7 @@ class AuthController extends BaseController {
   public function getUser($params) {
     $userdata['user'] = self::$user_model->userExists('username', $params['username']);
     $error['msg'] = 'User Not Found';
-    empty($userdata['user']) ? getView('Error404', $error): getView('UserProfile', $userdata) ;
+    empty($userdata['user']) ? self::getView('Error404', $error): self::getView('UserProfile', $userdata) ;
   }
 
   public function getUsersList() {
@@ -31,8 +31,8 @@ class AuthController extends BaseController {
       // adds updated comment item back to main array
       $userlist[$index] = $user;
   }
-    // getView('UsersList', $userlist);
-    self::getViewWithData('UsersList', $userlist);
+    // self::getView('UsersList', $userlist);
+    self::getView('UsersList', $userlist);
   }
 
   public function getProfile() {
@@ -43,7 +43,7 @@ class AuthController extends BaseController {
       Header("Location: login");
     } else {
       unset($data['user_data']['password']);
-      getView('SelfProfile',$data);
+      self::getView('SelfProfile',$data);
     }
 
   }

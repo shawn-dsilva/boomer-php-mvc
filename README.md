@@ -84,11 +84,11 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - [x] Publicly viewable user Profile styling.
 - [x] List of all users registered
 - [x] User List Page CSS styling
-
+- [x] Check for User data associated with sessionId in isAuth middleware
+- [x] getView reworked to automatically add user data from sessions into views
 
 ## In Progress
 
-- [ ] Check for User data associated with sessionId in isAuth middleware
 - [ ] Delete previous session ID entries from DB Upon new session creation
 - [ ] Input validation for all new features
 - [ ] Rate Limiting
