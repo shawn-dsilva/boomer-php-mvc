@@ -9,6 +9,7 @@ CREATE TABLE `users` (
   `name` varchar(100) COLLATE utf8_unicode_ci ,
   `about` varchar(1200) COLLATE utf8_unicode_ci ,
   `location` varchar(100) COLLATE utf8_unicode_ci,
+  `registered_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
