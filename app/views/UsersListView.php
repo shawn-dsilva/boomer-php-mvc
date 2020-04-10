@@ -6,7 +6,7 @@
 <?php foreach ($data as $item): ?>
   <div class="userlist-item">
   <a href="/users/<?= $item['username']?>">
-  <h2><?php echo $item['name']." ( ".$item['username']." ) " ?></h2>
+  <h2><?php echo $item['name']." ( ".$item['username']." ) " ?><?php echo $item['registered_on']; ?></h2>
   </a>
   </div>
 <?php endforeach; ?>

@@ -22,9 +22,15 @@ class AuthController  {
   }
 
   public function getUsersList() {
-    $data = self::$user_model->getAllUsers();
-    // die(var_dump($data));
-    getView('UsersList', $data);
+    $userlist = self::$user_model->getAllUsers();
+    // die(var_dump($userlist));
+    foreach($userlist as $index => $user) {
+      // Changes date to human readable form per comment item in array
+      $user['registered_on'] = date('l, F jS, Y ', strtotime($user['registered_on']));
+      // adds updated comment item back to main array
+      $userlist[$index] = $user;
+  }
+    getView('UsersList', $userlist);
   }
 
   public function getProfile() {

@@ -27,15 +27,11 @@ class UserModel extends BaseModel {
 
     public function saveSession($sessionId, $data) {
 
-        unset($data['password']);
-        unset($data['name']);
-        unset($data['about']);
-        unset($data['location']);
-
-        $data["sessionId"] = $sessionId;
+        $session['id'] = $data['id'];
+        $session["sessionId"] = $sessionId;
         // die(var_dump($data));
-        $this->insertInto('sessions', $data);
-        $this->execstmt($this->query, $data);
+        $this->insertInto('sessions', $session);
+        $this->execstmt($this->query, $session);
     }
 
     public function getSession($sessionId) {
