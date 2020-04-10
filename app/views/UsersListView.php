@@ -5,7 +5,9 @@
   <h1>Registered Users</h1>
 <?php foreach ($data as $item): ?>
   <div class="userlist-item">
-    <h2><?php echo $item['name']." ( ".$item['username']." ) " ?></h2>
+  <a href="/users/<?= $item['username']?>">
+  <h2><?php echo $item['name']." ( ".$item['username']." ) " ?></h2>
+  </a>
   </div>
 <?php endforeach; ?>
 </div>

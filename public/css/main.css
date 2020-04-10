@@ -956,7 +956,7 @@ textarea {
 }
 
 .userlist-container {
-  min-height: 80vh;
+  min-height: 50vh;
   width: 50%;
   margin: 3rem auto;
   padding: 3rem;
@@ -981,4 +981,11 @@ textarea {
   font-weight: 600;
   padding:2rem;
   font-size: 1.5rem;
+  color:#3b3b3b;
+}
+
+.userlist-item h2:hover {
+  color:#f57c00!important;
+  border: 2px solid #f57c00;
+  border-left: 8px solid #f57c00;
 }
