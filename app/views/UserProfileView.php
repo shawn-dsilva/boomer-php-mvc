@@ -14,6 +14,7 @@
     function render($icons, $key, $value) {
 
 
+      (empty($value) ? $value = 'This field is empty ' : $value);
 
       $title = " <div class='profile-item-title'>
         {$icons[$key]}
