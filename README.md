@@ -88,6 +88,8 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 
 ## In Progress
 
+- [ ] Check for User data associated with sessionId in isAuth middleware
+- [ ] Delete previous session ID entries from DB Upon new session creation
 - [ ] Input validation for all new features
 - [ ] Rate Limiting
 - [ ] Redo CSS in SASS
