@@ -7,7 +7,7 @@ class BaseController {
   public $method;
   public $middleware = [];
   public $mwReturns = [];
-
+  public static $middlewareReturns = [];
   public $paramk = [];
   public $params = [];
 
@@ -59,8 +59,15 @@ class BaseController {
   public function runMiddlewares() {
     foreach( $this->middleware as $middleware) {
     $this->mwReturns[$middleware] = call_user_func($middleware, $this);
+    self::$middlewareReturns[$middleware] = call_user_func($middleware, $this);
 
     }
+  }
+
+  public function getViewWithData($viewName, $data) {
+    die(var_dump(self::$middlewareReturns['isAuth']['user_data']));
+    getView($viewName, $data);
+
   }
 
 }

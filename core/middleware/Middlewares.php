@@ -10,16 +10,18 @@ function isAuth($obj) {
 
       }
 
-      return false;
+      return [false, 'someText'];
 
     } else {
+
+      $userdata = sessionUserData($_COOKIE['sessionId']);
 
       if($obj->uri == 'login' || $obj->uri == 'register') {
         Header("Location: dashboard");
         exit();
       }
 
-      return true;
+      return [true, 'user_data' => $userdata];
 
     }
 

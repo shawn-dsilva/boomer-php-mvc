@@ -9,13 +9,14 @@ class StaticPageController {
 
   public function init($mwReturns)
   {     self::$mwReturns = $mwReturns;
-    if(self::$mwReturns['isAuth'] == TRUE) {
+    if(self::$mwReturns['isAuth'][0] == TRUE) {
       self::$data['user_data'] = sessionUserData($_COOKIE['sessionId']);
     }
 
   }
 
   public function home () {
+    // die(var_dump(self::$mwReturns));
     return getView('Home', self::$data);
   }
 

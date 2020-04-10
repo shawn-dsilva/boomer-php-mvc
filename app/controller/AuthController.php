@@ -3,15 +3,16 @@
 include_once('../app/models/UserModel.php');
 include_once('../app/controller/SessionsController.php');
 include_once('../core/utils/Validator.php');
+include_once('../app/controller/BaseController.php');
 
 
-class AuthController  {
+class AuthController extends BaseController {
 
   public  static $user_model;
-  public static $mwReturns = [];
+  // public static $mwReturns = [];
   public function init($mwReturns)
   {
-    self::$mwReturns = $mwReturns;
+    // self::$mwReturns = $mwReturns;
     self::$user_model = new UserModel();
   }
 
@@ -30,7 +31,8 @@ class AuthController  {
       // adds updated comment item back to main array
       $userlist[$index] = $user;
   }
-    getView('UsersList', $userlist);
+    // getView('UsersList', $userlist);
+    self::getViewWithData('UsersList', $userlist);
   }
 
   public function getProfile() {
