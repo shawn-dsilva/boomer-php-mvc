@@ -1061,30 +1061,53 @@ textarea {
   display:flex;
   flex-direction: column;
   color: #3b3b3b;
-  margin:1rem 0.5rem;
-  padding:1rem
+  margin:1rem 0.75rem;
+  padding:1rem;
+  padding-bottom:2rem;
 
 }
 
 .postlist-item h2 {
   display: block;
   font-weight: 600;
-  padding:1rem;
+  padding-top:1rem;
   margin:0;
   font-size: 2rem;
   color:inherit;
 }
 
+.postlist-item p {
+  display: block;
+  font-weight: 400;
+  margin:0;
+  font-size: 1.1rem;
+  color:inherit;
+}
+
 .post-metadata {
+  padding: 1.2rem 0;
+}
+.post-metadata span {
   margin-left: auto ;
   font-weight: 300!important;
-  font-size: 1.1rem!important;
+  font-size: 1.3rem!important;
   margin:0;
   padding:0!important;
+  color: #3b3b3b;
 }
 
 .postlist-item:hover {
-  color:#f57c00!important;
   border: 2px solid #f57c00;
   border-left: 8px solid #f57c00;
+}
+
+.postlist-item a:hover {
+  width:fit-content;
+}
+
+.read-more {
+  margin-top:auto;
+  padding-top:1rem;
+  font-size: 1.2rem;
+  font-weight: 400;
 }
