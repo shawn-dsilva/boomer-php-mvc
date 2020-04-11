@@ -99,6 +99,8 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 
 - [ ] Schema Builder
 - [ ] Upvotes and Downvotes from users
+- [ ] Refactor BaseController.php into RouteHandler.php.
+- [ ] New BaseController Class for other Controller classes to inherit from.
 
 ## Author
 
