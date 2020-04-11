@@ -1022,3 +1022,69 @@ textarea {
   border-left: 2px solid lightgrey;
   border-right: 2px solid lightgrey;
 }
+
+
+.postlist-bg {
+  background-color: #f0f0f0;
+  margin:0;
+  padding:3rem;
+}
+
+.postlist-container {
+  min-height: 50vh;
+  width: 80%;
+  margin: 3rem auto;
+  padding: 3rem;
+  background-color: white;
+  box-shadow: 3px 4px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.list-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap:nowrap;
+}
+.postlist-container h1 {
+  font-weight: 900;
+  font-size: 3rem;
+  color: #3b3b3b;
+  border-bottom: 8px solid #3b3b3b;
+  padding-bottom: 1rem;
+  width:fit-content;
+  text-align: center;
+  margin:0 auto;
+  margin-bottom: 3rem;
+}
+
+.postlist-item   {
+  border: 2px solid lightgrey;
+  display:flex;
+  flex-direction: column;
+  color: #3b3b3b;
+  margin:1rem 0.5rem;
+  padding:1rem
+
+}
+
+.postlist-item h2 {
+  display: block;
+  font-weight: 600;
+  padding:1rem;
+  margin:0;
+  font-size: 2rem;
+  color:inherit;
+}
+
+.post-metadata {
+  margin-left: auto ;
+  font-weight: 300!important;
+  font-size: 1.1rem!important;
+  margin:0;
+  padding:0!important;
+}
+
+.postlist-item:hover {
+  color:#f57c00!important;
+  border: 2px solid #f57c00;
+  border-left: 8px solid #f57c00;
+}

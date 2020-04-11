@@ -12,7 +12,9 @@ class PostModel extends BaseModel
 
     public function getAllPosts()
     {
-        $this->selectAll('posts');
+        // $this->selectAll('posts');
+        $userdata = ['users.username','name','users.id','posts.user_id','posts.id','title','content','created_at'];
+        $this->select($userdata)->from('users')->join('posts')->on('users.id','posts.user_id');
         return $this->execstmt($this->query, [])->fetchAll();
     }
 
