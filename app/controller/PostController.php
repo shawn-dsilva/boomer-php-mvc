@@ -16,6 +16,11 @@ class PostController extends BaseController
         self::$post_model = new PostModel();
     }
 
+    public function getAllPosts() {
+        $posts['post_data'] = self::$post_model->getAllPosts();
+        self::getView('AllPostsList', $posts);
+    }
+
     public function addPost () {
 
         $data=array(

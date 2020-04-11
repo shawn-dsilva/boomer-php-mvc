@@ -10,6 +10,12 @@ class PostModel extends BaseModel
         $this->execstmt($this->query, $data);
     }
 
+    public function getAllPosts()
+    {
+        $this->selectAll('posts');
+        return $this->execstmt($this->query, [])->fetchAll();
+    }
+
     public function getPost($userId)
     {
         $this->selectAll('posts')->where('user_id', $userId);

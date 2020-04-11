@@ -2,15 +2,11 @@
 <?php require('includes/navbar.php'); ?>
 <div class="postlist-bg">
 <div class="postlist-container">
-  <h1>Registered Users</h1>
-  <div class="table-container">
-    <div class="table-element">Real Name</div>
-    <div class="table-element">Username</div>
-    <div class="table-element">Registered On</div>
-  </div>
+  <h1>Latest Posts From All Users</h1>
+
 <?php
 unset($data['user_data']);
-foreach ($data as $item): ?>
+foreach ($data['post_data'] as $item): ?>
   <a href="/users/<?= $item['username']?>">
 
   <div class="postlist-item">

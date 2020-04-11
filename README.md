@@ -101,6 +101,8 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - [ ] Upvotes and Downvotes from users
 - [ ] Refactor BaseController.php into RouteHandler.php.
 - [ ] New BaseController Class for other Controller classes to inherit from.
+- [ ] Refactor all routers in RoutesController.php into `routes` folder inside '`app` folder
+- [ ] The `routes` folder must contain routes grouped by their function in a single file
 
 ## Author
 
