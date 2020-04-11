@@ -89,6 +89,7 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 
 ## In Progress
 
+- [ ] List of latest posts from all users
 - [ ] Delete previous session ID entries from DB Upon new session creation
 - [ ] Input validation for all new features
 - [ ] Rate Limiting
@@ -96,7 +97,6 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 
 ## TO-DO
 
-- [ ] List of latest posts from all users
 - [ ] Schema Builder
 - [ ] Upvotes and Downvotes from users
 
