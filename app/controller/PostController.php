@@ -18,6 +18,13 @@ class PostController extends BaseController
 
     public function getAllPosts() {
         $posts['post_data'] = self::$post_model->getAllPosts();
+
+        foreach($posts['post_data'] as $index => $post) {
+            // Changes date to human readable form per comment item in array
+            $post['created_at'] = date('l, F jS, Y \a\t\ g:i A', strtotime($post['created_at']));
+            // adds updated comment item back to main array
+            $posts['post_data'][$index] = $post;
+        }
         self::getView('AllPostsList', $posts);
     }
 

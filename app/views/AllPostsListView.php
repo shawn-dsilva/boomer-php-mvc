@@ -6,14 +6,16 @@
 
 <?php
 unset($data['user_data']);
+// die(var_dump($data['post_data']));
 foreach ($data['post_data'] as $item): ?>
-  <a href="/users/<?= $item['username']?>">
-
-  <div class="postlist-item">
-  <h2><?php echo $item['name']." ( ".$item['username']." ) " ?></h2>
-  <h2 class="registered-date"><?php echo $item['registered_on']; ?></h2>
-  </div>
+<div class="postlist-item">
+  <a href="/post/<?= $item['id']?>">
+  <h2><?= $item['title']?></h2>
   </a>
+  <h2 class="registered-date"><?php echo $item['created_at']; ?></h2>
+  <p><?= substr($item['content'], 0, 150)."..."?></p>
+  <a href="/post/<?= $item['id']?>">READ MORE => </a>
+  </div>
 
 <?php endforeach; ?>
 </div>
