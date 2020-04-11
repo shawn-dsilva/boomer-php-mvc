@@ -43,6 +43,6 @@ class StaticPageController extends BaseController {
   public static function err404($msg) {
     self::$data['user_data'] = sessionUserData($_COOKIE['sessionId']);
     self::$data['msg'] = $msg;
-    return self::getView('Error404');
+    return self::getView('Error404',self::$data);
   }
 }
