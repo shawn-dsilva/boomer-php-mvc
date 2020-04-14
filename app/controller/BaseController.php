@@ -6,20 +6,18 @@ class BaseController {
   // public $uri;
   // public $method;
   // public $middleware = [];
-  // public $mwReturns = [];
+  public $mwReturns = [];
   public static $middlewareReturns = [];
   // public $paramk = [];
-  // public $params = [];
+  public $params = [];
 
-  // public function __construct($controller, $method, $uri, $paramk = [])
-  // {
-  //   $this->controller = $controller;
-  //   $this->uri = $uri;
-  //   $this->method = $method;
-  //   $this->paramk = $paramk;
-
-  //   return $this->controller;
-  // }
+  public function __construct($mwReturns,$params = [])
+  {
+    $this->params = $params;
+    $this->mwReturns = $mwReturns;
+    // $this->controller = $controller;
+    // return $this->controller;
+  }
 
 
   // public function getParamKeys() {

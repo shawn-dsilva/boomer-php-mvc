@@ -48,12 +48,13 @@ class RouteHandler {
   public function runController() {
 
     //extracts only the controller name from the controller+function string
-    $controller = current(explode('::', $this->controller));
-
+    $controllerClass = explode('::', $this->controller)[0];
+    $controllerMethod = explode('::', $this->controller)[1];
+    // die(var_dump($controllerClass));
     // initizalizes the controller
-    call_user_func($controller::init($this->mwReturns));
-
-    call_user_func($this->controller, $this->params); // passes in parameters to the controller
+    $controller = new $controllerClass($this->mwReturns, $this->params);
+    $controller->$controllerMethod();
+    // call_user_func($this->controller, $this->params); // passes in parameters to the controller
   }
 
   public function runMiddlewares() {
