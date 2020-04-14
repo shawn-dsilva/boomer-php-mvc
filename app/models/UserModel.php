@@ -30,7 +30,10 @@ class UserModel extends BaseModel {
         $session['id'] = $data['id'];
         $session["sessionId"] = $sessionId;
         // die(var_dump($data));
+
         $this->insertInto('sessions', $session);
+        // die(var_dump($this->query));
+
         $this->execstmt($this->query, $session);
     }
 

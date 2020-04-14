@@ -7,7 +7,6 @@ class BaseController {
   // public $method;
   // public $middleware = [];
   public $mwReturns = [];
-  public static $middlewareReturns = [];
   // public $paramk = [];
   public $params = [];
 
@@ -63,7 +62,7 @@ class BaseController {
   // }
 
   public function getView($viewName, $data = null) {
-    $data['user_data'] = self::$middlewareReturns['isAuth']['user_data'];
+    $data['user_data'] = $this->mwReturns['isAuth']['user_data'];
     view($viewName, $data);
 
   }
