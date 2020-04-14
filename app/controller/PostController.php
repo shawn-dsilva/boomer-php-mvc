@@ -9,15 +9,16 @@ include_once('../app/controller/BaseController.php');
 
 class PostController extends BaseController
 {
-    public static $post_model;
+    public $post_model;
 
-    public function init()
+    public function __construct($mwReturns,$params)
     {
-        self::$post_model = new PostModel();
+      parent::__construct($mwReturns, $params);
+      $this->post_model = new PostModel();
     }
 
     public function getAllPosts() {
-        $posts['post_data'] = self::$post_model->getAllPosts();
+        $posts['post_data'] = $this->post_model->getAllPosts();
 
         foreach($posts['post_data'] as $index => $post) {
             // Changes date to human readable form per comment item in array
@@ -35,21 +36,21 @@ class PostController extends BaseController
           'content' => $_POST['content'],
           'user_id' => sessionUserData($_COOKIE['sessionId'])["id"]
         );
-        self::$post_model->insertPost($data);
+        $this->post_model->insertPost($data);
         echo('success');
     }
 
     public function getPosts() {
         $userId = sessionUserData($_COOKIE['sessionId'])["id"];
-        $posts = self::$post_model->getPost($userId);
+        $posts = $this->post_model->getPost($userId);
         echo(json_encode($posts));
     }
 
-    public function getOnePost($params) {
+    public function getOnePost() {
 
         $data['user_data'] = sessionUserData($_COOKIE['sessionId']);
         // if($params['user_id'] == $userId) {
-        $data['post'] = self::$post_model->getSinglePost($params['postid']);
+        $data['post'] = $this->post_model->getSinglePost($this->params['postid']);
         $data['post']['created_at'] = date('l, F jS, Y \a\t\ g:i A', strtotime($data['post']['created_at']));
         // echo(json_encode($post));
         return self::getView('SinglePost', $data);
@@ -60,11 +61,11 @@ class PostController extends BaseController
     public function removePost() {
         $id = $_POST['id'];
         $userId = sessionUserData($_COOKIE['sessionId'])["id"];
-        self::$post_model->deletePost($userId, $id);
+        $this->post_model->deletePost($userId, $id);
         echo('success');
     }
 
-    public function getEditPostForm($params) {
+    public function getEditPostForm() {
         $data['user_data'] = sessionUserData($_COOKIE['sessionId']);
         if(!$data['user_data']) {
             $data['errcode'] = 401;
@@ -72,7 +73,7 @@ class PostController extends BaseController
             return self::getView('Error404',$data );
         }
         // if($params['user_id'] == $userId) {
-        $data['post'] = self::$post_model->getSinglePost($params['postid']);
+        $data['post'] = $this->post_model->getSinglePost($this->params['postid']);
         if($data['post']['user_id'] == $data['user_data']['id']) {
             return self::getView('EditPost', $data);
         } else {
@@ -91,7 +92,7 @@ class PostController extends BaseController
           'content' => $_POST['content'],
           'user_id' => sessionUserData($_COOKIE['sessionId'])["id"]
         );
-        self::$post_model->updatePost($data);
+        $this->post_model->updatePost($data);
         echo('success');
     }
 
@@ -102,13 +103,13 @@ class PostController extends BaseController
           'user_id' => sessionUserData($_COOKIE['sessionId'])["id"],
           'post_id' => $_POST['post_id']
         );
-        self::$post_model->insertComment($data);
+        $this->post_model->insertComment($data);
         echo('success');
     }
 
-    public function getComments($params) {
-        $postId = $params['postid'];
-        $comments = self::$post_model->getComments($postId);
+    public function getComments() {
+        $postId = $this->params['postid'];
+        $comments = $this->post_model->getComments($postId);
 
         foreach($comments as $index => $comment) {
             // Changes date to human readable form per comment item in array
@@ -123,14 +124,14 @@ class PostController extends BaseController
         echo(json_encode($data));
     }
 
-    public function removeComment($params) {
-        $commentId = $params['commentid'];
+    public function removeComment() {
+        $commentId = $this->params['commentid'];
         $userId = sessionUserData($_COOKIE['sessionId'])["id"];
-        $comment =  self::$post_model->getSingleComment($commentId);
+        $comment =  $this->post_model->getSingleComment($commentId);
         if($userId != $comment['user_id']) {
             echo('ERROR : You Can only Delete Comments Written by You');
         } else {
-            self::$post_model->deleteComment($commentId);
+            $this->post_model->deleteComment($commentId);
             echo('success');
         }
     }
@@ -143,13 +144,13 @@ class PostController extends BaseController
             'content' => $_POST['content'],
           );
 
-          $comment =  self::$post_model->getSingleComment($data['comment_id']);
+          $comment =  $this->post_model->getSingleComment($data['comment_id']);
           $userId = sessionUserData($_COOKIE['sessionId'])["id"];
 
           if($userId != $comment['user_id']) {
               echo('ERROR : You Can only Edit Comments Written by You');
           } else {
-              self::$post_model->updateComment($data);
+              $this->post_model->updateComment($data);
               echo('success');
           }
     }
