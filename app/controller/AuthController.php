@@ -8,22 +8,22 @@ include_once('../app/controller/BaseController.php');
 
 class AuthController extends BaseController {
 
-  public  static $user_model;
+  public $user_model;
   // public static $mwReturns = [];
-  public function init($mwReturns)
+  public function __construct($mwReturns,$params)
   {
-    // self::$mwReturns = $mwReturns;
-    self::$user_model = new UserModel();
+    parent::__construct($mwReturns, $params);
+    $this->user_model = new UserModel();
   }
 
-  public function getUser($params) {
-    $userdata['user'] = self::$user_model->userExists('username', $params['username']);
+  public function getUser() {
+    $userdata['user'] = $this->user_model->userExists('username', $this->params['username']);
     $error['msg'] = 'User Not Found';
     empty($userdata['user']) ? self::getView('Error404', $error): self::getView('UserProfile', $userdata) ;
   }
 
   public function getUsersList() {
-    $userlist = self::$user_model->getAllUsers();
+    $userlist = $this->user_model->getAllUsers();
     // die(var_dump($userlist));
     foreach($userlist as $index => $user) {
       // Changes date to human readable form per comment item in array
@@ -59,7 +59,7 @@ class AuthController extends BaseController {
      }
     }
     //die(var_dump($data,$id));
-    self::$user_model->updateUserData($id,$data);
+    $this->user_model->updateUserData($id,$data);
     echo 'success';
 
   }
@@ -76,12 +76,12 @@ class AuthController extends BaseController {
 
        //Checks if user exists, if it does, then an array will be returned,
        // else it will be empty
-       $user = self::$user_model->userExists('email', $data['email']);
+       $user = $this->user_model->userExists('email', $data['email']);
 
        if (!empty($user)) {
        //If not empty, check given password with the stored password in db
            if ($data['password'] == $user['password']) {
-             createSession(self::$user_model, $user);
+             createSession($this->user_model, $user);
              //Header("Location: dashboard"); // Redirect to dashboard page
              echo('success');
            } else {
@@ -109,14 +109,14 @@ class AuthController extends BaseController {
 
       if ($validator->validateAll($data)) {
 
-          $user = self::$user_model->userExists('email', $data['email']);
+          $user = $this->user_model->userExists('email', $data['email']);
 
           if (empty($user)) {
-            $username = self::$user_model->userExists('username', $data['username']);
+            $username = $this->user_model->userExists('username', $data['username']);
             if(!empty($username)) {
               echo('sorry, that username is already taken');
             } else {
-                self::$user_model->addUser($data);
+                $this->user_model->addUser($data);
                 echo('success');
             }
           } else {
@@ -130,6 +130,6 @@ class AuthController extends BaseController {
 
   public function logout() {
     $sessionId = $_COOKIE['sessionId'];
-    destroySession(self::$user_model, $sessionId);
+    destroySession($this->user_model, $sessionId);
   }
 }
