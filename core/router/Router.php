@@ -4,7 +4,7 @@ require '../app/controller/StaticPageController.php';
 require '../app/controller/AuthController.php';
 require '../app/controller/PostController.php';
 
-// require '../app/controller/BaseController.php';
+require '../core/router/RouteHandler.php';
 // require './middleware/Middlewares.php';
 include(dirname(__FILE__)."/../middleware/Middlewares.php");
 
@@ -59,7 +59,7 @@ class Router
         $this->url = $uri;
       }
 
-      return $this->routes[$method][$this->url] = new BaseController($controller, $method, $this->url, $this->paramKeys);
+      return $this->routes[$method][$this->url] = new RouteHandler($controller, $method, $this->url, $this->paramKeys);
 
     } else {
       throw new Exception('Invalid Method');

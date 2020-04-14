@@ -90,6 +90,8 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 
 ## In Progress
 
+- [ ] Refactor BaseController.php into RouteHandler.php.
+- [ ] New BaseController Class for other Controller classes to inherit from.
 - [ ] Delete previous session ID entries from DB Upon new session creation
 - [ ] Input validation for all new features
 - [ ] Rate Limiting
@@ -99,8 +101,6 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 
 - [ ] Schema Builder
 - [ ] Upvotes and Downvotes from users
-- [ ] Refactor BaseController.php into RouteHandler.php.
-- [ ] New BaseController Class for other Controller classes to inherit from.
 - [ ] Refactor all routers in RoutesController.php into `routes` folder inside '`app` folder
 - [ ] The `routes` folder must contain routes grouped by their function in a single file
 
