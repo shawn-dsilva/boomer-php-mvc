@@ -87,10 +87,12 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - [x] Check for User data associated with sessionId in isAuth middleware
 - [x] getView reworked to automatically add user data from sessions into views
 - [x] List of latest posts from all users
+- [x] Refactor BaseController.php into RouteHandler.php.
+
 
 ## In Progress
 
-- [ ] Refactor BaseController.php into RouteHandler.php.
+- [ ] Refactor all controller classes into object based from static
 - [ ] New BaseController Class for other Controller classes to inherit from.
 - [ ] Delete previous session ID entries from DB Upon new session creation
 - [ ] Input validation for all new features
