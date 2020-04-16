@@ -1,7 +1,9 @@
 <?php
 
 include_once('../app/models/UserModel.php');
-include_once('../app/controller/SessionsController.php');
+include_once('../core/sessions/SessionsController.php');
+include_once('../core/sessions/SessionModel.php');
+
 include_once('../core/utils/Validator.php');
 include_once('../app/controller/BaseController.php');
 
@@ -14,6 +16,8 @@ class AuthController extends BaseController {
   {
     parent::__construct($mwReturns, $params);
     $this->user_model = new UserModel();
+    $this->session_model = new SessionModel();
+
   }
 
   public function getUser() {
@@ -81,7 +85,7 @@ class AuthController extends BaseController {
        if (!empty($user)) {
        //If not empty, check given password with the stored password in db
            if ($data['password'] == $user['password']) {
-             createSession($this->user_model, $user);
+             createSession($this->session_model, $user);
              //Header("Location: dashboard"); // Redirect to dashboard page
              echo('success');
            } else {

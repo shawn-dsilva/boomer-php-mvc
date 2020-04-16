@@ -1,4 +1,5 @@
 <?php
+include_once('../core/sessions/SessionModel.php');
 
 
   function createSession($user_model, $data) {
@@ -8,8 +9,8 @@
   }
 
   function sessionUserData($sessionId) {
-    $user_model = new UserModel;
-    $userdata = $user_model->getSession($sessionId);
+    $session_model = new SessionModel;
+    $userdata = $session_model->getSession($sessionId);
     return $userdata;
   }
 
