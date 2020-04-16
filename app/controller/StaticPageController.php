@@ -20,7 +20,7 @@ class StaticPageController extends BaseController {
     // die(var_dump($this->mwReturns));
     // exit();
     // $data['posts'] = $pc->getPosts($data['user_data']['id']);
-    return $this->getView('Dashboard',self::$data);
+    return $this->getView('Dashboard');
   }
 
   public function login () {
