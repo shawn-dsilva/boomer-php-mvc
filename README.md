@@ -88,12 +88,13 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - [x] getView reworked to automatically add user data from sessions into views
 - [x] List of latest posts from all users
 - [x] Refactor BaseController.php into RouteHandler.php.
+- [x] Refactor all controller classes into object based from static
+- [x] New BaseController Class for other Controller classes to inherit from.
 
 
 ## In Progress
 
-- [ ] Refactor all controller classes into object based from static
-- [ ] New BaseController Class for other Controller classes to inherit from.
+- [ ] Refactor Sessions related code into  seperate sessions folder in `core`
 - [ ] Delete previous session ID entries from DB Upon new session creation
 - [ ] Input validation for all new features
 - [ ] Rate Limiting
