@@ -40,7 +40,7 @@ class StaticPageController extends BaseController {
     return $this->getView('CreatePost');
   }
 
-  public static function err404($msg) {
+  public function err404($msg) {
     $data['msg'] = $msg;
     return $this->getView('Error404',$data);
   }
