@@ -41,9 +41,11 @@ $isLoggedIn = FALSE;
 
   </div>
 </div>
-<script>//ajaxSubmit('addcomment','<?php echo $data['post']['id']; ?>')
-// ajaxSubmit('editcomment');
+<script>
 getCommentList('<?php echo $data['post']['id']; ?>');
+
+ajaxSubmit('addcomment','<?php echo $data['post']['id']; ?>');
+// ajaxSubmit('editcomment');
 </script>
 <div id="editBox"></div>
 <?php require('includes/footer.html'); ?>

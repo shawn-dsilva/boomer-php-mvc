@@ -18,6 +18,9 @@ $router->registerRoute('GET', 'removecomment/{:commentid}', 'PostController::rem
 
 $router->registerRoute('POST', 'editpost', 'PostController::editPost')->middleware('isAuth');
 
+$router->registerRoute('GET', 'getcomments/{:postid}', 'PostController::getComments')->middleware('isAuth');
+
+
 $router->registerRoute('POST', 'addcomment', 'PostController::addComment')->middleware('isAuth');
 
 $router->registerRoute('POST', 'editcomment', 'PostController::editComment')->middleware('isAuth');
