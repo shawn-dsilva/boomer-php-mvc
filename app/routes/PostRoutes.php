@@ -21,6 +21,6 @@ $router->registerRoute('POST', 'editpost', 'PostController::editPost')->middlewa
 $router->registerRoute('GET', 'getcomments/{:postid}', 'PostController::getComments')->middleware('isAuth');
 
 
-$router->registerRoute('POST', 'addcomment', 'PostController::addComment')->middleware('isAuth');
+$router->registerRoute('POST', 'addcomment', 'PostController::addComment')->middleware('isAuth', 'inputValidate');
 
 $router->registerRoute('POST', 'editcomment', 'PostController::editComment')->middleware('isAuth');
