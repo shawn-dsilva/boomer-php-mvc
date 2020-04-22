@@ -26,6 +26,7 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - Deals with a local( non-container ) install of Apache2 on an Ubuntu 18.04 instance.
 - To serve using Apache2, move this folder into the `/var/www/html` directory
 - Add `/var/www/html/boomer-php-mvc/public/index.php` as the DocumentRoot in the `/etc/apache2/sites-available/000-default.conf` file.
+- Run `sudo systemctl restart apache2`
 
 ## Completed Tasks
 
@@ -98,7 +99,8 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - [x] New BaseController Class for other Controller classes to inherit from.
 - [x] Refactor Sessions related code into  seperate sessions folder in `core`
 - [x] Refactor code for Routes list into seperate routes folder in `app`
-
+- [x] Refactor all routers in RoutesController.php into `routes` folder inside '`app` folder
+- [x] The `routes` folder must contain routes grouped by their function in a single file
 
 ## In Progress
 
@@ -111,8 +113,7 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 
 - [ ] Schema Builder
 - [ ] Upvotes and Downvotes from users
-- [ ] Refactor all routers in RoutesController.php into `routes` folder inside '`app` folder
-- [ ] The `routes` folder must contain routes grouped by their function in a single file
+
 
 ## Author
 
