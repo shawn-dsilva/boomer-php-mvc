@@ -21,6 +21,12 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - Middleware support for specific routes.
 - Query Builder for MySQL used in Models.
 
+## Usage with Apache2
+
+- Deals with a local( non-container ) install of Apache2 on an Ubuntu 18.04 instance.
+- To serve using Apache2, move this folder into the `/var/www/html` directory
+- Add `/var/www/html/boomer-php-mvc/public/index.php` as the DocumentRoot in the `/etc/apache2/sites-available/000-default.conf` file.
+
 ## Completed Tasks
 
 - [x] Skeleton files and directory setup
