@@ -117,7 +117,7 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 
 ## Author
 
-### Shawn D'silva
-
-- **Github profile :** github.com/shawn-dsilva
-- **Website :** shawndsilva.com
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+| [<img src="https://avatars0.githubusercontent.com/u/33859225?s=460&u=797dc9181252488a9c325fca842898c24ff28688&v=4" width="75px;"/><br /><sub>Shawn D'silva</sub>](https://www.shawndsilva.com)<br /> | 
+| :---: |
+<!-- ALL-CONTRIBUTORS-LIST:END -->
