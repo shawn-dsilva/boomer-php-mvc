@@ -1,8 +1,6 @@
 FROM php:7.2-apache
-COPY . /var/www/html/
+COPY . /var/www/site
 
-EXPOSE 5000
+RUN a2enmod rewrite
 
-
-RUN sed -ri -e 's!/var/www/html!/var/www/html/public/index.php!g' /etc/apache2/sites-available/*.conf
-RUN sed -ri -e 's!/var/www/!//var/www/html/public/index.php!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
+ADD apache-config.conf /etc/apache2/sites-enabled/000-default.conf
