@@ -1,5 +1,16 @@
 version: "3"
 services:
+
+    mysql:
+        container_name: mysql
+        image: mysql:5.7
+        ports:
+            - '3312:3306'
+        environment:
+            - MYSQL_ROOT_PASSWORD=root
+            - MYSQL_DATABASE=boomerphpmvc
+            - MYSQL_USER=phpmyadmin
+            - MYSQL_PASSWORD=123456
     server:
         container_name: server
         build:
