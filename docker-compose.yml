@@ -11,14 +11,14 @@ services:
             - MYSQL_DATABASE=boomerphpmvc
             - MYSQL_USER=phpmyadmin
             - MYSQL_PASSWORD=123456
+        volumes:
+            - './bin:/docker-entrypoint-initdb.d/'
     apache2php7:
         container_name: apache2php7
-        depends_on: 
+        depends_on:
             - mysql
         build:
             context: .
             dockerfile: dockerfile
-            network: boomerphpmvc_default
         ports:
             - "5000:80"
-
