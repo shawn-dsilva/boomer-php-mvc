@@ -21,6 +21,12 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - Middleware support for specific routes.
 - Query Builder for MySQL used in Models.
 
+## Quickstart
+
+- You need Docker and `docker-compose` for this.
+- Run `docker-compose up`
+- Site is hosted on `localhost:5000` by default.
+
 ## Usage with Apache2
 
 - Deals with a local( non-container ) install of Apache2 on an Ubuntu 18.04 instance.
@@ -118,6 +124,6 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 ## Author
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-| [<img src="https://avatars0.githubusercontent.com/u/33859225?s=460&u=797dc9181252488a9c325fca842898c24ff28688&v=4" width="75px;"/><br /><sub>Shawn D'silva</sub>](https://www.shawndsilva.com)<br /> | 
+| [<img src="https://avatars0.githubusercontent.com/u/33859225?s=460&u=797dc9181252488a9c325fca842898c24ff28688&v=4" width="75px;"/><br /><sub>Shawn D'silva</sub>](https://www.shawndsilva.com)<br /> |
 | :---: |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
