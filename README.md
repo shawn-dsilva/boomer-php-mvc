@@ -110,6 +110,8 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 
 ## In Progress
 
+- [ ] Refactor into proper `baseurl` setup
+- [ ] Refactor resource routes(css,js,image) into its own controller in `core`
 - [ ] Delete previous session ID entries from DB Upon new session creation
 - [ ] Input validation for all new features
 - [ ] Rate Limiting

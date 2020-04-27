@@ -52,7 +52,7 @@ class StaticPageController extends BaseController {
   }
 
   public function js() {
-    header('Content-Type: text/javascript; charset=UTF-8');
+    header("Content-Type: text/javascript; charset: UTF-8");
     return require "../public/js/main.js";
   }
 }
