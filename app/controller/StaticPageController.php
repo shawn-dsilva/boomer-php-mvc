@@ -44,4 +44,15 @@ class StaticPageController extends BaseController {
     $data['msg'] = $msg;
     return $this->getView('Error404',$data);
   }
+
+
+  public function css() {
+    header("Content-Type:text/css; charset: UTF-8");
+    return require "../public/css/main.css";
+  }
+
+  public function js() {
+    header('Content-Type: text/javascript; charset=UTF-8');
+    return require "../public/js/main.js";
+  }
 }

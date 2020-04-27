@@ -35,11 +35,9 @@ class Router
 
 
   public function registerRoute($method, $uri, callable $controller) {
-
     //If method is allowed, store controller in a sub-array $method of $routes
     // with the key as $uri and value as $controller
     if (array_key_exists($method, $this->allowedMethods)) {
-
       // if a the route uri contains strings like {:someparameter}
       if(preg_match_all( "{:([a-z]+)}", $uri, $matches)){
 
@@ -68,8 +66,6 @@ class Router
 
 
   public function handleRoute($uri, $methodType) {
-
-    // searches for URIs having parameters
     foreach ($this->routes[$methodType] as $route) {
 
       if(preg_match_all($route->getUri() , $uri, $matches )) {
