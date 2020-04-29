@@ -1,6 +1,5 @@
 <?php
-$router->registerRoute('GET', "js/main.js", 'StaticPageController::js');
-$router->registerRoute('GET', 'css/main.css', 'StaticPageController::css');
+
 
 $router->registerRoute('GET', "", 'StaticPageController::home')->middleware('isAuth');
 $router->registerRoute('GET', 'home', 'StaticPageController::home')->middleware('isAuth');

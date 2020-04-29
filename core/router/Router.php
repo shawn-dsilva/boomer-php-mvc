@@ -1,11 +1,13 @@
 <?php
 
-require '../app/controller/StaticPageController.php';
-require '../app/controller/AuthController.php';
-require '../app/controller/PostController.php';
 
+foreach (glob("../app/controller/*.php") as $controller)
+{
+    require $controller;
+}
+
+require '../core/controller/ResourceController.php';
 require '../core/router/RouteHandler.php';
-// require './middleware/Middlewares.php';
 include(dirname(__FILE__)."/../middleware/Middlewares.php");
 
 
@@ -29,6 +31,9 @@ class Router
 
     //includes the routes.php file and runs the registerRoute() functions contained within
     require $routes;
+
+    $router->registerRoute('GET', "js/main.js", 'ResourceController::js');
+    $router->registerRoute('GET', 'css/main.css', 'ResourceController::css');
 
     return $router;
   }

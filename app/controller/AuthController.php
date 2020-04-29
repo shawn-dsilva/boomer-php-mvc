@@ -5,7 +5,7 @@ include_once('../core/sessions/SessionsController.php');
 include_once('../core/sessions/SessionModel.php');
 
 include_once('../core/utils/Validator.php');
-include_once('../app/controller/BaseController.php');
+include_once('../core/controller/BaseController.php');
 
 
 class AuthController extends BaseController {

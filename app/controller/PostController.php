@@ -4,7 +4,7 @@ include_once('../app/models/PostModel.php');
 include_once('../core/sessions/SessionsController.php');
 include_once('../core/utils/Validator.php');
 include_once('../app/models/UserModel.php');
-include_once('../app/controller/BaseController.php');
+include_once('../core/controller/BaseController.php');
 
 
 class PostController extends BaseController
