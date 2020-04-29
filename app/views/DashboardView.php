@@ -38,18 +38,18 @@
       <div class="dashboard-linkcard">
         <h2>User Profile</h2>
         <p>View and Edit your Public Profile</p>
-        <a href="/profile">View your Profile</a>
+        <a href="profile">View your Profile</a>
       </div>
       <div class="dashboard-linkcard">
         <h2>Your Blog Posts</h2>
         <p>View, Edit and Delete your Blog posts from a list</p>
-        <a href="/postlist">View Blog Posts</a>
+        <a href="postlist">View Blog Posts</a>
 
       </div>
       <div class="dashboard-linkcard">
         <h2>Create a Blog Post</h2>
         <p>Write a New Blog Post</p>
-        <a href="/createpost">Create New Post</a>
+        <a href="createpost">Create New Post</a>
       </div>
     </div>
   </div>

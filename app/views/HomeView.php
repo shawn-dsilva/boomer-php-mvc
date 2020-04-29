@@ -39,7 +39,7 @@
         <p>Boomer PHP MVC implements most common sense Web Framework features from scratch, like a Router, Middlewares, Input Validation, SQL Query Builder and Sessions based Authentication</p>
         <p>To demonstrate these features, this demo website is structured as a blogging platform, supporting multiple users, who can Create, View, Edit and Delete their own Blog posts, Comment on other's blog posts, edit & delete said comments, and customize their own user profile with a bio and a display picture</p>
         <p>These operations take place in a standard page based form, or using AJAX to update content without a page refresh</p>
-        <p><a href="/register">Create an account</a> to demo its features, or <a href="/login">Sign In</a> if you already have one.</p>
+        <p><a href="register">Create an account</a> to demo its features, or <a href="login">Sign In</a> if you already have one.</p>
 
       </div>
 

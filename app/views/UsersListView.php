@@ -11,7 +11,7 @@
 <?php
 unset($data['user_data']);
 foreach ($data as $item): ?>
-  <a href="/users/<?= $item['username']?>">
+  <a href="users/<?= $item['username']?>">
 
   <div class="userlist-item">
   <h2><?php echo $item['name']." ( ".$item['username']." ) " ?></h2>
