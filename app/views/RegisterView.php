@@ -3,7 +3,7 @@
 <div class="container">
   <div class="card">
 <h1>REGISTER</h1>
-<span>Already have an account? <a href="/login">Login.</a></span>
+<span>Already have an account? <a href="login">Login.</a></span>
     <div class="errorBox" id="errorBox"></div>
     <div class="successBox" id="successBox"></div>
 

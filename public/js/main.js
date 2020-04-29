@@ -19,13 +19,13 @@ function ajaxSubmit(form, id=null) {
               $("#successBox").html(`<b>${data} : </b> Login successful, you will be redirected to the Dashboard`);
               $("#successBox").fadeIn();
               $("#successBox").delay(3000).fadeOut(500, function() {
-                window.location = "/dashboard";
+                window.location = "dashboard";
               });
             } else if (form === 'register') {
               $("#successBox").html(`<b>${data} : </b> Registered successfully, you will be redirected to the Login page`);
               $("#successBox").fadeIn();
               $("#successBox").delay(3000).fadeOut(500, function() {
-                window.location = "/login";
+                window.location = "login";
               });
             }
             if(form === 'addpost') {
@@ -36,7 +36,7 @@ function ajaxSubmit(form, id=null) {
               location.reload();
             }
             if(form === 'editprofile') {
-              window.location = "/profile";
+              window.location = "profile";
             }
             if(form === 'addcomment') {
               getCommentList(id);
@@ -59,11 +59,11 @@ function ajaxSubmit(form, id=null) {
 function logout() {
 
   xhttp = new XMLHttpRequest();
-  xhttp.open("GET","/logout", false);
+  xhttp.open("GET","logout", false);
   xhttp.send();
 
   document.cookie = "sessionId= ; expires = Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-  window.location.href = "/login";
+  window.location.href = "login";
 }
 
 function getPostList() {
