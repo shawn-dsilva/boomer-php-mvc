@@ -10,7 +10,7 @@ function ajaxSubmit(form, id=null) {
       e.preventDefault();
       $.ajax({
         type: "POST",
-        url: "/"+form,
+        url: form,
         data: $(formId).serializeArray(),
         success: function(data) {
           console.log(data);
@@ -70,7 +70,7 @@ function getPostList() {
   $(document).ready(function() {
       $.ajax({
         type: "GET",
-        url: "/getpost",
+        url: "getpost",
         success: function(data) {
 
            data = JSON.parse(data);
@@ -101,7 +101,7 @@ function deletePost(itemId) {
 
       $.ajax({
         type: "POST",
-        url: "/deletepost",
+        url: "deletepost",
         data: {id: itemId},
         success: function(data) {
           if(data == 'success') {
@@ -167,7 +167,7 @@ function getCommentList(postid) {
   $(document).ready(function() {
       $.ajax({
         type: "GET",
-        url: "/getcomments/"+postid,
+        url: "getcomments/"+postid,
         success: function(data) {
 
           console.log(data);
@@ -209,7 +209,7 @@ function getCommentList(postid) {
 function deleteComment(commentId) {
   $.ajax({
     type: "GET",
-    url: "/removecomment/"+commentId,
+    url: "removecomment/"+commentId,
     success: function(data) {
       console.log(data);
       if(data === 'success') {
