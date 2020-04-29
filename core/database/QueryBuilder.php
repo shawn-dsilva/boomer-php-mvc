@@ -1,8 +1,6 @@
 <?php
 
-include('../core/database/Database.php');
-
-class BaseModel extends Database {
+class QueryBuilder {
 
     public $query;
 
