@@ -1,8 +1,6 @@
 
 # Boomer PHP MVC
 
-(WORK-IN-PROGRESS)
-
 This is a PHP Framework made by Shawn D'silva to learn MVC Architecture, SQL based CRUD and AJAX from scratch using Linux, Apache, MySQL and PHP , No JavaScript or PHP Frameworks used and neither are any PHP packages or libraries, The Front-End for the demo app is made with with custom CSS & JQuery.
 </br>
 This Project supports Docker and is deployed in Docker containers, The Docker deployment consists of a MySQL container with an Apache2 server + PHP7.2 apache mod, which runs the web app.
