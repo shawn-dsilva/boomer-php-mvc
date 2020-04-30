@@ -11,11 +11,11 @@ function findMethod(){
 function mediate($uri, $BASEURL_SUBDIR) {
   // die(var_dump(strpos($uri, "boomer-php-mvc/")));
    if(strpos($uri, $BASEURL_SUBDIR) === 0) {
-   $uri = str_replace($BASEURL_SUBDIR,'',$uri);
+   $uri = str_replace($BASEURL_SUBDIR."/",'',$uri);
    } else if ($uri == $BASEURL_SUBDIR) {
      $uri = "";
    }
- // die(var_dump($uri));
+//  die(var_dump($uri));
    return $uri;
  }
 
