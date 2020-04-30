@@ -18,12 +18,14 @@ This Project supports Docker and is deployed in Docker containers, The Docker de
 - Entry point for the web app is in `index.php` which lives in the `public` folder, which also contains `.css` and `.js` in their respective folders
 - PHP application code goes in `app` which contains `controllers`, `views` , `models` and `routes`.
 - The core Framework PHP code is in `core` which contains the `database`,`sessions`,`router`,`middlewares`,`utils` and base `controller` and `models` logic
+- Application controllers and models inherit from `controller` and `models` in `core` which encapsulte the parameter or middleware data for controllers from the routes or expose the database functions and Query Builder for the models
 
 ## Main Features
 
 - Created using only pure PHP, no frameworks or external libraries.
 - MVC CRUD App with AJAX features where required
 - Router with support for parameterized dynamic routes and protected routes.
+- Route parameters can be accessed in controller, so can the data output by Middlewares
 - Sessions based authentication, with only sessionId stored in cookie, and user data stored in database.
 - Validation library to check user input.
 - Middleware support for specific routes.
