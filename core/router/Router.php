@@ -104,7 +104,7 @@ class Router
     } else {
     // throw new Exception('No route defined for this URI');
       $page = new StaticPageController(null, null);
-    return $page->err404('No Route defined for this URI<br><br><a href="/"> Go to the Homepage</a>');
+    return $page->err404('No Route defined for this URI<br><br><a href=""> Go to the Homepage</a>');
     }
   }
 
