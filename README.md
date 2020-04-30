@@ -3,36 +3,30 @@
 
 (WORK-IN-PROGRESS)
 
-This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD and AJAX from scratch using a Linux, Apache, MySQL and PHP , No JavaScript or PHP Frameworks used, with custom CSS & JQuery.
+This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD and AJAX from scratch using a Linux, Apache, MySQL and PHP , No JavaScript or PHP Frameworks used neither are any PHP packages or libraries, The Front-End for the demo app is made with with custom CSS & JQuery.
+This Project supports Docker and is deployed in Docker containers, The Docker deployment consists of a MySQL container with an Apache2 server with PHP7.2, which runs the web app.
 
-## Directory Structure
+## Quickstart
 
-- `app` contains  MVC logic, `controller`, `views`, `model` and a `config` folder
-- `core` contains `database` for db init, `router` for routing, `middleware` for middlewares and `utils` for helper functions
-- `public` contains user facing CSS, JS and index.php
+- You need `docker` and `docker-compose` for this.
+- Run `docker-compose up`
+- Site is hosted on `localhost:5003` by default.
+
+## Usage
+
+- Entry point for the web app is in `index.php` which lives in the `public` folder, which also contains `.css` and `.js` in their respective folders
+- PHP application code goes in `app` which contains `controllers`, `views` , `models` and `routes`.
+- The core Framework PHP code is in `core` which contains the `database`,`sessions`,`router`,`middlewares`,`utils` and base `controller` and `models` logic
 
 ## Main Features
 
 - Created using only pure PHP, no frameworks or external libraries.
 - MVC CRUD App with AJAX features where required
 - Router with support for parameterized dynamic routes and protected routes.
-- Sessions based authentication, with only sessionId stored in cookie.
+- Sessions based authentication, with only sessionId stored in cookie, and user data stored in database.
 - Validation library to check user input.
 - Middleware support for specific routes.
-- Query Builder for MySQL used in Models.
-
-## Quickstart
-
-- You need Docker and `docker-compose` for this.
-- Run `docker-compose up`
-- Site is hosted on `localhost:5000` by default.
-
-## Usage with Apache2
-
-- Deals with a local( non-container ) install of Apache2 on an Ubuntu 18.04 instance.
-- To serve using Apache2, move this folder into the `/var/www/html` directory
-- Add `/var/www/html/boomer-php-mvc/public/index.php` as the DocumentRoot in the `/etc/apache2/sites-available/000-default.conf` file.
-- Run `sudo systemctl restart apache2`
+- Database abstraction using a Query Builder for MySQL.
 
 ## Completed Tasks
 
@@ -107,11 +101,12 @@ This is a PHP Framework that i made to learn MVC Architecture, SQL based CRUD an
 - [x] Refactor code for Routes list into seperate routes folder in `app`
 - [x] Refactor all routers in RoutesController.php into `routes` folder inside '`app` folder
 - [x] The `routes` folder must contain routes grouped by their function in a single file
+- [x] Refactor into proper `baseurl` setup
+- [x] Refactor resource routes(css,js,image) into its own controller in `core`
 
 ## In Progress
 
-- [ ] Refactor into proper `baseurl` setup
-- [ ] Refactor resource routes(css,js,image) into its own controller in `core`
+
 - [ ] Delete previous session ID entries from DB Upon new session creation
 - [ ] Input validation for all new features
 - [ ] Rate Limiting
