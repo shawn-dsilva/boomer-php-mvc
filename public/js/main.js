@@ -39,6 +39,7 @@ function ajaxSubmit(form, id=null) {
               window.location = "profile";
             }
             if(form === 'addcomment') {
+              $("textarea#content").val('');
               getCommentList(id);
             }
             if(form === 'editcomment') {

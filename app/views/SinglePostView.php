@@ -30,12 +30,16 @@ $isLoggedIn = FALSE;
 
 <?php $addCommentForm = "<form id='addcomment' class='addcomment'>
   <h2>Add a Comment</h2>
+  <div id='errorBox' class='errorBox'></div>
 
   <input type='hidden' name='post_id' id='id' value='".$data['post']['id']."'></input>
   <textarea name='content' id='content' rows='10' placeholder=' Write your comment here'></textarea>
   <button type='submit' form='addcomment'>Submit Comment <i class='fas fa-arrow-right'></i></button>
+
   </form>
 "?>
+
+
 
 <?php echo ($isLoggedIn) ? $addCommentForm : null ?>
 

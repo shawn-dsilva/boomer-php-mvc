@@ -37,7 +37,7 @@ class PostController extends BaseController
           'user_id' => sessionUserData($_COOKIE['sessionId'])["id"]
         );
 
-        if (strlen($data['content']) >= 350 || strlen($data['content']) <= 700) {
+        if (strlen($data['content']) >= 350 && strlen($data['content']) <= 700) {
             $this->post_model->insertPost($data);
             echo('success');
         } else {
@@ -108,8 +108,14 @@ class PostController extends BaseController
           'user_id' => sessionUserData($_COOKIE['sessionId'])["id"],
           'post_id' => $_POST['post_id']
         );
-        $this->post_model->insertComment($data);
-        echo('success');
+
+        if (strlen($data['content']) >= 50 && strlen($data['content']) <= 200) {
+            $this->post_model->insertComment($data);
+            echo('success');
+        } else {
+            echo('A Comment needs to be between 50 to 200 Characters');
+        }
+
     }
 
     public function getComments() {
