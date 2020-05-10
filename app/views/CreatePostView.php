@@ -6,6 +6,7 @@
 
     <div class="createpost-content">
       <h1>Create New Post</h1>
+      <div id="errorBox" class="errorBox"></div>
 
       <form id="addpost">
       <input   type="text" id="title" name="title" placeholder="Title of your Post"><br>
@@ -19,7 +20,6 @@
 
       <script>ajaxSubmit('addpost')</script>
 
-      <div id="errorBox"></div>
       </div>
     </div>
 </div>

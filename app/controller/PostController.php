@@ -33,11 +33,16 @@ class PostController extends BaseController
 
         $data=array(
           'title' => $_POST['title'],
-          'content' => $_POST['content'],
+          'content' => strip_tags($_POST['content']),
           'user_id' => sessionUserData($_COOKIE['sessionId'])["id"]
         );
-        $this->post_model->insertPost($data);
-        echo('success');
+
+        if (strlen($data['content']) >= 350) {
+            $this->post_model->insertPost($data);
+            echo('success');
+        } else {
+            echo('Blog Post needs to be longer than 350 characters');
+        }
     }
 
     public function getPosts() {
