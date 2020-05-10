@@ -37,11 +37,11 @@ class PostController extends BaseController
           'user_id' => sessionUserData($_COOKIE['sessionId'])["id"]
         );
 
-        if (strlen($data['content']) >= 350) {
+        if (strlen($data['content']) >= 350 || strlen($data['content']) <= 700) {
             $this->post_model->insertPost($data);
             echo('success');
         } else {
-            echo('Blog Post needs to be longer than 350 characters');
+            echo('A Blog Post needs to be between 350 to 700 Characters');
         }
     }
 
