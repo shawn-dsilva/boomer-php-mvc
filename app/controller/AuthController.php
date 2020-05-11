@@ -56,20 +56,27 @@ class AuthController extends BaseController {
     $data = $_POST;
     $id = sessionUserData($_COOKIE['sessionId'])['id'];
     // TODO : FIX isAuth Middleware to reject non-logged in users from accessing profile, and remove if else block from here
+// die(var_dump($data));
+    if(strlen($data['name']) >=10 && strlen($data['name']) <= 25) {
+      // die(var_dump($data['name']));
+      if(strlen($data['about']) >=200 && strlen($data['about']) <= 500) {
 
-    if(strlen($data['name']) >=10 && strlen($data['name']) <= 75) {
-    } else { 
-      echo "Name must be between 10 to 75 characters only";
-    }
+        if(strlen($data['location']) >=20 && strlen($data['location']) <= 50) {
+          $this->user_model->updateUserData($id,$data);
+          echo 'success';
+        } else {
+          echo "Location must be between 20 to 50 characters only";
+          exit;
+        }
 
-    if(strlen($data['about']) >=200 && strlen($data['about']) <= 500) {
-    } else { 
-      echo "About Me description must be between 200 to 500 characters only";
-    }
+      } else {
+        echo "About Me description must be between 200 to 500 characters only";
+        exit;
+      }
 
-    if(strlen($data['location']) >=40 && strlen($data['location']) <= 100) {
-    } else { 
-      echo "Location must be between 40 to 100 characters only";
+    } else {
+      echo "Name must be between 10 to 25 characters only";
+      exit;
     }
 
     foreach($data as $key => $value) {
@@ -78,8 +85,7 @@ class AuthController extends BaseController {
      }
     }
     //die(var_dump($data,$id));
-    $this->user_model->updateUserData($id,$data);
-    echo 'success';
+
 
   }
 
