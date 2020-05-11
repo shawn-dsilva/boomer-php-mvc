@@ -33,9 +33,9 @@
       $contentNoEdit = "<div class='profile-item-content '  {$color}>{$text}</div>";
       $input = "<input class='profile-item-content profile-edit-item hide' type='text' name='{$key}' {$filling}>";
 
-      $aboutInput = "<div class='about-container'>
+      $aboutInput = "<div class='about-container' >
       <span style='display:none;' class='count' id='count'></span>
-      <textarea id='about-edit' class='profile-item-content profile-edit-item hide' name='{$key}' style='max-width:100%!important'  rows='15' cols='30' onkeyup='javascript:counter()' onkeydown='javascript:counter()' {$filling} >{$text}</textarea>
+      <textarea id='about-edit' class='profile-item-content profile-edit-item hide' name='{$key}' style='max-width:100%!important;'  rows='15' cols='30' onkeyup='javascript:counter()' onkeydown='javascript:counter()' {$filling} ></textarea>
       </div>";
 
       ($key == 'username' || $key == 'email') ? ($concat = $title.$contentNoEdit):(($key == 'about') ? ($concat = $title.$content.$aboutInput) : ($concat = $title.$content.$input));
