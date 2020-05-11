@@ -4,7 +4,7 @@ define('DB_HOST', '127.0.0.1');
 // define('DB_HOST', 'mysql');
 define('DB_USER', 'phpmyadmin');
 define('DB_PASS', '123456');
-define('DB_NAME', 'boomerphpmvc');
+define('DB_NAME', 'mysql');
 define('DSN', 'mysql:host='.DB_HOST.';dbname='.DB_NAME);
 define('OPTS', [
   PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,

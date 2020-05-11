@@ -55,6 +55,8 @@
 
     <h1>YOUR PROFILE</h1>
 
+    <div class="errorBox" id="errorBox"></div>
+
     <div class="profile-data">
 
 
