@@ -63,7 +63,9 @@ function logout() {
   xhttp.open("GET","logout", false);
   xhttp.send();
 
-  document.cookie = "sessionId= ; expires = Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  // document.cookie = "sessionId= ; expires = Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  document.cookie = "sessionId= ; expires = Thu, 01 Jan 1970 00:00:00 UTC; path=/boomer-php-mvc;";
+
   window.location.href = "login";
 }
 
