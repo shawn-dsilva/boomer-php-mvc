@@ -37,11 +37,11 @@ class PostController extends BaseController
           'user_id' => sessionUserData($_COOKIE['sessionId'])["id"]
         );
 
-        if (strlen($data['content']) >= 350 && strlen($data['content']) <= 700) {
+        if (strlen($data['content']) >= 350 && strlen($data['content']) <= 1000) {
             $this->post_model->insertPost($data);
             echo('success');
         } else {
-            echo('A Blog Post needs to be between 350 to 700 Characters');
+            echo('A Blog Post needs to be between 350 to 1000 Characters');
         }
     }
 
@@ -109,11 +109,11 @@ class PostController extends BaseController
           'post_id' => $_POST['post_id']
         );
 
-        if (strlen($data['content']) >= 50 && strlen($data['content']) <= 200) {
+        if (strlen($data['content']) >= 20 && strlen($data['content']) <= 150) {
             $this->post_model->insertComment($data);
             echo('success');
         } else {
-            echo('A Comment needs to be between 50 to 200 Characters');
+            echo('A Comment needs to be between 20 to 150 Characters');
         }
 
     }

@@ -20,7 +20,9 @@
         $filling= "placeholder='You can now Edit your {$key} !'";
       } else {
         $text = $value;
+        $value = str_replace("'", "\'", $value);
         $filling="value='{$value}'";
+        $abouttext = $value;
       }
 
       $title = " <div class='profile-item-title'>
@@ -35,7 +37,7 @@
 
       $aboutInput = "<div class='about-container' >
       <span style='display:none;' class='count' id='count'></span>
-      <textarea id='about-edit' class='profile-item-content profile-edit-item hide' name='{$key}' style='max-width:100%!important;'  rows='15' cols='30' onkeyup='javascript:counter()' onkeydown='javascript:counter()' {$filling} ></textarea>
+      <textarea id='about-edit' class='profile-item-content profile-edit-item hide' name='{$key}' style='max-width:100%!important;'  rows='15' cols='30' onkeyup='javascript:counter()' onkeydown='javascript:counter()' {$filling} >{$abouttext}</textarea>
       </div>";
 
       ($key == 'username' || $key == 'email') ? ($concat = $title.$contentNoEdit):(($key == 'about') ? ($concat = $title.$content.$aboutInput) : ($concat = $title.$content.$input));

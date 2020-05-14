@@ -30,7 +30,7 @@ function ajaxSubmit(form, id=null) {
             }
             if(form === 'addpost') {
               $("#postList").html('');
-              getPostList();
+              window.location = "postlist";
             }
             if(form === 'editpost') {
               location.reload();
