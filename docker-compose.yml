@@ -13,6 +13,8 @@ services:
             - MYSQL_PASSWORD=123456
         volumes:
             - './bin:/docker-entrypoint-initdb.d/'
+            - ./mysql-data:/var/lib/mysql
+
     apache2php7:
         container_name: apache2php7
         depends_on:
@@ -25,4 +27,4 @@ services:
 networks:
     default:
         external:
-            name: nginxrpgateway_default              
+            name: nginxrpgateway_default

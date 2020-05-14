@@ -13,7 +13,6 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-DROP TABLE IF EXISTS `posts`;
 
 CREATE TABLE `posts` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
@@ -24,7 +23,6 @@ CREATE TABLE `posts` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-DROP TABLE IF EXISTS `sessions`;
 
 CREATE TABLE `sessions` (
   `id` int(11) unsigned NOT NULL,
@@ -33,7 +31,6 @@ CREATE TABLE `sessions` (
   PRIMARY KEY (`sessionId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-DROP TABLE IF EXISTS `comments`;
 
 CREATE TABLE `comments` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
