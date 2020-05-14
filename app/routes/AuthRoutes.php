@@ -8,7 +8,7 @@ $router->registerRoute('GET', 'logout', 'AuthController::logout');
 
 $router->registerRoute('GET', 'users', 'AuthController::getUsersList')->middleware('isAuth');
 
-$router->registerRoute('GET', 'users/{:username}', 'AuthController::getUser');
+$router->registerRoute('GET', 'users/{:username}', 'AuthController::getUser')->middleware('isAuth');
 
 $router->registerRoute('GET', 'profile', 'AuthController::getProfile')->middleware('isAuth');
 

@@ -23,6 +23,9 @@ class AuthController extends BaseController {
   public function getUser() {
     $userdata['user'] = $this->user_model->userExists('username', $this->params['username']);
     $error['msg'] = 'User Not Found';
+    $userdata['user']['registered'] = date('l, F jS, Y \a\t\ g:i A', strtotime($userdata['user']['registered_on']));
+    // die(var_dump($userdata));
+    unset($userdata['user']['registered_on']);
     empty($userdata['user']) ? self::getView('Error404', $error): self::getView('UserProfile', $userdata) ;
   }
 
@@ -57,25 +60,25 @@ class AuthController extends BaseController {
     $id = sessionUserData($_COOKIE['sessionId'])['id'];
     // TODO : FIX isAuth Middleware to reject non-logged in users from accessing profile, and remove if else block from here
 // die(var_dump($data));
-    if(strlen($data['name']) >=10 && strlen($data['name']) <= 25) {
+    if(strlen($data['name']) >=3 && strlen($data['name']) <= 25) {
       // die(var_dump($data['name']));
-      if(strlen($data['about']) >=200 && strlen($data['about']) <= 500) {
+      if(strlen($data['about']) >=150 && strlen($data['about']) <= 350) {
 
-        if(strlen($data['location']) >=20 && strlen($data['location']) <= 50) {
+        if(strlen($data['location']) >=12 && strlen($data['location']) <= 40) {
           $this->user_model->updateUserData($id,$data);
           echo 'success';
         } else {
-          echo "Location must be between 20 to 50 characters only";
+          echo "Location must be between 12 to 40 characters only";
           exit;
         }
 
       } else {
-        echo "About Me description must be between 200 to 500 characters only";
+        echo "About Me description must be between 150 to 350 characters only";
         exit;
       }
 
     } else {
-      echo "Name must be between 10 to 25 characters only";
+      echo "Name must be between 3 to 25 characters only";
       exit;
     }
 

@@ -10,6 +10,7 @@
     $icons['email'] = "<i class='fas fa-envelope'></i>";
     $icons['about'] = "<i class='fas fa-info-circle'></i>";
     $icons['location'] = "<i class='fas fa-map-marker-alt'></i>";
+    $icons['registered'] = "<i class='far fa-calendar-alt'></i>";
 
     function render($icons, $key, $value) {
 
