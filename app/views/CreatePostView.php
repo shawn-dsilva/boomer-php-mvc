@@ -9,7 +9,7 @@
       <div id="errorBox" class="errorBox"></div>
 
       <form id="addpost">
-      <input   type="text" id="title" name="title" placeholder="Title of your Post"><br>
+      <input   type="text" id="title" name="title" placeholder="Title of your Post" autocomplete="off"><br>
 
 
       <textarea  name="content" id="content" rows="10" cols="30" placeholder="Content of your post"></textarea>

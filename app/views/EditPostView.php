@@ -10,7 +10,7 @@
       <form id="editpost">
       <input type='hidden' name='post_id' id='post_id' value="<?php echo "{$data['post']['id']}" ?>"></input>
 
-      <input   type="text" id="title" name="title" value="<?php echo "{$data['post']['title']}" ?>"><br>
+      <input   type="text" id="title" name="title" value="<?php echo "{$data['post']['title']}" ?>" autocomplete="off"><br>
 
 
       <textarea  name="content" id="content" rows="10" cols="30" ><?php echo "{$data['post']['content']}" ?></textarea>
