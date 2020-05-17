@@ -33,7 +33,7 @@ function ajaxSubmit(form, id=null) {
               window.location = "postlist";
             }
             if(form === 'editpost') {
-              location.reload();
+              window.location = "post/"+id;
             }
             if(form === 'editprofile') {
               window.location = "profile";
