@@ -33,7 +33,7 @@
       $content = "<div class='profile-item-content profile-content-item'  {$color}>{$text}</div>";
 
       $contentNoEdit = "<div class='profile-item-content '  {$color}>{$text}</div>";
-      $input = "<input class='profile-item-content profile-edit-item hide' type='text' name='{$key}' {$filling}>";
+      $input = "<input class='profile-item-content profile-edit-item hide' type='text' name='{$key}' {$filling} autocomplete='off'>";
 
       $aboutInput = "<div class='about-container' >
       <span style='display:none;' class='count' id='count'></span>
